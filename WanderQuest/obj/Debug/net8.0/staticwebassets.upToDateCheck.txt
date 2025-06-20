@@ -1,0 +1,4 @@
+wwwroot\Areas\Admin\css\styles.css
+wwwroot\Areas\Admin\js\script.js
+wwwroot\assets\css\styles.css
+wwwroot\assets\js\script.js

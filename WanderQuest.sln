@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WanderQuest", "WanderQuest\WanderQuest.csproj", "{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{A943EFE0-3F7A-4251-9658-3C8F5475FC92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A943EFE0-3F7A-4251-9658-3C8F5475FC92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A943EFE0-3F7A-4251-9658-3C8F5475FC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A943EFE0-3F7A-4251-9658-3C8F5475FC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A943EFE0-3F7A-4251-9658-3C8F5475FC92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF9D46FC-CBE8-4DDA-9607-89F421AB50E2}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,27 @@
+﻿@model List<Category>
+
+<div class="table-container">
+    <a class="nav-link" asp-controller="dashboard" asp-action="index" asp-area="admin"><button class="btn-delete">Go Back</button></a>
+    <h2>Categories</h2>
+    <table class="table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Settings</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@Model[i].Name</td>
+                    <td>
+                        <button class="btn-details">Details</button>
+                        <button class="btn-update">Update</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

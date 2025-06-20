@@ -1,0 +1,137 @@
+﻿@model HomeVM
+
+<!-- Hero Slider -->
+<section class="hero" id="home">
+    <div class="slider" id="heroSlider">
+        @for (int i = 0; i < Model.Sliders.Count; i++)
+        {
+            <div class="slide active" style="background-image:url(@Model.Sliders[i].ImgUrl)">
+                <div class="slide-content">
+                    <h1>@Model.Sliders[i].Title</h1>
+                    <p>@Model.Sliders[i].Description</p>
+                </div>
+            </div>
+        }
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <button class="next" id="nextBtn">&#10095;</button>
+    </div>
+</section>
+
+<!-- Packages Section -->
+<section class="packages" id="packages">
+    <h2>Our Travel Packages</h2>
+    <div class="filters">
+        <button data-filter="all" class="filter-btn active">All</button>
+        @for (int i = 0; i < Model.Categories.Count; i++)
+        {
+            <button data-filter="@Model.Categories[i].Name.ToLower()" class="filter-btn">@Model.Categories[i].Name</button>
+        }
+        
+        @* <button data-filter="beach" class="filter-btn">Beach</button>
+        <button data-filter="city" class="filter-btn">City</button>
+        <button data-filter="adventure" class="filter-btn">Adventure</button> *@
+    </div>
+    <div class="package-grid" id="packageGrid">
+        <!-- JavaScript will populate packages -->  
+        @for (int i = 0; i < Model.Cards.Count; i++)
+        {
+            <div class="package-card" data-category="@Model.Cards[i].Category.Name.ToLower()">
+                <img src="@Model.Cards[i].ImgUrl" alt="$@Model.Cards[i].Title">
+                <div class="package-card-content">
+                    <h3>@Model.Cards[i].Title</h3>
+                    <p>@Model.Cards[i].Description</p>
+                    <div class="price">"$@Model.Cards[i].Price"</div>
+                    <button data-id="@Model.Cards[i].Category.Id">Add to Wishlist</button>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Feature Section -->
+<section class="feature-section">
+    <div class="feature-content">
+        <h2>Why Choose WanderQuest?</h2>
+        <p>We curate personalized experiences, ensuring unforgettable journeys.</p>
+    </div>
+</section>
+
+<!-- About / Team Section -->
+<section class="about" id="about">
+    <h2>Meet Our Guides</h2>
+    <div class="team-profiles">
+        <div class="profile-card">
+            <img src="https://picsum.photos/200?random=1" alt="Guide 1">
+            <h3>Alice Carter</h3>
+            <p>Mountain Specialist</p>
+        </div>
+        <div class="profile-card">
+            <img src="https://picsum.photos/200?random=2" alt="Guide 2">
+            <h3>David Lee</h3>
+            <p>Beach Enthusiast</p>
+        </div>
+        <div class="profile-card">
+            <img src="https://picsum.photos/200?random=3" alt="Guide 3">
+            <h3>Maria Gomez</h3>
+            <p>City Explorer</p>
+        </div>
+        <div class="profile-card">
+            <img src="https://picsum.photos/200?random=4" alt="Guide 4">
+            <h3>James Patel</h3>
+            <p>Adventure Seeker</p>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <h2>What Our Travelers Say</h2>
+    <div class="testimonial-slider" id="testimonialSlider">
+        <div class="testimonial active">
+            <p>"An amazing experience! The mountains tour was breathtaking and well organized."</p>
+            <h4>- Emily R.</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Beach getaway was perfect. Highly recommend WanderQuest for seamless planning."</p>
+            <h4>- Michael S.</h4>
+        </div>
+        <div class="testimonial">
+            <p>"City tour opened my eyes to hidden gems. Fantastic guides!"</p>
+            <h4>- Sara L.</h4>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+    <h2>Subscribe for Exclusive Deals</h2>
+    <div class="newsletter-form">
+        <input type="email" id="emailNewsletter" placeholder="Enter your email">
+        <button id="subscribeBtn">Subscribe</button>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section class="blog" id="blog">
+    <h2>From Our Blog</h2>
+    <div class="blog-grid" id="blogGrid">
+        <!-- Populated via JS -->
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019845371635!2d-122.41941548468253!3d37.77492927975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c2f8f7d1f%3A0x4a0c1e0f9b7d1e0!2sSan+Francisco!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+

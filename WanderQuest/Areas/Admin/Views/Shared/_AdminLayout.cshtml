@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majestic Admin Panel</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="~/Areas/Admin/css/styles.css">
+    <script defer src="~/Areas/Admin/js/script.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a class="nav-link" asp-controller="category" asp-action="index" asp-area="admin"><i class="material-icons">assignment</i><span>Categories</span></a></li>
+            <li data-section="charts"><i class="material-icons">bar_chart</i><span>Charts</span></li>
+            <li data-section="tables"><i class="material-icons">table_chart</i><span>Tables</span></li>
+            <li data-section="icons"><i class="material-icons">star</i><span>Icons</span></li>
+            <li id="toggle-sidebar"><i class="material-icons">menu</i><span>Toggle Menu</span></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="user-info">
+                <span class="material-icons">account_circle</span>
+                <span>Admin</span>
+            </div>
+        </div>
+
+        @RenderBody()
+
+    </div>
+</body>
+</html>

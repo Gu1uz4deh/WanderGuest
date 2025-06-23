@@ -6,6 +6,17 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
+
+let loadMoreButton = document.getElementById("loadMore");
+let products = document.getElementById("products");
+
+loadMoreButton.addEventListener("click", async function () {
+    let resp = await fetch("/products/loadmore");
+    let data = await resp.text();
+    console.log(data);
+    products.innerHTML += data;
+})
+
 // Hero Slider
 const slides = document.querySelectorAll('#heroSlider .slide');
 let currentSlide = 0;
@@ -29,22 +40,20 @@ setInterval(() => {
     showSlide((currentSlide + 1) % slides.length);
 }, 5000);
 
-// Packages Data
 const packageGrid = document.getElementById('packageGrid');
 
-function renderPackages(filter = 'all') {
-    const packageCards = packageGrid.querySelectorAll('.package-card');
-    packageCards.forEach(card => {
-        const category = card.dataset.category;
-        if (filter === 'all' || category === filter) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
-    });
-}
+//function renderPackages(filter = 'all') {
+//    const packageCards = packageGrid.querySelectorAll('.package-card');
+//    packageCards.forEach(card => {
+//        const category = card.dataset.category;
+//        if (filter === 'all' || category === filter) {
+//            card.classList.remove('hidden');
+//        } else {
+//            card.classList.add('hidden');
+//        }
+//    });
+//}
 
-// Filtre butonları için olay dinleyicileri
 const filterBtns = document.querySelectorAll('.filter-btn');
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -54,9 +63,7 @@ filterBtns.forEach(btn => {
     });
 });
 
-// İlk render - tüm kartlar başlangıçta gösterilir
-renderPackages();
-// Wishlist functionality
+//renderPackages();
 let wishlistCount = 0;
 document.addEventListener('click', e => {
     if (e.target.matches('.package-card-content button')) {
@@ -66,7 +73,6 @@ document.addEventListener('click', e => {
     }
 });
 
-// Testimonials Slider
 const testimonials = document.querySelectorAll('#testimonialSlider .testimonial');
 let currentTestimonial = 0;
 function showTestimonial(index) {
@@ -81,13 +87,11 @@ setInterval(() => {
     showTestimonial((currentTestimonial + 1) % testimonials.length);
 }, 4000);
 
-// Newsletter Subscribe
 document.getElementById('subscribeBtn').addEventListener('click', () => {
     const email = document.getElementById('emailNewsletter').value;
     if (email) alert('Subscribed: ' + email);
 });
 
-// Blog Data
 const blogs = [
     { id: 1, title: 'Top 10 Mountain Trails', date: '01 June 2025', img: 'https://picsum.photos/200?random=1' },
     { id: 2, title: 'Beach Safety Tips', date: '15 May 2025', img: 'https://picsum.photos/200?random=2' },
@@ -108,7 +112,7 @@ blogs.forEach(b => {
     blogGrid.appendChild(card);
 });
 
-// Contact Form
+
 document.getElementById('contactForm').addEventListener('submit', e => {
     e.preventDefault();
     const name = document.getElementById('name').value;

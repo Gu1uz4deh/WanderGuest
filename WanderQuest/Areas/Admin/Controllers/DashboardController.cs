@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WanderQuest.Areas.Admin.Controllers
 {
+
+    [Area("Admin")]
     public class DashboardController : Controller
     {
         // GET: Dashboard

@@ -12,11 +12,11 @@
 <body>
     <!-- Navbar -->
     <header class="navbar">
-        <div class="logo">WanderQuest</div>
+        <a asp-area="" asp-controller="home" asp-action="index" class="logo">WanderQuest</a>
         <nav class="nav-menu" id="navMenu">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#packages">Packages</a></li>
+                <li><a asp-area="" asp-controller="home" asp-action="index">Home</a></li>
+                <li><a asp-area="" asp-controller="products" asp-action="index">Products</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -27,9 +27,13 @@
             <span></span><span></span><span></span>
         </div>
     </header>
+
+
     <div>
         @RenderBody()
     </div>
+
+
     <footer>
         <div class="footer-sections">
             <div class="footer-column">

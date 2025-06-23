@@ -31,20 +31,24 @@
         <button data-filter="city" class="filter-btn">City</button>
         <button data-filter="adventure" class="filter-btn">Adventure</button> *@
     </div>
-    <div class="package-grid" id="packageGrid">
-        <!-- JavaScript will populate packages -->  
-        @for (int i = 0; i < Model.Cards.Count; i++)
+    <div id="products" class="package-grid" id="packageGrid">
+        @for (int i = 0; i < Model.Products.Count; i++)
         {
-            <div class="package-card" data-category="@Model.Cards[i].Category.Name.ToLower()">
-                <img src="@Model.Cards[i].ImgUrl" alt="$@Model.Cards[i].Title">
+            <div class="package-card" data-category="@Model.Products[i].Category.Name.ToLower()">
+                <img src="@Model.Products[i].ImgUrl" alt="$@Model.Products[i].Title">
                 <div class="package-card-content">
-                    <h3>@Model.Cards[i].Title</h3>
-                    <p>@Model.Cards[i].Description</p>
-                    <div class="price">"$@Model.Cards[i].Price"</div>
-                    <button data-id="@Model.Cards[i].Category.Id">Add to Wishlist</button>
+                    <h3>@Model.Products[i].Title</h3>
+                    <p>@Model.Products[i].Description</p>
+                    <div class="price">"$@Model.Products[i].Price"</div>
+                    <button data-id="@Model.Products[i].Category.Id">Add to Wishlist</button>
                 </div>
             </div>
         }
+    </div>
+    <div class="more-products">
+        <a id="loadMore" class="nav-link" >
+            <button class="button-more">More...</button>
+        </a>
     </div>
 </section>
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data.Models
 {
-    public class Card : BaseEntity
+    public class Product : BaseEntity
     {
         public string ImgUrl { get; set; }
         public string Title { get; set; }

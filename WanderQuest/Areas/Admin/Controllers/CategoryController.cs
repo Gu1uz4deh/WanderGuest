@@ -13,6 +13,8 @@ namespace WanderQuest.Areas.Admin.Controllers
         {
             _context = context;
         }
+
+        [Area("Admin")]
         public async Task<IActionResult> Index()
         {
             var categories = await _context.Categories.Where(n => !n.IsDeleted).ToListAsync(); 

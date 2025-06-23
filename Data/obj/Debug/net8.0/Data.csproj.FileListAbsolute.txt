@@ -12,3 +12,4 @@ C:\Users\quluz\source\repos\WanderQuest\Data\obj\Debug\net8.0\refint\Data.dll
 C:\Users\quluz\source\repos\WanderQuest\Data\obj\Debug\net8.0\Data.pdb
 C:\Users\quluz\source\repos\WanderQuest\Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
 C:\Users\quluz\source\repos\WanderQuest\Data\obj\Debug\net8.0\ref\Data.dll
+C:\Users\quluz\source\repos\WanderQuest\Data\obj\Debug\net8.0\Data.sourcelink.json

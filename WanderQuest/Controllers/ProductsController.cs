@@ -19,11 +19,12 @@ namespace WanderQuest.Controllers
             return View(products);
         }
 
-        public async Task<IActionResult> LoadMore()
+        [Route("{controller}/loadmore/{skip}")]
+        public async Task<IActionResult> LoadMore(int skip)
         {
             var products = await _context.Products.Where(n => !n.IsDeleted)
                                                     .Include(n => n.Category)
-                                                    .Skip(4)
+                                                    .Skip(skip)
                                                     .Take(4)
                                                     .ToListAsync();
             return PartialView("_ProductPartial", products);

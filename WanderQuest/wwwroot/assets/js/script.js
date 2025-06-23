@@ -9,12 +9,19 @@ hamburger.addEventListener('click', () => {
 
 let loadMoreButton = document.getElementById("loadMore");
 let products = document.getElementById("products");
+let productItems = document.getElementsByClassName("productItem");
 
 loadMoreButton.addEventListener("click", async function () {
-    let resp = await fetch("/products/loadmore");
+    let skip = productItems.length;
+    let resp = await fetch(`/products/loadmore/${skip}`);
     let data = await resp.text();
-    console.log(data);
+    if (data.trim() === "") {
+        //loadMoreButton.style.display = "none";
+        loadMoreButton.remove();
+    }
     products.innerHTML += data;
+
+    console.log(skip);
 })
 
 // Hero Slider
@@ -42,17 +49,17 @@ setInterval(() => {
 
 const packageGrid = document.getElementById('packageGrid');
 
-//function renderPackages(filter = 'all') {
-//    const packageCards = packageGrid.querySelectorAll('.package-card');
-//    packageCards.forEach(card => {
-//        const category = card.dataset.category;
-//        if (filter === 'all' || category === filter) {
-//            card.classList.remove('hidden');
-//        } else {
-//            card.classList.add('hidden');
-//        }
-//    });
-//}
+function renderPackages(filter = 'all') {
+    const packageCards = packageGrid.querySelectorAll('.package-card');
+    packageCards.forEach(card => {
+        const category = card.dataset.category;
+        if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+}
 
 const filterBtns = document.querySelectorAll('.filter-btn');
 filterBtns.forEach(btn => {

@@ -1,0 +1,20 @@
+﻿@model Category
+
+<div class="category-create-section">
+    <h2>CATEGORY - CREATE</h2>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="@Model.Name">Name</label>
+            <input type="text" asp-for="@Model.Name" placeholder="Name">
+        </div>
+        <div class="buttons-table-product-update">
+            <a class="nav-link product-go-back" asp-controller="category" asp-action="index" asp-area="admin">
+                <button class="btn-back">Cancel</button>
+            </a>
+            <a class="nav-link create-product"><button class="btn-success create-product-btn">Submit</button></a>
+        </div>
+    </form>
+</div>
+
+
+

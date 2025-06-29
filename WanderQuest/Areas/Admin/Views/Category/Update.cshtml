@@ -1,0 +1,20 @@
+﻿@model Category
+
+<div class="update-section">
+    <h2>CATEGORY - UPDATE</h2>
+    <form method="post" asp-route-id="@Model.Id"> 
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input value="@Model.Name" type="text" id="name" name="categoryName" placeholder="@Model.Name">
+        </div>
+        <div class="buttons-table-product-update">
+            <a class="nav-link product-go-back" asp-controller="category" asp-action="index" asp-area="admin">
+                 <button class="btn-back">Cancel</button>
+            </a>
+            <a class="nav-link create-product"><button class="btn-success create-product-btn">Submit</button></a>
+        </div>
+    </form>
+</div>
+
+
+

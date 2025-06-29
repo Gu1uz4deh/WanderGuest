@@ -5,7 +5,7 @@
     <div class="slider" id="heroSlider">
         @for (int i = 0; i < Model.Sliders.Count; i++)
         {
-            <div class="slide active" style="background-image:url(@Model.Sliders[i].ImgUrl)">
+            <div class="slide active" style="background-image:url('@Url.Content("~/assets/img/" + Model.Sliders[i].ImgUrl)')">
                 <div class="slide-content">
                     <h1>@Model.Sliders[i].Title</h1>
                     <p>@Model.Sliders[i].Description</p>
@@ -26,26 +26,24 @@
         {
             <button data-filter="@Model.Categories[i].Name.ToLower()" class="filter-btn">@Model.Categories[i].Name</button>
         }
-        
-        @* <button data-filter="beach" class="filter-btn">Beach</button>
-        <button data-filter="city" class="filter-btn">City</button>
-        <button data-filter="adventure" class="filter-btn">Adventure</button> *@
+
     </div>
-    <div id="products" class="package-grid" id="packageGrid">
+    <div id="products" class="package-grid">
         @for (int i = 0; i < Model.Products.Count; i++)
         {
             <div class="package-card" data-category="@Model.Products[i].Category.Name.ToLower()">
-                <img src="@Model.Products[i].ImgUrl" alt="$@Model.Products[i].Title">
+                <img src="~/assets/img/@Model.Products[i].ProductImages?[0].Image.Name" alt="$@Model.Products[i].Title">
                 <div class="package-card-content">
                     <h3>@Model.Products[i].Title</h3>
                     <p>@Model.Products[i].Description</p>
-                    <div class="price">"$@Model.Products[i].Price"</div>
+                    <div class="price">$@Model.Products[i].Price</div>
                     <button data-id="@Model.Products[i].Category.Id">Add to Wishlist</button>
                 </div>
             </div>
         }
     </div>
-    <div class="more-products">
+
+    <div id="moreProductButton" class="more-products">
         <a asp-area="" asp-controller="products" asp-action="index" class="nav-link">
             <button class="button-more">More...</button>
         </a>
@@ -65,22 +63,22 @@
     <h2>Meet Our Guides</h2>
     <div class="team-profiles">
         <div class="profile-card">
-            <img src="https://picsum.photos/200?random=1" alt="Guide 1">
+            <img src="~/assets/img/mountaineering-mountainous-landforms-winter-sport.jpg" alt="Guide 1">
             <h3>Alice Carter</h3>
             <p>Mountain Specialist</p>
         </div>
         <div class="profile-card">
-            <img src="https://picsum.photos/200?random=2" alt="Guide 2">
+            <img src="~/assets/img/s-3e6525c9484d36e5930798ea6b8facd24ca7d5aa.jpg" alt="Guide 2">
             <h3>David Lee</h3>
             <p>Beach Enthusiast</p>
         </div>
         <div class="profile-card">
-            <img src="https://picsum.photos/200?random=3" alt="Guide 3">
+            <img src="~/assets/img/9781e0c92a77fe526611d93a4ac0c6c2.jpg" alt="Guide 3">
             <h3>Maria Gomez</h3>
             <p>City Explorer</p>
         </div>
         <div class="profile-card">
-            <img src="https://picsum.photos/200?random=4" alt="Guide 4">
+            <img src="~/assets/img/gettyImages-1155613712-1.jpg" alt="Guide 4">
             <h3>James Patel</h3>
             <p>Adventure Seeker</p>
         </div>
@@ -119,7 +117,30 @@
 <section class="blog" id="blog">
     <h2>From Our Blog</h2>
     <div class="blog-grid" id="blogGrid">
-        <!-- Populated via JS -->
+        <div class="blog-card">
+            <img src="~/assets/img/mountain-landscape-3840x2160-19802.jpg" alt="Top 10 Mountain Trails">
+            <div class="blog-card-content">
+                <h3>Top 10 Mountain Trails</h3>
+                <p>01 June 2025</p>
+                <a href="#">Read More</a>
+            </div>
+        </div> 
+        <div class="blog-card">
+            <img src="~/assets/img/tropical-beach-3840x2160-14811.jpg" alt="Beach Safety Tips">
+            <div class="blog-card-content">
+                <h3>Beach Safety Tips</h3>
+                <p>15 May 2025</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="blog-card">
+            <img src="~/assets/img/chicago-downtown-3840x2160-21348.jpg" alt="City Travel Hacks">
+            <div class="blog-card-content">
+                <h3>City Travel Hacks</h3>
+                <p>20 April 2025</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
     </div>
 </section>
 

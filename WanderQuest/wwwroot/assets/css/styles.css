@@ -1,5 +1,4 @@
-﻿/* styles.css */
-:root {
+﻿:root {
     --primary-color: #2a9d8f;
     --secondary-color: #264653;
     --accent-color: #e9c46a;
@@ -80,6 +79,7 @@ ul {
         display: flex;
     }
 }
+
 /* Hero Slider */
 .hero {
     position: relative;
@@ -138,6 +138,7 @@ ul {
 }
 .prev { left: 20px; }
 .next { right: 20px; }
+
 /* Packages */
 .packages {
     padding: 40px 20px;

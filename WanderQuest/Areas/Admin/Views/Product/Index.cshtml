@@ -1,0 +1,56 @@
+﻿@model List<Product>
+
+<div class="product-container">
+    <div class="buttons-table-product">
+        <a class="nav-link product-go-back" asp-controller="dashboard" asp-action="index" asp-area="admin"><button class="btn-back">Go Back</button></a>
+        <a class="nav-link create-product" asp-controller="product" asp-action="create" asp-area="admin"><button class="btn-success create-product-btn">Create</button></a>
+    </div>
+    <h2>Products</h2>
+    <table class="table-striped">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Settings</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <img src="~/assets/img/@Model[i].ProductImages?[0].Image.Name" alt="image" class="product-image" />
+                    </td>
+                    <td>
+                        @Model[i].Title
+                    </td>
+                    <td>
+                        @Model[i].Description
+                    </td>
+                    <td>
+                        @Model[i].Price
+                    </td>
+                    <td>
+                        @Model[i].Category.Name
+                    </td>
+                    <td>
+                        <div class="action-buttons">
+                        <a asp-area="admin" asp-controller="product" asp-action="details" asp-route-id="@Model[i].Id">
+                            <button class="btn-details">Details</button>
+                        </a>
+                        <a asp-area="admin" asp-controller="product" asp-action="update" asp-route-id="@Model[i].Id">
+                            <button class="btn-update">Update</button>
+                        </a>
+                        <a asp-area="admin" asp-controller="product" asp-action="delete" asp-route-id="@Model[i].Id">
+                            <button class="btn-delete">Delete</button>
+                        </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -15,7 +15,12 @@ namespace WanderQuest.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var products = await _context.Products.Where(n => !n.IsDeleted).Include(n => n.Category).Take(4).ToListAsync();
+            var products = await _context.Products.Where(n => !n.IsDeleted)
+                .Include(n => n.Category)
+                .Include(n => n.ProductImages)
+                .ThenInclude(n => n.Image)
+                .Take(4)
+                .ToListAsync();
             return View(products);
         }
 
@@ -24,6 +29,8 @@ namespace WanderQuest.Controllers
         {
             var products = await _context.Products.Where(n => !n.IsDeleted)
                                                     .Include(n => n.Category)
+                                                    .Include(n => n.ProductImages)
+                                                    .ThenInclude(n => n.Image)
                                                     .Skip(skip)
                                                     .Take(4)
                                                     .ToListAsync();

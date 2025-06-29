@@ -17,8 +17,15 @@ namespace WanderQuest.Controllers
         public async Task<IActionResult> Index()
         {
             HomeVM homeVM = new HomeVM();
-            homeVM.Products = await _context.Products.Include(n => n.Category).Where(n => !n.IsDeleted).OrderByDescending(n => n.CreatedDate).Take(8).ToListAsync();
-            homeVM.Sliders = await _context.Sliders.Where(n => !n.IsDeleted).OrderByDescending(n => n.CreatedDate).Take(8).ToListAsync();
+            homeVM.Products = await _context.Products
+                .Include(n => n.Category)
+                .Include(n => n.ProductImages)
+                .ThenInclude(n => n.Image)
+                .Where(n => !n.IsDeleted)
+                .OrderByDescending(n => n.CreatedDate)
+                .Take(5)
+                .ToListAsync();
+            homeVM.Sliders = await _context.Sliders.Where(n => !n.IsDeleted).OrderByDescending(n => n.CreatedDate).ToListAsync();
             homeVM.Categories = await _context.Categories.Where(n => !n.IsDeleted).OrderByDescending(n => n.CreatedDate).ToListAsync();
 
             return View(homeVM);

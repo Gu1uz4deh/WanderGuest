@@ -16,6 +16,11 @@ namespace WanderQuest
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession(n =>
+            {
+                n.IdleTimeout = TimeSpan.FromSeconds(10);
+            });
+
             services.AddControllersWithViews();
              
             services.AddDbContext<AppDbContext>(options => 
@@ -27,6 +32,11 @@ namespace WanderQuest
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSession(new SessionOptions()
+            {
+                IdleTimeout = TimeSpan.FromSeconds(5),
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

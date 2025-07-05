@@ -39,7 +39,7 @@ if (packageGrid) {
     function renderPackages(filter = 'all') {
         const packageCards = packageGrid.querySelectorAll('.package-card');
         packageCards.forEach(card => {
-            const category = card.dataset.category;
+            const category = card.dataset.id;
             if (filter === 'all' || category === filter) {
                 card.classList.remove('hidden');
                 if (filter === 'all') {
@@ -64,33 +64,27 @@ if (filterBtns.length > 0) {
     });
 }
 
+//LoadMore
+
 let loadMoreButton = document.getElementById("loadMore");
 let products = document.getElementById("products");
 if (loadMoreButton && products) {
     loadMoreButton.addEventListener("click", async function () {
-        let productItems = document.getElementsByClassName("productItem"); // Yeniden al
+        let productItems = document.getElementsByClassName("productItem");
         let skip = productItems.length;
         let resp = await fetch(`/products/loadmore/${skip}`);
+
         let data = await resp.text();
         if (data.trim() === "") {
             loadMoreButton.remove();
         }
+
         products.innerHTML += data;
-        console.log(skip);
     });
 } else {
     console.log("loadMoreButton or products element not found - likely not on product page");
 }
 
-//renderPackages();
-let wishlistCount = 0;
-document.addEventListener('click', e => {
-    if (e.target.matches('.package-card-content button')) {
-        wishlistCount++;
-        document.getElementById('wishlistCount').textContent = wishlistCount;
-        alert('Added to wishlist!');
-    }
-});
 
 const testimonials = document.querySelectorAll('#testimonialSlider .testimonial');
 let currentTestimonial = 0;
@@ -114,27 +108,123 @@ if (subscribeBtn) {
     });
 }
 
-//const blogs = [
-//    { id: 1, title: 'Top 10 Mountain Trails', date: '01 June 2025', img: 'https://picsum.photos/200?random=1' },
-//    { id: 2, title: 'Beach Safety Tips', date: '15 May 2025', img: 'https://picsum.photos/200?random=2' },
-//    { id: 3, title: 'City Travel Hacks', date: '20 April 2025', img: 'https://picsum.photos/200?random=3' },
-//];
-//const blogGrid = document.getElementById('blogGrid');
-//if (blogGrid) {
-//    blogs.forEach(b => {
-//        const card = document.createElement('div');
-//        card.className = 'blog-card';
-//        card.innerHTML = `
-//            <img src="${b.img}" alt="${b.title}">
-//            <div class="blog-card-content">
-//                <h3>${b.title}</h3>
-//                <p>${b.date}</p>
-//                <a href="#">Read More</a>
-//            </div>
-//        `;
-//        blogGrid.appendChild(card);
-//    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+const productContainer = document.getElementById("products");
+const basketCounts = document.querySelectorAll(".basketCount"); // Hepsini al
+//let addToCardForm = document.querySelector(".addToCardForm");
+
+if (productContainer && basketCounts.length > 0) {
+    productContainer.addEventListener("click", async function (e) {
+        const addButton = e.target.closest(".addBasket");
+        if (addButton) {
+            let dataValue = addButton.getAttribute("data-value");
+            try {
+                let resp = await fetch("/products/SetBasket/" + dataValue);
+                let data = await resp.json();
+
+                if (data.status === 200) {
+                    let totalCount = data.data.reduce((sum, item) => sum + item.count, 0);
+
+                    // Tüm basketCount'lara yaz
+                    basketCounts.forEach(el => {
+                        el.innerHTML = ` ${totalCount}`;
+                    });
+                } else {
+                    basketCounts.forEach(el => {
+                        el.innerHTML = " 0";
+                    });
+                }
+            } catch (err) {
+                console.error("Wishlist update error:", err);
+                basketCounts.forEach(el => {
+                    el.innerHTML = " 0";
+                });
+            }
+        }
+    });
+}
+
+//let addBasketButtons = document.getElementsByClassName("addBasket");
+//let basketCount = document.querySelector(".basketCount");
+
+//if (addBasketButtons !== null) {
+//    for (let addBasket of addBasketButtons) {
+//        addBasket.addEventListener("click", async function () {
+//            let dataValue = this.getAttribute("data-value");
+//            let resp = await fetch("/products/SetBasket/" + dataValue);
+//            let data = await resp.json();
+//            console.log(data.data.length);
+//            if (data.status === 200) {
+//                let totalCount = 0;
+//                for (let item of data.data) {
+//                    totalCount += item.count;
+//                }
+//                basketCount.innerHTML = `Wishlist ${totalCount}`;
+//            }
+//            else
+//            {
+//                basketCount.innerHTML = "Wishlist 0";
+//            }
+
+//        });
+//    }
 //}
+
+
+document.addEventListener("DOMContentLoaded", async function () {
+    let basketCounts = document.querySelectorAll(".basketCount"); // Tüm .basketCount'ları al
+
+    if (basketCounts.length > 0) {
+        try {
+            let resp = await fetch("/products/getbasket");
+            let data = await resp.json();
+
+            if (data.status === 200) {
+                let totalCount = 0;
+                for (let item of data.data) {
+                    totalCount += item.count;
+                }
+
+                // Tüm basketCount'lara yaz
+                basketCounts.forEach(el => {
+                    el.innerHTML = ` ${totalCount}`;
+                });
+            } else {
+                basketCounts.forEach(el => {
+                    el.innerHTML = " 0";
+                });
+            }
+        } catch (err) {
+            console.error("Wishlist error:", err);
+            basketCounts.forEach(el => {
+                el.innerHTML = "Wishlist 0";
+            });
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {

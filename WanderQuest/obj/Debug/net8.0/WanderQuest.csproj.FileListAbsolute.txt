@@ -166,3 +166,4 @@ C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Data.dll
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Data.pdb
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\obj\Debug\net8.0\WanderQuest.sourcelink.json
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll

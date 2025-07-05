@@ -1,5 +1,6 @@
 ﻿@model HomeVM
 
+
 <!-- Hero Slider -->
 <section class="hero" id="home">
     <div class="slider" id="heroSlider">
@@ -29,18 +30,7 @@
 
     </div>
     <div id="products" class="package-grid">
-        @for (int i = 0; i < Model.Products.Count; i++)
-        {
-            <div class="package-card" data-category="@Model.Products[i].Category.Name.ToLower()">
-                <img src="~/assets/img/@Model.Products[i].ProductImages?[0].Image.Name" alt="$@Model.Products[i].Title">
-                <div class="package-card-content">
-                    <h3>@Model.Products[i].Title</h3>
-                    <p>@Model.Products[i].Description</p>
-                    <div class="price">$@Model.Products[i].Price</div>
-                    <button data-id="@Model.Products[i].Category.Id">Add to Wishlist</button>
-                </div>
-            </div>
-        }
+        @await Component.InvokeAsync("Products", new { skip = 4, take = 4 })
     </div>
 
     <div id="moreProductButton" class="more-products">

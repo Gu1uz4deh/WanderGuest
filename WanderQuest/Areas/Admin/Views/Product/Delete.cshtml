@@ -1,11 +1,11 @@
 ﻿@model Product
 
 <div class="create-section">
-    <h2>CATEGORY - DELETE</h2>
+    <h2>PRODUCT - DELETE</h2>
     <form method="post">
         <div class="form-group">
             <label asp-for="@Model.Title">Please type down Product name if you are sure</label>
-            <input type="text" asp-for="@Model.Title" placeholder="Name">
+            <input type="text" asp-for="@Model.Title" placeholder="Name" value="">
         </div>
         <div class="buttons-table-product-update">
             <a class="nav-link product-go-back" asp-controller="product" asp-action="index" asp-area="admin">

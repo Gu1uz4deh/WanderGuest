@@ -5,7 +5,7 @@
     <form method="post">
         <div class="form-group">
             <label asp-for="@Model.Name">Please type down Category name if you are sure</label>
-            <input type="text" asp-for="@Model.Name" placeholder="Name">
+            <input type="text" asp-for="@Model.Name" placeholder="Name" value="">
         </div>
         <div class="buttons-table-product-update">
             <a class="nav-link product-go-back" asp-controller="category" asp-action="index" asp-area="admin">

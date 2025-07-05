@@ -11,9 +11,12 @@ namespace WanderQuest.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly AppDbContext _context;
-        public ProductController(AppDbContext context)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public ProductController(AppDbContext context, 
+                                  IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
         public async Task<IActionResult> Index()
         {
@@ -49,15 +52,44 @@ namespace WanderQuest.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Product product)
         {
-            
-            product.CreatedDate = DateTime.Now;
-            var image = await _context.Images.Where(n => n.Name == product.ImageUrl).FirstOrDefaultAsync();
+            ViewData["Categories"] = await GetCategories();
+            bool error = false;
+            ModelState.Clear();
+            if (string.IsNullOrEmpty(product.Title)) { ModelState.AddModelError("Title", "Title cannot be empty"); error = true; }
+            if (string.IsNullOrEmpty(product.Description)) { ModelState.AddModelError("Description", "Description cannot be empty"); error = true; }
+            if (product.Price <= 0) { ModelState.AddModelError("Price", "Price cannot under 0!"); error = true; }
+            if (product.ImageFile is null) { ModelState.AddModelError("ImageFile", "Image field cannot be null"); error = true; }
+            if (error) { return View(product); }
+            if (!product.ImageFile.ContentType.Contains("image/")) { ModelState.AddModelError("ImageFile", "File must be image only"); return View(product); }
 
-            if (image is null)
+            decimal size = (decimal) product.ImageFile.Length / 1024 / 1024;
+
+            if (size > 3)
             {
-                return Content("Image Url Not Found.");
+                ModelState.AddModelError("ImageFile", "File size cannot  be more than 3 MB"); 
+                return View(product);
             }
 
+            string imageName = Guid.NewGuid().ToString() + product.ImageFile.FileName;
+            if (imageName.Length >= 254)
+            {
+                imageName = imageName.Substring(imageName.Length - 254, 254);
+            }
+
+            string path = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "uploads", "products", imageName);
+
+            using (FileStream filestream = new FileStream(path, FileMode.Create))
+            {
+                await product.ImageFile.CopyToAsync(filestream);
+            }
+
+
+            Image image = new Image();
+            image.Name = imageName;
+            
+
+            product.CreatedDate = DateTime.Now;
+            await _context.Images.AddAsync(image);
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
 
@@ -91,6 +123,7 @@ namespace WanderQuest.Areas.Admin.Controllers
         public async Task<IActionResult> Update(int id, Product product)
         {
             ViewData["Categories"] = await GetCategories();
+            ModelState.Clear();
 
             var dbProduct = await _context.Products.Where(n => !n.IsDeleted && n.Id == id)
                 .Include(n => n.Category)
@@ -102,25 +135,73 @@ namespace WanderQuest.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var productImage = await _context.ProductImages.Where(n => n.ProductId == dbProduct.Id)
-                .FirstOrDefaultAsync();
-
-            var image = await _context.Images.Where(n => n.Name == product.ImageUrl)
-                .FirstOrDefaultAsync();
-
-            if (productImage is null || image is null)
+            if (product.ImageFile != null)
             {
-                return NotFound();
+                decimal size = (decimal) product.ImageFile.Length / 1024 / 1024;
+                if (!product.ImageFile.ContentType.Contains("image/"))
+                {
+                    ModelState.AddModelError("ImageFile", "File must be image only");
+                    return View(product);
+                }
+                if (size > 3)
+                {
+                    ModelState.AddModelError("ImageFile", "Image size cannot be more than 3 MB");
+                    return View(product);
+                }
+
+                string fileName = Guid.NewGuid().ToString() + product.ImageFile.FileName;
+
+                if (fileName.Length > 254)
+                {
+                    fileName = fileName.Substring(fileName.Length - 254, 254);
+                }
+
+                string path = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "uploads", "products", fileName);
+
+                using (FileStream fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await product.ImageFile.CopyToAsync(fileStream);
+                }
+
+                Image image = new Image();
+                image.Name = fileName;
+
+                await _context.Images.AddAsync(image);
+
+                var oldProductImage = await _context.ProductImages.Where(n => n.ProductId == dbProduct.Id)
+                                                                .FirstOrDefaultAsync();
+
+                if (oldProductImage == null)
+                {
+                    return Json("ProductImage is null");
+                }
+
+                var oldImage = await _context.Images.Where(n => n.Id == oldProductImage.ImageId).FirstOrDefaultAsync();
+
+                if (oldImage == null)
+                {
+                    return Json("Image is null");
+                }
+
+                _context.ProductImages.Remove(oldProductImage);
+                await _context.SaveChangesAsync();
+
+                _context.Images.Remove(oldImage);
+
+                ProductImages newProductImage = new ProductImages();
+                newProductImage.ImageId = image.Id;
+                newProductImage.ProductId = dbProduct.Id;
+
+                await _context.ProductImages.AddAsync(newProductImage);
+                await _context.SaveChangesAsync();
             }
 
-            productImage.ImageId = image.Id;
 
             dbProduct.CategoryId = product.CategoryId;
             dbProduct.Title = product.Title;
             dbProduct.Description = product.Description;
             dbProduct.Price = product.Price;
 
-            _context.ProductImages.Update(productImage);
             _context.Products.Update(dbProduct);
             await _context.SaveChangesAsync();
 
@@ -145,7 +226,7 @@ namespace WanderQuest.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            if(dbProduct.Title != product.Title)
+            if(dbProduct.Title.Trim().ToLower() != product.Title.Trim().ToLower())
             {
                 return Content("Cannot Delete");
             }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WanderQuest Travel</title>
+    <link rel="icon" type="image/jpg" href="~/assets/img/3b2fb682772f52e97b9dd8ba933b9493.jpg">
     <link rel="stylesheet" href="~/assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
     <script defer src="~/assets/js/script.js"></script>
@@ -20,7 +21,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#wishlist">Wishlist <span id="wishlistCount">0</span></a></li>
+                <li><a asp-area="" asp-controller="basket" asp-action="index"><span>Wishlist</span><span id="wishlistCount" class="basketCount"></span></a></li>
             </ul>
         </nav>
         <div class="hamburger" id="hamburger">

@@ -11,7 +11,8 @@
           "Data": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.6",
-          "Microsoft.EntityFrameworkCore.Tools": "9.0.6"
+          "Microsoft.EntityFrameworkCore.Tools": "9.0.6",
+          "Services": "1.0.0"
         },
         "runtime": {
           "WanderQuest.dll": {}
@@ -1092,6 +1093,19 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "Services/1.0.0": {
+        "dependencies": {
+          "Data": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.6"
+        },
+        "runtime": {
+          "Services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1704,6 +1718,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

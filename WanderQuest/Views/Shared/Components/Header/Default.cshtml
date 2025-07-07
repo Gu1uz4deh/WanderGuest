@@ -1,0 +1,19 @@
+﻿@model Dictionary<string, string>
+
+
+<header class="navbar">
+    <a asp-area="" asp-controller="home" asp-action="index" class="logo">WanderQuest</a>
+    <nav class="nav-menu" id="navMenu">
+        <ul>
+            <li><a asp-area="" asp-controller="home" asp-action="index">Home</a></li>
+            <li><a asp-area="" asp-controller="products" asp-action="index">Products</a></li>
+            <li><a href="@Model["Twitter"]">About</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a asp-area="" asp-controller="basket" asp-action="index"><span>Wishlist</span><span id="wishlistCount" class="basketCount"></span></a></li>
+        </ul>
+    </nav>
+    <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+    </div>
+</header>

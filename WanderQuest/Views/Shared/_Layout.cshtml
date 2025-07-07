@@ -1,4 +1,5 @@
-﻿<!-- index.html -->
+﻿
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,60 +13,15 @@
 </head>
 <body>
     <!-- Navbar -->
-    <header class="navbar">
-        <a asp-area="" asp-controller="home" asp-action="index" class="logo">WanderQuest</a>
-        <nav class="nav-menu" id="navMenu">
-            <ul>
-                <li><a asp-area="" asp-controller="home" asp-action="index">Home</a></li>
-                <li><a asp-area="" asp-controller="products" asp-action="index">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a asp-area="" asp-controller="basket" asp-action="index"><span>Wishlist</span><span id="wishlistCount" class="basketCount"></span></a></li>
-            </ul>
-        </nav>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
-        </div>
-    </header>
 
+    @await Component.InvokeAsync("Header")
 
     <div>
         @RenderBody()
     </div>
 
 
-    <footer>
-        <div class="footer-sections">
-            <div class="footer-column">
-                <h3>About</h3>
-                <p>WanderQuest is dedicated to creating unforgettable travel experiences tailored to you.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#packages">Packages</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact</h3>
-                <p>Email: info@wanderquest.com</p>
-                <p>Phone: +1 234 567 890</p>
-            </div>
-            <div class="footer-column">
-                <h3>Follow Us</h3>
-                <ul class="social">
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                </ul>
-            </div>
-        </div>
-        <p class="copyright">&copy; 2025 WanderQuest. All rights reserved.</p>
-    </footer>
+    @await Component.InvokeAsync("Footer")
 
 </body>
 </html>

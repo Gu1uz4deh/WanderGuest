@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WanderQuest", "WanderQuest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{A943EFE0-3F7A-4251-9658-3C8F5475FC92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{8A70FF61-164A-40CB-A91D-E92EDA008ECB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A943EFE0-3F7A-4251-9658-3C8F5475FC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A943EFE0-3F7A-4251-9658-3C8F5475FC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A943EFE0-3F7A-4251-9658-3C8F5475FC92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A70FF61-164A-40CB-A91D-E92EDA008ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A70FF61-164A-40CB-A91D-E92EDA008ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A70FF61-164A-40CB-A91D-E92EDA008ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A70FF61-164A-40CB-A91D-E92EDA008ECB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

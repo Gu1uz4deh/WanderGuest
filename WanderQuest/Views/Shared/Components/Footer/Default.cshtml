@@ -1,0 +1,33 @@
+﻿@model Dictionary<string, string>
+
+<footer>
+    <div class="footer-sections">
+        <div class="footer-column">
+            <h3>About</h3>
+            <p>WanderQuest is dedicated to creating unforgettable travel experiences tailored to you.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>Email: info@wanderquest.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul class="social">
+                <li><a target="_blank" href="@Model["Twitter"]">Twitter</a></li>
+                <li><a target="_blank" href="@Model["Instagram"]">Instagram</a></li>
+                <li><a target="_blank" href="@Model["Facebook"]">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="copyright">&copy; 2025 WanderQuest. All rights reserved.</p>
+</footer>

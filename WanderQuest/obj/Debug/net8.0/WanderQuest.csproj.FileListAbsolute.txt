@@ -165,5 +165,12 @@ C:\Users\quluz\source\repos\WanderQuest\WanderQuest\obj\Debug\net8.0\WanderQu.72
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Data.dll
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Data.pdb
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\obj\Debug\net8.0\WanderQuest.sourcelink.json
-C:\Users\quluz\source\repos\WanderQuest\WanderQuest\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Services.deps.json
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Services.runtimeconfig.json
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Services.staticwebassets.endpoints.json
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Services.exe
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Services.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Services.pdb
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\obj\Debug\net8.0\WanderQuest.MvcApplicationPartsAssemblyInfo.cs

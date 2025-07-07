@@ -3,6 +3,8 @@ using Data.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Services.Services;
+using Services.Implementations;
 
 namespace WanderQuest
 {
@@ -20,6 +22,10 @@ namespace WanderQuest
             {
                 n.IdleTimeout = TimeSpan.FromSeconds(10);
             });
+
+            services.AddScoped<ISettingsService, SettingsServices>();
+
+
 
             services.AddControllersWithViews();
              

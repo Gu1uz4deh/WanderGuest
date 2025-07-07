@@ -3,20 +3,100 @@
   "WorkspaceRootPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\wwwroot\\assets\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\wwwroot\\assets\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\shared\\components\\footer\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\shared\\components\\footer\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\services\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|solutionrelative:services\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\viewcomponents\\headerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\viewcomponents\\headerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\viewcomponents\\footerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\viewcomponents\\footerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\services\\implementations\\settingsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|solutionrelative:services\\implementations\\settingsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\services\\services\\isettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|solutionrelative:services\\services\\isettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\services\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|solutionrelative:services\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\services\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|solutionrelative:services\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\viewcomponents\\productsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\viewcomponents\\productsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\shared\\components\\header\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\shared\\components\\header\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\shared\\_productpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\shared\\_productpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\services\\services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|solutionrelative:services\\services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A943EFE0-3F7A-4251-9658-3C8F5475FC92}|Data\\Data.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\data\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A943EFE0-3F7A-4251-9658-3C8F5475FC92}|Data\\Data.csproj|solutionrelative:data\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\services\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8A70FF61-164A-40CB-A91D-E92EDA008ECB}|Services\\Services.csproj|solutionrelative:services\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\wanderquest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\wanderquest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A943EFE0-3F7A-4251-9658-3C8F5475FC92}|Data\\Data.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\data\\models\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A943EFE0-3F7A-4251-9658-3C8F5475FC92}|Data\\Data.csproj|solutionrelative:data\\models\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\wwwroot\\assets\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\wwwroot\\assets\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,24 +107,12 @@
       "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\shared\\components\\products\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\shared\\_productpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\shared\\_productpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\migrations\\20250614201401_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\migrations\\20250614201401_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\basket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -87,14 +155,6 @@
       "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\viewmodel\\basketitemvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -125,6 +185,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\wwwroot\\areas\\admin\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\wwwroot\\areas\\admin\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Services\\SettingsServices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\Services\\SettingsServices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -134,11 +198,204 @@
       "DocumentGroups": [
         {
           "DockedHeight": 375,
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 40,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Services\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\Services\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Services\\ICategoryService.cs",
+              "RelativeToolTip": "Services\\Services\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T20:16:29.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Shared\\Components\\Footer\\Default.cshtml",
+              "RelativeDocumentMoniker": "WanderQuest\\Views\\Shared\\Components\\Footer\\Default.cshtml",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Shared\\Components\\Footer\\Default.cshtml",
+              "RelativeToolTip": "WanderQuest\\Views\\Shared\\Components\\Footer\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-06T19:53:06.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FooterViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\ViewComponents\\FooterViewComponent.cs",
+              "RelativeDocumentMoniker": "WanderQuest\\ViewComponents\\FooterViewComponent.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\ViewComponents\\FooterViewComponent.cs",
+              "RelativeToolTip": "WanderQuest\\ViewComponents\\FooterViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T19:49:16.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Shared\\Components\\Header\\Default.cshtml",
+              "RelativeDocumentMoniker": "WanderQuest\\Views\\Shared\\Components\\Header\\Default.cshtml",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Shared\\Components\\Header\\Default.cshtml",
+              "RelativeToolTip": "WanderQuest\\Views\\Shared\\Components\\Header\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-06T14:13:15.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ISettingsService.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Services\\ISettingsService.cs",
+              "RelativeDocumentMoniker": "Services\\Services\\ISettingsService.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Services\\ISettingsService.cs",
+              "RelativeToolTip": "Services\\Services\\ISettingsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T14:09:42.024Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "HeaderViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\ViewComponents\\HeaderViewComponent.cs",
+              "RelativeDocumentMoniker": "WanderQuest\\ViewComponents\\HeaderViewComponent.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\ViewComponents\\HeaderViewComponent.cs",
+              "RelativeToolTip": "WanderQuest\\ViewComponents\\HeaderViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T14:06:36.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SettingsServices.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Implementations\\SettingsServices.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\SettingsServices.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Implementations\\SettingsServices.cs",
+              "RelativeToolTip": "Services\\Implementations\\SettingsServices.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T12:14:33.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Services.csproj",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Services.csproj",
+              "RelativeDocumentMoniker": "Services\\Services.csproj",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Services.csproj",
+              "RelativeToolTip": "Services\\Services.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-06T11:57:35.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "SettingsServices.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Services\\SettingsServices.cs",
+              "RelativeDocumentMoniker": "Services\\Services\\SettingsServices.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Services\\SettingsServices.cs",
+              "RelativeToolTip": "Services\\Services\\SettingsServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:21:28.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\appsettings.json",
+              "RelativeDocumentMoniker": "Services\\appsettings.json",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\appsettings.json",
+              "RelativeToolTip": "Services\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-05T15:15:38.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "WanderQuest.csproj",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\WanderQuest.csproj",
+              "RelativeDocumentMoniker": "WanderQuest\\WanderQuest.csproj",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\WanderQuest.csproj",
+              "RelativeToolTip": "WanderQuest\\WanderQuest.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-05T15:04:23.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Startup.cs",
+              "RelativeDocumentMoniker": "Services\\Startup.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Startup.cs",
+              "RelativeToolTip": "Services\\Startup.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:05:45.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Program.cs",
+              "RelativeDocumentMoniker": "WanderQuest\\Program.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Program.cs",
+              "RelativeToolTip": "WanderQuest\\Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:04:26.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Program.cs",
+              "RelativeDocumentMoniker": "Services\\Program.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Services\\Program.cs",
+              "RelativeToolTip": "Services\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:04:20.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Data\\DAL\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Data\\DAL\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\DAL\\AppDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T13:21:55.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Data\\Models\\Settings.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\Settings.cs",
+              "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Data\\Models\\Settings.cs",
+              "RelativeToolTip": "Data\\Models\\Settings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T13:21:01.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "Default.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Shared\\Components\\Products\\Default.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Views\\Shared\\Components\\Products\\Default.cshtml",
@@ -146,12 +403,11 @@
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\Components\\Products\\Default.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-05T12:01:02.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T12:01:02.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 26,
               "Title": "20250614201401_InitialMigration.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Migrations\\20250614201401_InitialMigration.cs",
               "RelativeDocumentMoniker": "WanderQuest\\Migrations\\20250614201401_InitialMigration.cs",
@@ -159,25 +415,23 @@
               "RelativeToolTip": "WanderQuest\\Migrations\\20250614201401_InitialMigration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T11:50:05.973Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T11:50:05.973Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "ProductsViewComponent.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\ViewComponents\\ProductsViewComponent.cs",
               "RelativeDocumentMoniker": "WanderQuest\\ViewComponents\\ProductsViewComponent.cs",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\ViewComponents\\ProductsViewComponent.cs",
               "RelativeToolTip": "WanderQuest\\ViewComponents\\ProductsViewComponent.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAIwA4AAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwAcAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T11:49:30.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T11:49:30.943Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 36,
               "Title": "BasketVM.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\ViewModel\\BasketVM.cs",
               "RelativeDocumentMoniker": "WanderQuest\\ViewModel\\BasketVM.cs",
@@ -189,19 +443,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 18,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\appsettings.json",
               "RelativeDocumentMoniker": "WanderQuest\\appsettings.json",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\appsettings.json",
               "RelativeToolTip": "WanderQuest\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-07-04T12:30:43.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 39,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Views\\_ViewStart.cshtml",
@@ -213,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 38,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Views\\_ViewImports.cshtml",
@@ -225,19 +479,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WanderQuest\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Controllers\\HomeController.cs",
               "RelativeToolTip": "WanderQuest\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T17:31:20.607Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 28,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Basket\\Index.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Views\\Basket\\Index.cshtml",
@@ -249,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 27,
               "Title": "BasketController.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Controllers\\BasketController.cs",
               "RelativeDocumentMoniker": "WanderQuest\\Controllers\\BasketController.cs",
@@ -261,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 35,
               "Title": "styles.css",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\wwwroot\\assets\\css\\styles.css",
               "RelativeDocumentMoniker": "WanderQuest\\wwwroot\\assets\\css\\styles.css",
@@ -273,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 23,
               "Title": "script.js",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\wwwroot\\assets\\js\\script.js",
               "RelativeDocumentMoniker": "WanderQuest\\wwwroot\\assets\\js\\script.js",
@@ -281,12 +535,11 @@
               "RelativeToolTip": "WanderQuest\\wwwroot\\assets\\js\\script.js",
               "ViewState": "AgIAADsAAAAAAAAAAAAgwH0AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-07-03T13:56:10.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T13:56:10.816Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 37,
               "Title": "BasketItemVM.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\ViewModel\\BasketItemVM.cs",
               "RelativeDocumentMoniker": "WanderQuest\\ViewModel\\BasketItemVM.cs",
@@ -298,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 40,
               "Title": "HomeVM.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\ViewModel\\HomeVM.cs",
               "RelativeDocumentMoniker": "WanderQuest\\ViewModel\\HomeVM.cs",
@@ -310,19 +563,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 3,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Startup.cs",
               "RelativeDocumentMoniker": "WanderQuest\\Startup.cs",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Startup.cs",
               "RelativeToolTip": "WanderQuest\\Startup.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABQAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwAUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T07:28:31.952Z"
+              "WhenOpened": "2025-07-03T07:28:31.952Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 41,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Views\\Category\\Delete.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Areas\\Admin\\Views\\Category\\Delete.cshtml",
@@ -334,7 +588,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 31,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Views\\Product\\Delete.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Areas\\Admin\\Views\\Product\\Delete.cshtml",
@@ -346,7 +600,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 24,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "WanderQuest\\Controllers\\ProductsController.cs",
@@ -354,12 +608,11 @@
               "RelativeToolTip": "WanderQuest\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAYwFIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T14:23:47.003Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T14:23:47.003Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 44,
               "Title": "_AdminLayout.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
@@ -371,19 +624,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBcAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-29T16:30:04.438Z"
+              "WhenOpened": "2025-06-29T16:30:04.438Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 32,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Views\\Product\\Details.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Areas\\Admin\\Views\\Product\\Details.cshtml",
@@ -395,7 +649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 33,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Views\\Product\\Index.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Areas\\Admin\\Views\\Product\\Index.cshtml",
@@ -407,7 +661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "_ProductPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Shared\\_ProductPartial.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Views\\Shared\\_ProductPartial.cshtml",
@@ -415,50 +669,48 @@
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\_ProductPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-29T16:24:02.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-29T16:24:02.417Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Products\\Index.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Views\\Products\\Index.cshtml",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Products\\Index.cshtml",
               "RelativeToolTip": "WanderQuest\\Views\\Products\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwAMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-29T16:23:51.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-29T16:23:51.914Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "WanderQuest\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAIwIAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-29T16:22:50.664Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 45,
               "Title": "styles.css",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\wwwroot\\Areas\\Admin\\css\\styles.css",
               "RelativeDocumentMoniker": "WanderQuest\\wwwroot\\Areas\\Admin\\css\\styles.css",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\wwwroot\\Areas\\Admin\\css\\styles.css",
               "RelativeToolTip": "WanderQuest\\wwwroot\\Areas\\Admin\\css\\styles.css",
-              "ViewState": "AgIAADoBAAAAAAAAAAAAAFEBAAARAAAAAAAAAA==",
+              "ViewState": "AgIAADcBAAAAAAAAAIBJwFEBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-06-29T09:04:52.334Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 43,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "WanderQuest\\Areas\\Admin\\Controllers\\CategoryController.cs",
@@ -470,19 +722,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 29,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Views\\Product\\Update.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Areas\\Admin\\Views\\Product\\Update.cshtml",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Views\\Product\\Update.cshtml",
               "RelativeToolTip": "WanderQuest\\Areas\\Admin\\Views\\Product\\Update.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACkAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwCkAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-29T08:27:33.387Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 34,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "WanderQuest\\Areas\\Admin\\Controllers\\ProductController.cs",
@@ -494,19 +746,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 30,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Views\\Product\\Create.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Areas\\Admin\\Views\\Product\\Create.cshtml",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Areas\\Admin\\Views\\Product\\Create.cshtml",
               "RelativeToolTip": "WanderQuest\\Areas\\Admin\\Views\\Product\\Create.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwCYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-29T08:06:40.163Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 42,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\Data\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Data\\Models\\Product.cs",

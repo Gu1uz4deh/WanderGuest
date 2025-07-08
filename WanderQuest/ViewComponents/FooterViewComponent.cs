@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Services.Services;
 using System;
+using WanderQuest.Application.Services.Public;
 
 namespace WanderQuest.ViewComponents
 {
     public class FooterViewComponent : ViewComponent
     {
-        private readonly ISettingsService _settingsService;
+        private readonly ISettingsQueryService _settingsService;
 
-        public FooterViewComponent(ISettingsService settingsService)
+        public FooterViewComponent(ISettingsQueryService settingsService)
         {
             _settingsService = settingsService;
         }

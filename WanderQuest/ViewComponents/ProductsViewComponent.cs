@@ -1,26 +1,21 @@
 ﻿using System;
-using Data.DAL;
+using WanderQuest.Infrastructure.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using WanderQuest.Application.Services.Public;
 
 namespace WanderQuest.ViewComponents
 {
     public class ProductsViewComponent : ViewComponent
     {
-        private readonly AppDbContext _context;
-        public ProductsViewComponent(AppDbContext context)
+        private readonly IProductsQueryService _productQueryService;
+        public ProductsViewComponent(IProductsQueryService productQueryService)
         {
-            _context = context;
+            _productQueryService = productQueryService;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int skip = 0, int take = 4)
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            var products = await _context.Products.Where(n => !n.IsDeleted)
-                                                  .Include(n => n.Category)
-                                                  .Include(n => n.ProductImages)
-                                                  .ThenInclude(n => n.Image)
-                                                  .Skip(skip)
-                                                  .Take(take)
-                                                  .ToListAsync();
+            var products = await _productQueryService.GetPaged();
             return View(products);
         }
     }

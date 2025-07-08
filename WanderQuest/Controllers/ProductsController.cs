@@ -1,42 +1,33 @@
 ﻿using System;
-using Data.DAL;
+using WanderQuest.Infrastructure.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using WanderQuest.ViewModel;
 using System.Text.Json;
+using WanderQuest.Application.Services.Public;
 
 namespace WanderQuest.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IProductsQueryService _productQueryService;
 
-        public ProductsController(AppDbContext context)
+        public ProductsController(IProductsQueryService products)
         {
-            _context = context;
+            _productQueryService = products;
         }
         public async Task<IActionResult> Index()
         {
-            var products = await _context.Products.Where(n => !n.IsDeleted)
-                .Include(n => n.Category)
-                .Include(n => n.ProductImages)
-                .ThenInclude(n => n.Image)
-                .Take(4)
-                .ToListAsync();
+            var products = await _productQueryService.GetPaged(0, 4);
+
             return View(products);
         }
 
         [Route("{controller}/loadmore/{skip}")]
         public async Task<IActionResult> LoadMore(int skip)
         {
-            var products = await _context.Products.Where(n => !n.IsDeleted)
-                                                    .Include(n => n.Category)
-                                                    .Include(n => n.ProductImages)
-                                                    .ThenInclude(n => n.Image)
-                                                    .Skip(skip)
-                                                    .Take(4)
-                                                    .ToListAsync();
+            var products = await _productQueryService.GetPaged(skip, 4);
             return PartialView("_ProductPartial", products);
         }
 

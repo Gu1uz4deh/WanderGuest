@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Services.Services;
 using System;
+using WanderQuest.Application.Services.Public;
 
 namespace WanderQuest.ViewComponents
 {
     public class HeaderViewComponent : ViewComponent
     {
-        private readonly ISettingsService _settingsService;
-        public HeaderViewComponent(ISettingsService settingsService)
+        private readonly ISettingsQueryService _settingsService;
+        public HeaderViewComponent(ISettingsQueryService settingsService)
         {
             _settingsService = settingsService;
         }

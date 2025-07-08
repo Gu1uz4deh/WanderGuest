@@ -1,0 +1,15 @@
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\bin\Debug\net8.0\WanderQuest.Infrastructure.deps.json
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\bin\Debug\net8.0\WanderQuest.Infrastructure.runtimeconfig.json
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\bin\Debug\net8.0\WanderQuest.Infrastructure.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\bin\Debug\net8.0\WanderQuest.Infrastructure.pdb
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.AssemblyInfo.cs
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.sourcelink.json
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\refint\WanderQuest.Infrastructure.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.pdb
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.genruntimeconfig.cache
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\ref\WanderQuest.Infrastructure.dll

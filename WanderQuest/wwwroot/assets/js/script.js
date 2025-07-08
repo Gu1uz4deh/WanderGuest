@@ -12,28 +12,77 @@ const slides = document.querySelectorAll('#heroSlider .slide');
 let currentSlide = 0;
 const nextBtn = document.getElementById('nextBtn');
 const prevBtn = document.getElementById('prevBtn');
+
 function showSlide(index) {
     slides.forEach((slide, i) => {
-        slide.classList.remove('active', 'prev');
-        if (i === index) slide.classList.add('active');
-        else if (i === (index - 1 + slides.length) % slides.length) slide.classList.add('prev');
+        slide.classList.remove('active', 'prev', 'next');
+        if (i === index) {
+            slide.classList.add('active');
+        } else if (i === (index - 1 + slides.length) % slides.length) {
+            slide.classList.add('prev');
+        } else if (i === (index + 1) % slides.length) {
+            slide.classList.add('next');
+        }
     });
     currentSlide = index;
 }
+
 if (nextBtn) {
     nextBtn.addEventListener('click', () => {
         showSlide((currentSlide + 1) % slides.length);
+        clearInterval(autoSlide);
     });
+} 
+else {
+    console.log("nextBtn element not found - likely not on product page");
 }
+
 if (prevBtn) {
     prevBtn.addEventListener('click', () => {
         showSlide((currentSlide - 1 + slides.length) % slides.length);
+        clearInterval(autoSlide);
     });
 }
-setInterval(() => {
+else {
+    console.log("prevBtn element not found - likely not on product page");
+}
+
+
+
+
+let autoSlide = setInterval(() => {
     showSlide((currentSlide + 1) % slides.length);
 }, 5000);
 
+const slider = document.getElementById('heroSlider');
+
+if (slider) {
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    slider.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(() => {
+            showSlide((currentSlide + 1) % slides.length);
+        }, 5000);
+    });
+}
+else {
+    console.log("slider element not found - likely not on product page");
+}
+
+showSlide(currentSlide);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Products
 const packageGrid = document.getElementById('products');
 if (packageGrid) {
     function renderPackages(filter = 'all') {
@@ -64,8 +113,8 @@ if (filterBtns.length > 0) {
     });
 }
 
-//LoadMore
 
+//LoadMore
 let loadMoreButton = document.getElementById("loadMore");
 let products = document.getElementById("products");
 if (loadMoreButton && products) {
@@ -111,19 +160,8 @@ if (subscribeBtn) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 const productContainer = document.getElementById("products");
-const basketCounts = document.querySelectorAll(".basketCount"); // Hepsini al
-//let addToCardForm = document.querySelector(".addToCardForm");
+const basketCounts = document.querySelectorAll(".basketCount"); 
 
 if (productContainer && basketCounts.length > 0) {
     productContainer.addEventListener("click", async function (e) {
@@ -156,35 +194,8 @@ if (productContainer && basketCounts.length > 0) {
     });
 }
 
-//let addBasketButtons = document.getElementsByClassName("addBasket");
-//let basketCount = document.querySelector(".basketCount");
-
-//if (addBasketButtons !== null) {
-//    for (let addBasket of addBasketButtons) {
-//        addBasket.addEventListener("click", async function () {
-//            let dataValue = this.getAttribute("data-value");
-//            let resp = await fetch("/products/SetBasket/" + dataValue);
-//            let data = await resp.json();
-//            console.log(data.data.length);
-//            if (data.status === 200) {
-//                let totalCount = 0;
-//                for (let item of data.data) {
-//                    totalCount += item.count;
-//                }
-//                basketCount.innerHTML = `Wishlist ${totalCount}`;
-//            }
-//            else
-//            {
-//                basketCount.innerHTML = "Wishlist 0";
-//            }
-
-//        });
-//    }
-//}
-
-
 document.addEventListener("DOMContentLoaded", async function () {
-    let basketCounts = document.querySelectorAll(".basketCount"); // Tüm .basketCount'ları al
+    let basketCounts = document.querySelectorAll(".basketCount"); 
 
     if (basketCounts.length > 0) {
         try {
@@ -197,7 +208,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                     totalCount += item.count;
                 }
 
-                // Tüm basketCount'lara yaz
                 basketCounts.forEach(el => {
                     el.innerHTML = ` ${totalCount}`;
                 });
@@ -214,16 +224,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 });
-
-
-
-
-
-
-
-
-
-
 
 
 const contactForm = document.getElementById('contactForm');

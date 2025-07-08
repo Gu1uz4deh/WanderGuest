@@ -1,5 +1,5 @@
-﻿using Data.DAL;
-using Data.Models;
+﻿using WanderQuest.Infrastructure.DAL;
+using WanderQuest.Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Http.Headers;

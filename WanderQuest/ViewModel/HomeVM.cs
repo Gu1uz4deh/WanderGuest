@@ -1,4 +1,4 @@
-﻿using Data.Models;
+﻿using WanderQuest.Infrastructure.Models;
 using System;
 
 namespace WanderQuest.ViewModel

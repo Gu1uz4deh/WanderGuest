@@ -6,15 +6,15 @@
     <div class="slider" id="heroSlider">
         @for (int i = 0; i < Model.Sliders.Count; i++)
         {
-            <div class="slide active" style="background-image:url('@Url.Content("~/assets/img/" + Model.Sliders[i].ImgUrl)')">
+            <div class="slide @(i == 0 ? "active" : "")" style="background-image:url('@Url.Content("~/assets/img/" + Model.Sliders[i].ImgUrl)')">
                 <div class="slide-content">
                     <h1>@Model.Sliders[i].Title</h1>
                     <p>@Model.Sliders[i].Description</p>
                 </div>
             </div>
         }
-        <button class="prev" id="prevBtn">&#10094;</button>
-        <button class="next" id="nextBtn">&#10095;</button>
+        <button class="prev" id="prevBtn">❮</button>
+        <button class="next" id="nextBtn">❯</button>
     </div>
 </section>
 

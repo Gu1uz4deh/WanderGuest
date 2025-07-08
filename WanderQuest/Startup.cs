@@ -1,10 +1,12 @@
-﻿using System;
-using Data.DAL;
+﻿using WanderQuest.Application.Implementations.Admin;
+using WanderQuest.Application.Implementations.Public;
+using WanderQuest.Application.Services.Admin;
+using WanderQuest.Application.Services.Public;
+using WanderQuest.Infrastructure.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Services.Services;
-using Services.Implementations;
+using System;
 
 namespace WanderQuest
 {
@@ -23,8 +25,12 @@ namespace WanderQuest
                 n.IdleTimeout = TimeSpan.FromSeconds(10);
             });
 
-            services.AddScoped<ISettingsService, SettingsServices>();
 
+            services.AddScoped<ISettingsQueryService, SettingsQueryRepository>();
+
+            services.AddScoped<ICategoryAdminService, CategoryAdminRepository>();
+
+            services.AddScoped<IProductsQueryService, ProductsQueryRepository>();
 
 
             services.AddControllersWithViews();

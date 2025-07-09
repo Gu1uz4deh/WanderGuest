@@ -27,10 +27,10 @@ namespace WanderQuest
 
 
             services.AddScoped<ISettingsQueryService, SettingsQueryRepository>();
-
             services.AddScoped<ICategoryAdminService, CategoryAdminRepository>();
-
             services.AddScoped<IProductsQueryService, ProductsQueryRepository>();
+            services.AddScoped<ISlidersQueryService, SlidersQueryRepository>();
+            services.AddScoped<ICategoriesQueryService, CategoriesQueryRepository>();
 
 
             services.AddControllersWithViews();

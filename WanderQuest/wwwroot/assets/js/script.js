@@ -160,39 +160,41 @@ if (subscribeBtn) {
 
 
 
-const productContainer = document.getElementById("products");
-const basketCounts = document.querySelectorAll(".basketCount"); 
+document.addEventListener("DOMContentLoaded", async function () {
+    const productContainer = document.getElementById("products");
+    const basketCounts = document.querySelectorAll(".basketCount");
 
-if (productContainer && basketCounts.length > 0) {
-    productContainer.addEventListener("click", async function (e) {
-        const addButton = e.target.closest(".addBasket");
-        if (addButton) {
-            let dataValue = addButton.getAttribute("data-value");
-            try {
-                let resp = await fetch("/products/SetBasket/" + dataValue);
-                let data = await resp.json();
+    if (productContainer && basketCounts.length > 0) {
+        productContainer.addEventListener("click", async function (e) {
+            const addButton = e.target.closest(".addBasket");
+            if (addButton) {
+                let dataValue = addButton.getAttribute("data-value");
+                try {
+                    let resp = await fetch("/products/SetBasket/" + dataValue);
+                    let data = await resp.json();
 
-                if (data.status === 200) {
-                    let totalCount = data.data.reduce((sum, item) => sum + item.count, 0);
+                    if (data.status === 200) {
+                        let totalCount = data.data.reduce((sum, item) => sum + item.count, 0);
 
-                    // Tüm basketCount'lara yaz
-                    basketCounts.forEach(el => {
-                        el.innerHTML = ` ${totalCount}`;
-                    });
-                } else {
+                        // Tüm basketCount'lara yaz
+                        basketCounts.forEach(el => {
+                            el.innerHTML = ` ${totalCount}`;
+                        });
+                    } else {
+                        basketCounts.forEach(el => {
+                            el.innerHTML = " 0";
+                        });
+                    }
+                } catch (err) {
+                    console.error("Wishlist update error:", err);
                     basketCounts.forEach(el => {
                         el.innerHTML = " 0";
                     });
                 }
-            } catch (err) {
-                console.error("Wishlist update error:", err);
-                basketCounts.forEach(el => {
-                    el.innerHTML = " 0";
-                });
             }
-        }
-    });
-}
+        });
+    }
+});
 
 document.addEventListener("DOMContentLoaded", async function () {
     let basketCounts = document.querySelectorAll(".basketCount"); 
@@ -224,6 +226,70 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 });
+
+
+
+
+  
+
+// Basket Hover And Add Change
+// 🌀 Basket-in hover görünüşünü serverdən yükləyir
+async function loadBasketHover() {
+    try {
+        const res = await fetch('/Basket/GetHoverDetailsHtml');
+        if (!res.ok) throw new Error('Server error');
+
+        const data = await res.json();
+
+        const container = document.getElementById('hoverContainer');
+        if (container) {
+            container.innerHTML = data.html;
+        } else {
+            console.warn('hoverContainer tapılmadı');
+        }
+    } catch (error) {
+        console.error('Load basket hover error:', error);
+    }
+}
+
+// 🖱️ addBasket düyməsinə klik olduqda basketə əlavə edir və hover-i yeniləyir
+document.addEventListener('click', async (e) => {
+    const addButton = e.target.closest('.addBasket');
+    if (!addButton) return;
+
+    const dataValue = addButton.getAttribute('data-value');
+    if (!dataValue) {
+        console.warn('data-value tapılmadı');
+        return;
+    }
+
+    try {
+        const resp = await fetch('/products/SetBasket/' + dataValue);
+        const data = await resp.json();
+
+        if (data.status === 200) {
+            // ✅ Uğurla əlavə olundu — hover görünüşü yenilənsin
+            await loadBasketHover();
+        } else {
+            console.error('Basket update failed');
+        }
+    } catch (err) {
+        console.error('Add to basket error:', err);
+    }
+});
+
+// 📦 Səhifə açıldıqda ilk basket hover yüklə
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadBasketHover();
+});
+
+
+
+
+
+
+
+
 
 
 const contactForm = document.getElementById('contactForm');

@@ -7,5 +7,6 @@ namespace WanderQuest.Infrastructure.Models
         public string ImgUrl { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public List<SliderImages> SliderImages { get; set; }
     }
 }

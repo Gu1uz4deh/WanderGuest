@@ -1,44 +1,9 @@
-﻿@model HomeVM
-
-
+﻿
 <!-- Hero Slider -->
-<section class="hero" id="home">
-    <div class="slider" id="heroSlider">
-        @for (int i = 0; i < Model.Sliders.Count; i++)
-        {
-            <div class="slide @(i == 0 ? "active" : "")" style="background-image:url('@Url.Content("~/assets/img/" + Model.Sliders[i].ImgUrl)')">
-                <div class="slide-content">
-                    <h1>@Model.Sliders[i].Title</h1>
-                    <p>@Model.Sliders[i].Description</p>
-                </div>
-            </div>
-        }
-        <button class="prev" id="prevBtn">❮</button>
-        <button class="next" id="nextBtn">❯</button>
-    </div>
-</section>
+@await Component.InvokeAsync("Sliders")
 
 <!-- Packages Section -->
-<section class="packages" id="packages">
-    <h2>Our Travel Packages</h2>
-    <div class="filters">
-        <button data-filter="all" class="filter-btn active">All</button>
-        @for (int i = 0; i < Model.Categories.Count; i++)
-        {
-            <button data-filter="@Model.Categories[i].Name.ToLower()" class="filter-btn">@Model.Categories[i].Name</button>
-        }
-
-    </div>
-    <div id="products" class="package-grid">
-        @await Component.InvokeAsync("Products", new { take = 4 })
-    </div>
-
-    <div id="moreProductButton" class="more-products">
-        <a asp-area="" asp-controller="products" asp-action="index" class="nav-link">
-            <button class="button-more">More...</button>
-        </a>
-    </div>
-</section>
+@await Component.InvokeAsync("Categories")
 
 <!-- Feature Section -->
 <section class="feature-section">
@@ -149,4 +114,5 @@
         </div>
     </div>
 </section>
+
 

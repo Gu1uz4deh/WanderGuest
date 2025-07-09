@@ -263,6 +263,11 @@ ul {
     cursor: pointer;
     border-radius: 4px;
 }
+
+    .filter-btn:hover {
+        background-color: #29725f;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
 .filter-btn.active {
     background: var(--accent-color);
     color: var(--secondary-color);
@@ -636,3 +641,169 @@ footer {
         font-size: 1.2em;
     }
 
+
+
+
+
+   
+
+
+
+
+.nav-menu ul li a.nav-link {
+    position: relative;
+    padding: 5px 0;
+    display: inline-block;
+}
+
+    .nav-menu ul li a.nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: white;
+        /*var(--accent-color)*/
+        transition: width 0.3s ease;
+    }
+
+    .nav-menu ul li a.nav-link:hover::after {
+        width: 100%;
+    }
+
+.nav-link:hover {
+    color: #d0d0d0;
+    transition: color 0.3s ease;
+}
+/* Badge for count */
+.badge {
+    display: inline-block;
+    min-width: 18px;
+    padding: 2px 6px;
+    font-size: 12px;
+    background: var(--accent-color);
+    color: #fff;
+    border-radius: 12px;
+    margin-left: 4px;
+    text-align: center;
+}
+
+/* Wishlist dropdown styles */
+.wishlist-item {
+    position: relative;
+}
+
+.wishlist-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    width: 260px;
+    background: var(--bg-color);
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 100;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.wishlist-item:hover .wishlist-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.wish-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+    .wish-items li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+        .wish-items li img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+.wish-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.wish-name {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.wish-qty {
+    font-size: 12px;
+    color: #777;
+}
+
+.wish-total {
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    border-top: 1px solid #eee;
+    padding-top: 6px;
+}
+
+#wishlistCount {
+    color: black;
+}
+/* Responsive: dropdown full width on small screens */
+@media (max-width: 768px) {
+    .wishlist-dropdown {
+        right: auto;
+        left: 0;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+}
+
+/* Badge pop-up animasyonu */
+@keyframes badge-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Badge’in temel hali */
+.badge {
+    display: inline-block;
+    /* dilersen renk veya gölge geçişi de ekleyebilirsin */
+    transition: transform 0.2s ease;
+}
+
+    /* JS ile tıklamada bu sınıfı ekleyip sonra kaldıracaksın */
+    .badge.pop {
+        animation: badge-pop 300ms ease;
+    }

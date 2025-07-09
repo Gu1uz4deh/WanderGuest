@@ -10,3 +10,4 @@ C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Shared\obj\Debug\net8.0\Wand
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Shared\obj\Debug\net8.0\refint\WanderQuest.Shared.dll
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Shared\obj\Debug\net8.0\WanderQuest.Shared.pdb
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Shared\obj\Debug\net8.0\ref\WanderQuest.Shared.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Shared\obj\Debug\net8.0\WanderQuest.Shared.csproj.AssemblyReference.cache

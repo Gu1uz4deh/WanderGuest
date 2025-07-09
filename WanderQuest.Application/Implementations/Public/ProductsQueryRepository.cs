@@ -15,34 +15,34 @@ namespace WanderQuest.Application.Implementations.Public
         }
         public async Task<List<Product>> GetAll()
         {
-            var data = await _context.Products.Where(n => !n.IsDeleted)
+            var products = await _context.Products.Where(n => !n.IsDeleted)
                                               .Include(n => n.Category)
                                               .Include(n => n.ProductImages)
                                               .ThenInclude(n => n.Image)
                                               .ToListAsync();
 
-            return data;
+            return products;
         }
 
         public async Task<Product> GetById(int id)
         {
-            var data = await _context.Products.Where(n => !n.IsDeleted && n.Id == id)
+            var product = await _context.Products.Where(n => !n.IsDeleted && n.Id == id)
                                         .Include(n => n.Category)
                                         .Include(n => n.ProductImages)
                                         .ThenInclude(n => n.Image)
                                         .FirstOrDefaultAsync();
-            return data;
+            return product;
         }
             public async Task<List<Product>> GetPaged(int skip = 0, int take = 10)
             {
-                var data = await _context.Products.Where(n => !n.IsDeleted)
+                var products = await _context.Products.Where(n => !n.IsDeleted)
                                                   .Include(n => n.Category)
                                                   .Include(n => n.ProductImages)
                                                   .ThenInclude(n => n.Image)
                                                   .Skip(skip)
                                                   .Take(take)
                                                   .ToListAsync();
-                return data;
+                return products;
             }
 
     }

@@ -17,5 +17,6 @@ namespace WanderQuest.Infrastructure.DAL
         public DbSet<Image> Images { get; set; }
         public DbSet<ProductImages> ProductImages { get; set; }
         public DbSet<Settings> Settings { get; set; }
+        public DbSet<SliderImages> SliderImages { get; set; }
     }
 }

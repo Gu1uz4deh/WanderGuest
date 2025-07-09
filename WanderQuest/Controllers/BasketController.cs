@@ -1,20 +1,25 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewEngines;  // NullView üçün
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Text.Json;
 using System.Threading.Tasks;
+using WanderQuest.Application.Services.Public;
 using WanderQuest.Infrastructure.DAL;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using WanderQuest.Shared.Helpers;
 using WanderQuest.ViewModel;
 
 namespace WanderQuest.Controllers
 {
     public class BasketController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IProductsQueryService _productQueryService;
 
-        public BasketController(AppDbContext context)
+        public BasketController(IProductsQueryService productQueryService)
         {
-            _context = context;
+            _productQueryService = productQueryService;
         }
         public async Task<IActionResult> Index()
         {
@@ -25,11 +30,7 @@ namespace WanderQuest.Controllers
 
             for (int i = 0; i < basketItems.Count; i++)
             {
-                var data = await _context.Products.Where(n => !n.IsDeleted && n.Id == basketItems[i].Id)
-                                                   .Include(n => n.Category)
-                                                   .Include(n => n.ProductImages)
-                                                   .ThenInclude(n => n.Image)
-                                                   .FirstOrDefaultAsync();
+                var data = await _productQueryService.GetById(basketItems[i].Id);
                 if (data != null)
                 {
                     totalPrice = totalPrice + data.Price * basketItems[i].Count;
@@ -62,6 +63,42 @@ namespace WanderQuest.Controllers
 
             }
             return basketItems;
+        }
+
+        public async Task<IActionResult> GetHoverDetailsHtml()
+        {
+            // 1. ActionContext hazırla
+            var actionContext = new ActionContext(HttpContext, RouteData, ControllerContext.ActionDescriptor);
+
+            // 2. NullView sinifindən nümunə yarat (aşağıda necə yaradacağını göstərəcəyəm)
+            var nullView = new NullView();
+
+            // 3. ViewContext yarat
+            var viewContext = new ViewContext(
+                actionContext,
+                nullView,
+                ViewData,
+                TempData,
+                TextWriter.Null,
+                new HtmlHelperOptions()
+            );
+
+            // 4. Sənin RenderAsync metodunu çağır
+            string html = await ControllerExtensions.RenderAsync(HttpContext, viewContext, "BasketHoverDetails", null);
+
+            // 5. Nəticəni view-ə göndər
+            //ViewBag.BasketHtml = html;
+
+            return Json(new { html });
+        }
+        public class NullView : IView
+        {
+            public string Path => string.Empty;
+
+            public Task RenderAsync(ViewContext context)
+            {
+                return Task.CompletedTask;
+            }
         }
     }
 }

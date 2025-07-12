@@ -31,6 +31,7 @@ namespace WanderQuest
             services.AddScoped<IProductsQueryService, ProductsQueryRepository>();
             services.AddScoped<ISlidersQueryService, SlidersQueryRepository>();
             services.AddScoped<ICategoriesQueryService, CategoriesQueryRepository>();
+            services.AddScoped<ITeamMembersQueyService, TeamMembersQueryRepository>();
 
 
             services.AddControllersWithViews();
@@ -61,6 +62,11 @@ namespace WanderQuest
             app.UseEndpoints(endpoints =>
             {
 
+                endpoints.MapControllerRoute(
+                    name: "ProductSearch",
+                    pattern: "products/searchproduct/{title?}",
+                    defaults: new { controller = "Products", action = "SearchProduct" }
+                );
                 endpoints.MapControllerRoute
                 (
                     name: "Areas",
@@ -69,9 +75,8 @@ namespace WanderQuest
                 endpoints.MapControllerRoute
                 (
                     name: "default",
-                    pattern: "{controller=home}/{action=index}/{id?}"
-                );
-                
+                    pattern: "{controller=home}/{action=index}/{id?}/{quantity?}"
+                ); 
             });
         }
     }

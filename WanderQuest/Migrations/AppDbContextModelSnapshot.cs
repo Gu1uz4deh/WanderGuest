@@ -162,10 +162,6 @@ namespace WanderQuest.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImgUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -202,6 +198,59 @@ namespace WanderQuest.Migrations
                     b.HasIndex("SliderId");
 
                     b.ToTable("SliderImages");
+                });
+
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.TeamMember", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TeamMembers");
+                });
+
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.TeamMemberImages", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ImageId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeamMemberId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImageId");
+
+                    b.HasIndex("TeamMemberId");
+
+                    b.ToTable("TeamMemberImages");
                 });
 
             modelBuilder.Entity("WanderQuest.Infrastructure.Models.Product", b =>
@@ -243,7 +292,7 @@ namespace WanderQuest.Migrations
                         .IsRequired();
 
                     b.HasOne("WanderQuest.Infrastructure.Models.Slider", "Slider")
-                        .WithMany()
+                        .WithMany("SliderImages")
                         .HasForeignKey("SliderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -251,6 +300,25 @@ namespace WanderQuest.Migrations
                     b.Navigation("Image");
 
                     b.Navigation("Slider");
+                });
+
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.TeamMemberImages", b =>
+                {
+                    b.HasOne("WanderQuest.Infrastructure.Models.Image", "Image")
+                        .WithMany("TeamMemberImages")
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WanderQuest.Infrastructure.Models.TeamMember", "TeamMember")
+                        .WithMany("TeamMemberImages")
+                        .HasForeignKey("TeamMemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Image");
+
+                    b.Navigation("TeamMember");
                 });
 
             modelBuilder.Entity("WanderQuest.Infrastructure.Models.Category", b =>
@@ -263,11 +331,23 @@ namespace WanderQuest.Migrations
                     b.Navigation("ProductImages");
 
                     b.Navigation("SliderImages");
+
+                    b.Navigation("TeamMemberImages");
                 });
 
             modelBuilder.Entity("WanderQuest.Infrastructure.Models.Product", b =>
                 {
                     b.Navigation("ProductImages");
+                });
+
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.Slider", b =>
+                {
+                    b.Navigation("SliderImages");
+                });
+
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.TeamMember", b =>
+                {
+                    b.Navigation("TeamMemberImages");
                 });
 #pragma warning restore 612, 618
         }

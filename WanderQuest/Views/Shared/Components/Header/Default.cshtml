@@ -10,17 +10,27 @@
             <li><a href="@Model["Twitter"]" class="nav-link">About</a></li>
             <li><a href="#blog" class="nav-link">Blog</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
-
-            <!-- Wishlist Only -->
+            <li class="nav-search">
+                <form id="searchForm" autocomplete="off" method="get" action="/products/searchproduct">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" name="title" placeholder="Search...">
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </li>
             <li class="wishlist-item">
                 <a asp-area="" asp-controller="basket" asp-action="index" class="nav-link">
                     <span>Wishlist</span>
-                    <span id="wishlistCount" class="badge basketCount">2</span>
+                    <span class="badge basketTotalCount"></span>
+                    <span class="badge basketTotalPrice"></span>
                 </a>
                 <div class="wishlist-dropdown" id="hoverContainer">
                     <!-- Wishlist Hover -->
                 </div>
             </li>
+            
         </ul>
     </nav>
 

@@ -33,17 +33,29 @@ namespace WanderQuest.Application.Implementations.Public
                                         .FirstOrDefaultAsync();
             return product;
         }
-            public async Task<List<Product>> GetPaged(int skip = 0, int take = 10)
-            {
-                var products = await _context.Products.Where(n => !n.IsDeleted)
-                                                  .Include(n => n.Category)
-                                                  .Include(n => n.ProductImages)
-                                                  .ThenInclude(n => n.Image)
-                                                  .Skip(skip)
-                                                  .Take(take)
-                                                  .ToListAsync();
-                return products;
-            }
+        public async Task<List<Product>> GetPaged(int skip = 0, int take = 10)
+        {
+            var products = await _context.Products.Where(n => !n.IsDeleted)
+                                              .Include(n => n.Category)
+                                              .Include(n => n.ProductImages)
+                                              .ThenInclude(n => n.Image)
+                                              .Skip(skip)
+                                              .Take(take)
+                                              .ToListAsync();
+            return products;
+        }
+
+        public async Task<List<Product>> SearchForTitle(string title)
+        {
+
+            var findingProducts = await _context.Products.Where(n => !n.IsDeleted && n.Title.ToLower().Contains(title.ToLower()))
+                                                        .Include(n => n.Category)
+                                                        .Include(n => n.ProductImages)
+                                                        .ThenInclude(n => n.Image)
+                                                        .ToListAsync();
+
+            return findingProducts;
+        }
 
     }
 }

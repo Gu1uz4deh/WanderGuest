@@ -689,7 +689,12 @@ footer {
     text-align: center;
 }
 
-/* Wishlist dropdown styles */
+.empty-basket-message {
+    color: #212121;
+    text-align: center;
+    font-size: 18px;
+}
+/* Önceki wishlist stilleri (değişmeden kalıyor) */
 .wishlist-item {
     position: relative;
 }
@@ -698,76 +703,165 @@ footer {
     position: absolute;
     top: calc(100% + 5px);
     right: 0;
-    width: 260px;
+    width: 400px;
+    max-width: 90vw;
     background: var(--bg-color);
     border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.2s ease;
-    z-index: 100;
-    padding: 10px;
+    z-index: 1000;
+    padding: 20px;
     border-radius: 4px;
+
+    /*opacity: 1;
+    visibility: visible;
+    transform: translateY(0);*/
 }
 
 .wishlist-item:hover .wishlist-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
 }
 
 .wish-items {
     list-style: none;
     margin: 0;
     padding: 0;
-    max-height: 200px;
+    max-height: 300px;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    display: block;
 }
+
+    .wish-items::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .wish-items::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
+    }
+
+    .wish-items::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 
     .wish-items li {
         display: flex;
         align-items: center;
-        margin-bottom: 8px;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
     }
 
+        .wish-items li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
         .wish-items li img {
-            width: 40px;
-            height: 40px;
+            width: 70px;
+            height: 70px;
             object-fit: cover;
             border-radius: 4px;
-            margin-right: 8px;
+            margin-right: 20px;
         }
 
 .wish-info {
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .wish-name {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+}
+
+.wish-qty-price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .wish-qty {
-    font-size: 12px;
+    width: 50px;
+    padding: 5px;
+    font-size: 14px;
     color: #777;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.wish-price {
+    font-size: 14px;
+    color: #777;
+}
+
+.qty-decrease, .qty-increase {
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+    .qty-decrease:hover, .qty-increase:hover {
+        background: var(--primary-color);
+    }
+
+.wish-qty-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.qty-delete {
+    background-color: #680000;
+    color: white;
+    border: none;
+    padding: 3px 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 10px;
+    transition: background 0.3s ease;
+
+    margin-left: auto; /* sağa itələmək üçün */
+    margin-right: 40px; /* sağdan məsafə */
+    flex-shrink: 0;
 }
 
 .wish-total {
     text-align: right;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
     color: var(--secondary-color);
     border-top: 1px solid #eee;
-    padding-top: 6px;
+    padding-top: 12px;
+    margin-top: 12px;
 }
 
 #wishlistCount {
     color: black;
 }
-/* Responsive: dropdown full width on small screens */
+.wishlist-item .wish-items {
+    display: block !important;
+}
+
+/* Responsive: Küçük ekranlarda tam genişlik */
 @media (max-width: 768px) {
     .wishlist-dropdown {
         right: auto;
@@ -776,8 +870,8 @@ footer {
         box-sizing: border-box;
     }
 
-    .nav-menu ul {
-        flex-direction: column;
+    .wish-items {
+        display: block;
     }
 }
 
@@ -807,3 +901,125 @@ footer {
     .badge.pop {
         animation: badge-pop 300ms ease;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Search stil */
+.nav-search {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    position: relative;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#searchForm input {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    width: 120px;
+    transition: width 0.3s ease;
+}
+
+    #searchForm input:focus {
+        width: 160px;
+    }
+
+#searchForm button {
+    background-color: #ffc107;
+    border: none;
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-container {
+        height: 28px;
+    }
+
+    #searchForm input {
+        width: 90px;
+        font-size: 13px;
+    }
+
+        #searchForm input:focus {
+            width: 120px;
+        }
+
+    #searchForm button {
+        padding: 0 8px;
+        font-size: 12px;
+    }
+}
+
+.message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(51, 51, 51, 0.9); /* Koyu gri, %20 şeffaf */
+    color: white;
+    padding: 15px 30px; /* Daha büyük iç boşluk */
+    border-radius: 10px; /* Daha yuvarlak köşeler */
+    text-align: center;
+    /*border-top: 6px solid #d4edda;*/ /* Daha kalın üst kenarlık */
+    z-index: 1000;
+    font-size: 1.3em; /* Yazı boyutu artırıldı */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* İkon ve metin arası mesafe artırıldı */
+    opacity: 0; /* Başlangıçta görünmez */
+    animation: fadeInOut 2s ease-in-out forwards; /* Animasyon eklendi */
+}
+    .message-box::before {
+        content: "✓";
+        color: #28a745;
+        font-size: 1.2em;
+    }
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+    /* 0.2 saniyede görünür */
+    90% {
+        opacity: 1;
+    }
+    /* 1.8 saniye görünür kalır */
+    100% {
+        opacity: 0;
+    }
+    /* 2 saniyede kaybolur */
+}

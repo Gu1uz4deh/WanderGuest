@@ -3,7 +3,19 @@
 @await Component.InvokeAsync("Sliders")
 
 <!-- Packages Section -->
-@await Component.InvokeAsync("Categories")
+<section class="packages" id="packages">
+    <h2>Our Travel Packages</h2>
+    @await Component.InvokeAsync("Categories")
+    <div id="products" class="package-grid">
+        @await Component.InvokeAsync("Products", new { take = 4 })
+    </div>
+
+    <div id="moreProductButton" class="more-products">
+        <a asp-area="" asp-controller="products" asp-action="index" class="nav-link">
+            <button class="button-more">More...</button>
+        </a>
+    </div>
+</section>
 
 <!-- Feature Section -->
 <section class="feature-section">
@@ -14,31 +26,7 @@
 </section>
 
 <!-- About / Team Section -->
-<section class="about" id="about">
-    <h2>Meet Our Guides</h2>
-    <div class="team-profiles">
-        <div class="profile-card">
-            <img src="~/assets/others/mountaineering-mountainous-landforms-winter-sport.jpg" alt="Guide 1">
-            <h3>Alice Carter</h3>
-            <p>Mountain Specialist</p>
-        </div>
-        <div class="profile-card">
-            <img src="~/assets/others/s-3e6525c9484d36e5930798ea6b8facd24ca7d5aa.jpg" alt="Guide 2">
-            <h3>David Lee</h3>
-            <p>Beach Enthusiast</p>
-        </div>
-        <div class="profile-card">
-            <img src="~/assets/others/9781e0c92a77fe526611d93a4ac0c6c2.jpg" alt="Guide 3">
-            <h3>Maria Gomez</h3>
-            <p>City Explorer</p>
-        </div>
-        <div class="profile-card">
-            <img src="~/assets/others/gettyImages-1155613712-1.jpg" alt="Guide 4">
-            <h3>James Patel</h3>
-            <p>Adventure Seeker</p>
-        </div>
-    </div>
-</section>
+@await Component.InvokeAsync("TeamMembers")
 
 <!-- Testimonials -->
 <section class="testimonials">

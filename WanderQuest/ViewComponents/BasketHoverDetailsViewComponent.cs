@@ -26,7 +26,7 @@ namespace WanderQuest.ViewComponents
             }
             else
             {
-                basketJson = JsonSerializer.Deserialize<List<BasketItemVM>>(cookieString);
+                basketJson = JsonSerializer.Deserialize<List<BasketItemVM>>(cookieString).OrderByDescending(x => x.AddingDate).ToList();
             }
 
             List<BasketVM> productsHoverInfo = new List<BasketVM>();
@@ -40,6 +40,7 @@ namespace WanderQuest.ViewComponents
                     totalPrice = totalPrice + dbProduct.Price * basketJson[i].Count;
                     productsHoverInfo.Add(new BasketVM
                     {
+                        Id = dbProduct.Id,
                         ImageUrl = dbProduct.ProductImages[0].Image.Name,
                         Title = dbProduct.Title,
                         Price = dbProduct.Price,

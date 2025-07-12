@@ -12,5 +12,7 @@ namespace WanderQuest.Infrastructure.Models
         public string Name { get; set; }
         public List<ProductImages> ProductImages { get; set; }
         public List<SliderImages> SliderImages { get; set; }
+        public List<TeamMemberImages> TeamMemberImages { get; set; }
+
     }
 }

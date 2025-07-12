@@ -2,7 +2,7 @@
 
 @for (int i = 0; i < Model.Count; i++)
 {
-    <div class="package-card productItem" data-id="@Model[i].Category.Name.ToLower()">
+    <div class="package-card productItem" data-id="@Model[i].Category.Name.ToLower()" data-product-id="@Model[i].Id">
         <img src="~/assets/uploads/products/@Model[i].ProductImages?[0].Image.Name" alt="$@Model[i].Title">
         <div class="package-card-content">
             <h3>@Model[i].Title</h3>

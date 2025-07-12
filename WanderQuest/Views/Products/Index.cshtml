@@ -1,5 +1,7 @@
 ﻿@model List<Product>
 <section class="packages" id="packages">
+    <h2>Our Travel Packages</h2>
+    @await Component.InvokeAsync("Categories")
     <div id="products" class="package-grid" id="packageGrid">
         <partial name="_ProductPartial"/>
         @* @await Component.InvokeAsync("Products", new { take = 4} ) *@
@@ -10,4 +12,6 @@
         </a>
     </div>
 </section>
+
+
 

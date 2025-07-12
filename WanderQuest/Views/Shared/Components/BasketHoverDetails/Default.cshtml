@@ -4,16 +4,32 @@
     decimal totalPrice = ViewBag.TotalPrice;
 }
 
-<ul class="wish-items">
-    @for (int i = 0; i < Model.Count; i++)
-    {
-        <li>
-            <img src="~/assets/uploads/products/@Model[i].ImageUrl" alt="Item 1">
-            <div class="wish-info">
-                <span class="wish-name">@Model[i].Title</span>
-                <span class="wish-qty">@Model[i].Count× $@Model[i].Price</span>
-            </div>
-        </li>
-    }
-</ul>
-<div class="wish-total">Total: $@totalPrice</div>
+@if (Model.Count >= 1)
+{
+    <ul class="wish-items">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+
+            <li data-product-id ="@Model[i].Id">
+                <img src="~/assets/uploads/products/@Model[i].ImageUrl" alt="@Model[i].Title">
+                <div class="wish-info">
+                    <div class="wish-qty-title">
+                        <span class="wish-name">@Model[i].Title</span>
+                        <button class="qty-delete delete-button" data-product-id="@Model[i].Id">X</button>
+                    </div>
+                    <div class="wish-qty-price">
+                        <button class="qty-decrease" data-product-id="@Model[i].Id">−</button>
+                        <input type="number" class="wish-qty" value="@Model[i].Count" min="0" max="100" data-product-id="@Model[i].Id">
+                        <button class="qty-increase" data-product-id="@Model[i].Id">+</button>
+                        <span class="wish-price">$@Model[i].Price</span>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+    <div class="wish-total">Total: $@totalPrice</div>
+}else
+{
+    <p class="empty-basket-message">No products in the cart.</p>
+}
+

@@ -8,5 +8,6 @@ namespace WanderQuest.Application.Services.Public
         Task<List<Product>> GetAll();
         Task<Product> GetById(int id);
         Task<List<Product>> GetPaged(int skip = 0, int take = 4);
+        Task<List<Product>> SearchForTitle(string title);
     }
 }

@@ -31,6 +31,20 @@ namespace WanderQuest.Controllers
             return PartialView("_ProductPartial", products);
         }
 
+        public async Task<IActionResult> SearchProduct(string title)
+        {
+            if (string.IsNullOrWhiteSpace(title))
+            {
+                title = "Trek";
+            }
+
+            var findingProducts = await _productQueryService.SearchForTitle(title);
+
+            ViewBag.SearchingWord = title;
+
+            return View(findingProducts);
+        }
+
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         public IActionResult SetBasket(int id)
@@ -55,12 +69,14 @@ namespace WanderQuest.Controllers
                 basketItems.Add(new BasketItemVM()
                 {
                     Id = id,
-                    Count = 1
+                    Count = 1,
+                    AddingDate = DateTime.Now
                 });
             }
             else
             {
                 basketItem.Count++;
+                basketItem.AddingDate = DateTime.Now;
             }
 
             cookieString = JsonSerializer.Serialize(basketItems);

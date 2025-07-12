@@ -1,0 +1,30 @@
+﻿@model List<TeamMember>
+
+<section class="about" id="about">
+    <h2>Meet Our Guides</h2>
+    <div class="team-profiles">
+        @for (int i = 0; i < Model.Count; i ++)
+        {
+            <div class="profile-card">
+                <img src="~/assets/uploads/teamMembers/@Model[i].TeamMemberImages[0].Image.Name" alt="Guide 1">
+                <h3>@Model[i].FullName</h3>
+                <p>@Model[i].Role</p>
+            </div>
+        }
+        @* <div class="profile-card">
+            <img src="~/assets/others/s-3e6525c9484d36e5930798ea6b8facd24ca7d5aa.jpg" alt="Guide 2">
+            <h3>David Lee</h3>
+            <p>Beach Enthusiast</p>
+        </div>
+        <div class="profile-card">
+            <img src="~/assets/others/9781e0c92a77fe526611d93a4ac0c6c2.jpg" alt="Guide 3">
+            <h3>Maria Gomez</h3>
+            <p>City Explorer</p>
+        </div>
+        <div class="profile-card">
+            <img src="~/assets/others/gettyImages-1155613712-1.jpg" alt="Guide 4">
+            <h3>James Patel</h3>
+            <p>Adventure Seeker</p>
+        </div> *@
+    </div>
+</section>

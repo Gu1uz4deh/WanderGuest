@@ -1,0 +1,41 @@
+﻿@model List<Product>
+
+@{
+    string searchingWord = ViewBag.SearchingWord;
+}
+
+<section class="packages" id="packages">
+    @if (Model.Count >= 1)
+    {
+        <h2>Results : @searchingWord</h2>
+        @* @await Component.InvokeAsync("Categories") *@
+        <div id="products" class="package-grid" id="packageGrid">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="package-card productItem" data-id="@Model[i].Category.Name.ToLower()">
+                    <img src="~/assets/uploads/products/@Model[i].ProductImages?[0].Image.Name" alt="$@Model[i].Title">
+                    <div class="package-card-content">
+                        <h3>@Model[i].Title</h3>
+                        <p>@Model[i].Description</p>
+                        <div class="price">$@Model[i].Price</div>
+                        <button data-value="@Model[i].Id" class="addBasket">Add to Wishlist</button>
+                        @*  <form method="post" asp-area="" asp-controller="products" asp-action="index" asp-route-id="@Model[i].Id" class="display-none addToCardForm">
+                <input type="hidden" value="@Model[i].Id" name="id"/>
+            </form> *@
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="more-products">
+            <a id="loadMoreSearch">
+                <button class="button-more">Load More...</button>
+            </a>
+        </div>
+    }
+    else
+    {
+        <h2>No Result : @searchingWord</h2>
+    }
+</section>
+
+

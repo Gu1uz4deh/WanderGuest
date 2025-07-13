@@ -301,7 +301,7 @@ function changeBackgroundColor(id = 0) {
     const packageCards = document.querySelectorAll('.package-card[data-product-id]');
     packageCards.forEach(element => {
         if (element.getAttribute('data-product-id') === id.toString()) {
-            element.style.backgroundColor = 'black'; // Bozartı ton
+            element.style.backgroundColor = '#c4c4c4'; // Bozartı ton
             setTimeout(() => {
                 element.style.backgroundColor = 'white';
             }, 1000);
@@ -405,80 +405,6 @@ function productMessage(message = 'Added to cart') {
     }, 2000);
 }
 
-
-//document.addEventListener("DOMContentLoaded", async function () {
-//    const productContainer = document.getElementById("products");
-//    const basketCounts = document.querySelectorAll(".basketCount");
-
-//    if (productContainer && basketCounts.length > 0) {
-//        productContainer.addEventListener("click", async function (e) {
-//            const addButton = e.target.closest(".addBasket");
-//            if (addButton) {
-//                let dataValue = addButton.getAttribute("data-value");
-//                try {
-//                    let resp = await fetch("/products/SetBasket/" + dataValue);
-//                    await addProduct();
-//                    Console.log("yazilmald");
-//                    await updateBasketTotals();
-//                    let data = await resp.json();
-
-//                    if (data.status === 200) {
-//                        let totalCount = data.data.reduce((sum, item) => sum + item.count, 0);
-
-//                        // Tüm basketCount'lara yaz
-//                        basketCounts.forEach(el => {
-//                            el.innerHTML = ` ${totalCount}`;
-//                        });
-//                    } else {
-//                        basketCounts.forEach(el => {
-//                            el.innerHTML = " 0";
-//                        });
-//                    }
-//                } catch (err) {
-//                    console.error("Wishlist update error:", err);
-//                    basketCounts.forEach(el => {
-//                        el.innerHTML = " 0";
-//                    });
-//                    await addProduct();
-//                    await updateBasketTotals();
-//                }
-//            }
-//        });
-//    }
-//});
-
-//document.addEventListener("DOMContentLoaded", async function () {
-//    let basketCounts = document.querySelectorAll(".basketCount");
-
-//    if (basketCounts.length > 0) {
-//        try {
-//            let resp = await fetch("/products/getbasket");
-//            let data = await resp.json();
-//            await updateBasketTotals();
-
-//            if (data.status === 200) {
-//                let totalCount = 0;
-//                for (let item of data.data) {
-//                    totalCount += item.count;
-//                }
-
-//                basketCounts.forEach(el => {
-//                    el.innerHTML = ` ${totalCount}`;
-//                });
-//            } else {
-//                basketCounts.forEach(el => {
-//                    el.innerHTML = " 0";
-//                });
-//            }
-//        } catch (err) {
-//            console.error("Wishlist error:", err);
-//            basketCounts.forEach(el => {
-//                el.innerHTML = "Wishlist 0";
-//            });
-//            await updateBasketTotals();
-//        }
-//    }
-//});
 
 
 

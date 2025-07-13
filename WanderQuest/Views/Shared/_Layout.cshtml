@@ -23,6 +23,8 @@
 
     @await Component.InvokeAsync("Footer")
 
-    
+    @{
+        await Html.RenderPartialAsync("_ValidationsPartial");
+    }
 </body>
 </html>

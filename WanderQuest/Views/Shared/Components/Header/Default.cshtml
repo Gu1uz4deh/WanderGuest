@@ -20,6 +20,15 @@
                     </div>
                 </form>
             </li>
+            @if(User.Identity.IsAuthenticated)
+            {
+                <li><a asp-area="" asp-controller="account" asp-action="profile" class="nav-link sign-in-header">@User.Identity.Name</a></li>
+                <li><a asp-area="" asp-controller="account" asp-action="logout" class="nav-link sign-in-header">Logout</a></li>
+            }
+            else
+            {
+                <li><a asp-area="" asp-controller="account" asp-action="register" class="nav-link sign-in-header">Sign in</a></li>
+            }
             <li class="wishlist-item">
                 <a asp-area="" asp-controller="basket" asp-action="index" class="nav-link">
                     <span>Wishlist</span>

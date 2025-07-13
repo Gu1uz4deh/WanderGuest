@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using Microsoft.AspNetCore.Identity;
+using WanderQuest.Infrastructure.Models;
 
 namespace WanderQuest
 {
@@ -36,11 +38,27 @@ namespace WanderQuest
 
             services.AddControllersWithViews();
              
+            
+            services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+                options.Lockout.MaxFailedAccessAttempts = 3;
+                options.Password.RequiredLength = 8;
+            })
+              .AddDefaultTokenProviders()
+              .AddEntityFrameworkStores<AppDbContext>();
+
+
             services.AddDbContext<AppDbContext>(options => 
             {
                 options.UseSqlServer(_configuration.GetConnectionString("Default"),
                     b => b.MigrationsAssembly("WanderQuest"));
             });
+
+
+            services.AddAuthentication();
+            services.AddAuthorization();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -55,16 +73,20 @@ namespace WanderQuest
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseStaticFiles();
 
-            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
 
                 endpoints.MapControllerRoute(
                     name: "ProductSearch",
-                    pattern: "products/searchproduct/{title?}",
+                    pattern: "products/searchproduct/{title}",
                     defaults: new { controller = "Products", action = "SearchProduct" }
                 );
                 endpoints.MapControllerRoute

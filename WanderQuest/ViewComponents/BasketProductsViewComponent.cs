@@ -2,7 +2,7 @@
 using System;
 using System.Text.Json;
 using WanderQuest.Application.Services.Public;
-using WanderQuest.ViewModel;
+using WanderQuest.ViewModels;
 
 namespace WanderQuest.ViewComponents
 {

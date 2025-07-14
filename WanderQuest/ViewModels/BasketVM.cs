@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WanderQuest.ViewModel
+namespace WanderQuest.ViewModels
 {
     public class BasketVM
     {

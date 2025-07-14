@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewEngines;  // NullView üçün
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -10,10 +11,11 @@ using WanderQuest.Application.Services.Public;
 using WanderQuest.Infrastructure.DAL;
 using WanderQuest.Infrastructure.Models;
 using WanderQuest.Shared.Helpers;
-using WanderQuest.ViewModel;
+using WanderQuest.ViewModels;
 
 namespace WanderQuest.Controllers
 {
+    [Authorize]
     public class BasketController : Controller
     {
         private readonly IProductsQueryService _productQueryService;
@@ -22,6 +24,7 @@ namespace WanderQuest.Controllers
         {
             _productQueryService = productQueryService;
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             decimal totalPrice = 0;

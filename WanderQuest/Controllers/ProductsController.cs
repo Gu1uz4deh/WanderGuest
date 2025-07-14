@@ -3,9 +3,10 @@ using WanderQuest.Infrastructure.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using WanderQuest.ViewModel;
+using WanderQuest.ViewModels;
 using System.Text.Json;
 using WanderQuest.Application.Services.Public;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WanderQuest.Controllers
 {
@@ -47,6 +48,7 @@ namespace WanderQuest.Controllers
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]
+        [Authorize]
         public IActionResult SetBasket(int id)
         {
             List<BasketItemVM> basketItems;

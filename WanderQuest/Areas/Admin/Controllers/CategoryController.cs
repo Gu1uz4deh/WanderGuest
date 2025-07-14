@@ -4,10 +4,12 @@ using WanderQuest.Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WanderQuest.Application.Services.Admin;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WanderQuest.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly ICategoryAdminService _categoryAdminService;

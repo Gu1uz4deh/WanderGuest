@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WanderQuest.ViewModel
+namespace WanderQuest.ViewModels.Account
 {
     public class RegisterVM
     {
@@ -23,7 +23,6 @@ namespace WanderQuest.ViewModel
         [Required, MaxLength(100), DataType(DataType.Password), Compare(nameof(Password))]
         public string ConfirmPassword { get; set; }
 
-        public bool RememberMe = false;
 
     }
 }

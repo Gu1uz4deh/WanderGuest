@@ -1,0 +1,31 @@
+﻿@model LoginVM
+
+<div class="page-wrapper">
+    <div class="signup-container">
+        <h2>Sign In</h2>
+        <p>Please sign in your account</p>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" placeholder="Email" required />
+                <span asp-validation-for="Email" class="text-error"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" placeholder="Password" required />
+                <span asp-validation-for="Password" class="text-error"></span>
+            </div>
+            <div class="remember-forgot">
+                <label asp-for="IsPersistent"><input asp-for="IsPersistent" /> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <p><div asp-validation-summary="ModelOnly" class="text-error other-model-errors"></div></p>
+            <button type="submit">SIGN IN</button>
+            <div class="remember-forgot">
+                <label></label>
+                <label></label>
+                <a asp-controller="account" asp-action="register">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</div>

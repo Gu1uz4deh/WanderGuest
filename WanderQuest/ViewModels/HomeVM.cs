@@ -1,7 +1,7 @@
 ﻿using WanderQuest.Infrastructure.Models;
 using System;
 
-namespace WanderQuest.ViewModel
+namespace WanderQuest.ViewModels
 {
     public class HomeVM
     {

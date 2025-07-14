@@ -22,24 +22,43 @@
             </li>
             @if(User.Identity.IsAuthenticated)
             {
-                <li><a asp-area="" asp-controller="account" asp-action="profile" class="nav-link sign-in-header">@User.Identity.Name</a></li>
-                <li><a asp-area="" asp-controller="account" asp-action="logout" class="nav-link sign-in-header">Logout</a></li>
+                <li class="username">
+                    <a asp-area="" asp-controller="account" asp-action="profile" class="nav-link sign-in-header">@User.Identity.Name</a>
+                    <div class="username-dropdown">
+                        <div class="username-items">
+                            <span>Test</span>
+                            <a asp-area="" asp-controller="account" asp-action="logout" class="nav-link logout-header">Logout</a>
+                        </div>
+                    </div> 
+                </li>
+                
+
+                <li class="wishlist-item">
+                    <a asp-area="" asp-controller="basket" asp-action="index" class="nav-link">
+                        <span>Wishlist</span>
+                        <span class="badge basketTotalCount"></span>
+                        <span class="badge basketTotalPrice"></span>
+                    </a>
+                    <div class="wishlist-dropdown" id="hoverContainer">
+                        <!-- Wishlist Hover -->
+                    </div>
+                </li>
             }
             else
             {
-                <li><a asp-area="" asp-controller="account" asp-action="register" class="nav-link sign-in-header">Sign in</a></li>
-            }
-            <li class="wishlist-item">
-                <a asp-area="" asp-controller="basket" asp-action="index" class="nav-link">
-                    <span>Wishlist</span>
-                    <span class="badge basketTotalCount"></span>
-                    <span class="badge basketTotalPrice"></span>
-                </a>
-                <div class="wishlist-dropdown" id="hoverContainer">
+                <li><a asp-area="" asp-controller="account" asp-action="login" class="nav-link sign-in-header">Sign in</a></li>
+
+                <li class="wishlist-item">
+                    <a asp-area="" asp-controller="account" asp-action="login" class="nav-link">
+                        <span>Wishlist</span>
+                        @* <span class="badge basketTotalCount"></span>
+                        <span class="badge basketTotalPrice"></span> *@
+                    </a>
+                @* <div class="wishlist-dropdown" id="hoverContainer">
                     <!-- Wishlist Hover -->
-                </div>
-            </li>
-            
+                </div> *@
+                </li>
+            }
         </ul>
     </nav>
 

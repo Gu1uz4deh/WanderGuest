@@ -594,6 +594,52 @@ footer {
     }
 
 
+/*username-hover*/
+.username-dropdown {
+    position: absolute;
+    top: calc(100% - 5px);
+    right: calc(145px);
+    width: 150px;
+    max-width: 90vw;
+    background: var(--bg-color);
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0; 
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 4px;
+    /*opacity: 1;
+    visibility: visible;
+    transform: translateY(0);*/
+}
+
+.username:hover .username-dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+.username-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    display: block;
+}
+@media (max-width: 768px) {
+    .username-dropdown {
+        right: auto;
+        left: 0;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+}
+
 
 
 
@@ -986,9 +1032,14 @@ footer {
     display: inline-block; /* Inline elementler için gerekli */
 }
 
-
-
-
+.logout-header {
+    text-align: center !important;
+    color: black !important;
+    font-weight: bolder !important;
+    border-bottom: 2px solid white; /* Kırmızı, 2px kalınlığında çizgi */
+    padding-bottom: 2px; /* Çizgi ile metin arasında boşluk */
+    display: inline-block; /* Inline elementler için gerekli */
+}
 
 /*SIGN UP*/
 .page-wrapper {

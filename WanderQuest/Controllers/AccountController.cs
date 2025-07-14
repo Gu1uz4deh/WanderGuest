@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using WanderQuest.Infrastructure.Models;
-using WanderQuest.ViewModel;
+using WanderQuest.ViewModels.Account;
+using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace WanderQuest.Controllers
 {
@@ -54,6 +56,46 @@ namespace WanderQuest.Controllers
 
             return RedirectToAction(actionName: nameof(Index), controllerName: "Home");
 
+        }
+
+        [Route(nameof(Login))]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [Route(nameof(Login))]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginVM login)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(login);
+            }
+
+            AppUser user = await _userManager.FindByEmailAsync(login.Email);
+
+            if (user is null)
+            {
+                ModelState.AddModelError("", "User does not exist");
+                return View(user);
+            }
+
+            SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, login.IsPersistent, true);
+
+            if (result.IsLockedOut)
+            {
+                ModelState.AddModelError("", "Your user is locked out.\nPlease try later");
+            }
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("Password", "Password is wrong!");
+                return View();
+            }
+
+            return RedirectToAction(actionName: "Index", controllerName: "Home");
         }
 
         public async Task<IActionResult> Logout()

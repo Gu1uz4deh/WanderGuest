@@ -2,7 +2,7 @@
 using WanderQuest.Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WanderQuest.ViewModel;
+using WanderQuest.ViewModels;
 
 namespace WanderQuest.Controllers
 {

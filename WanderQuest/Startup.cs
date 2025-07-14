@@ -44,6 +44,7 @@ namespace WanderQuest
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
                 options.Lockout.MaxFailedAccessAttempts = 3;
                 options.Password.RequiredLength = 8;
+                options.User.RequireUniqueEmail = true;
             })
               .AddDefaultTokenProviders()
               .AddEntityFrameworkStores<AppDbContext>();

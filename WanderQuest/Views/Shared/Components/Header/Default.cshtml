@@ -20,6 +20,14 @@
                     </div>
                 </form>
             </li>
+           @*  @if(User.IsInRole("Admin"))
+            {
+            <li><a href="#contact" class="nav-link">Admin</a></li>
+            }
+            @if(User.IsInRole("Member"))
+            {
+            <li><a href="#contact" class="nav-link">Member</a></li>
+            } *@
             @if(User.Identity.IsAuthenticated)
             {
                 <li class="username">

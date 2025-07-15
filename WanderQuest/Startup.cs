@@ -39,16 +39,16 @@ namespace WanderQuest
             services.AddControllersWithViews();
              
             
-            services.AddIdentity<AppUser, IdentityRole>(options =>
+            services.AddIdentity<AppUser, IdentityRole>()
+              .AddDefaultTokenProviders()
+              .AddEntityFrameworkStores<AppDbContext>();
+            services.Configure<IdentityOptions>(options =>
             {
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
                 options.Lockout.MaxFailedAccessAttempts = 3;
                 options.Password.RequiredLength = 8;
                 options.User.RequireUniqueEmail = true;
-            })
-              .AddDefaultTokenProviders()
-              .AddEntityFrameworkStores<AppDbContext>();
-
+            });
 
             services.AddDbContext<AppDbContext>(options => 
             {

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace WanderQuest.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         private readonly AppDbContext _context;

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using WanderQuest.Infrastructure.Models;
+using WanderQuest.Shared.Helpers;
 using WanderQuest.ViewModels.Account;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
@@ -11,11 +12,14 @@ namespace WanderQuest.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         public AccountController(UserManager<AppUser> userManager,
-                                 SignInManager<AppUser> signInManager)
+                                 SignInManager<AppUser> signInManager,
+                                 RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
         [Route(nameof(Register))]
         public IActionResult Register()
@@ -52,10 +56,21 @@ namespace WanderQuest.Controllers
                 }
             }
 
-            await _signInManager.SignInAsync(newUser, false);
+            await _userManager.AddToRoleAsync(newUser, Enums.Roles.Member.ToString());
 
-            return RedirectToAction(actionName: nameof(Index), controllerName: "Home");
 
+            string token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+            string route = Url.Action("ConfirmEmail", "Account", new { userId = newUser.Id, token }, HttpContext.Request.Scheme);
+
+            //return RedirectToAction(actionName: "Test", controllerName: "Account", new {route});
+            return View("Test", route);
+
+            //return RedirectToAction(actionName: nameof(Index), controllerName: "Home");
+        }
+
+        public IActionResult Test(string route)
+        {
+            return View(route);
         }
 
         [Route(nameof(Login))]
@@ -82,26 +97,77 @@ namespace WanderQuest.Controllers
                 return View(user);
             }
 
-            SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, login.IsPersistent, true);
+            bool passwordIsValid = await _userManager.CheckPasswordAsync(user, login.Password);
 
-            if (result.IsLockedOut)
-            {
-                ModelState.AddModelError("", "Your user is locked out.\nPlease try later");
-            }
-
-            if (!result.Succeeded)
+            if (!passwordIsValid)
             {
                 ModelState.AddModelError("Password", "Password is wrong!");
                 return View();
             }
 
+            if (!user.EmailConfirmed)
+            {
+                ModelState.AddModelError("", "Your mail is not confirmed.\nPlease confirm your email");
+                return View();
+            }
+
+            bool isLocked = await _userManager.IsLockedOutAsync(user);
+
+            if (isLocked)
+            {
+                ModelState.AddModelError("", "Your user is locked out.\nPlease try later");
+            }
+
+
+
+            SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, login.IsPersistent, true);
+
+            //if(await _userManager.IsInRoleAsync(user, Enums.Roles.Admin.ToString()))
+            //{ 
+            //}
+
+            if(User.IsInRole(Enums.Roles.Admin.ToString()))
+            {
+                return RedirectToAction(actionName: "Index", controllerName: "Dashboard", new {area = "Admin"});
+            }
+
             return RedirectToAction(actionName: "Index", controllerName: "Home");
         }
-
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction(actionName: nameof(Index), controllerName: "Home");
         }
+
+        public async Task CreateRoles()
+        {
+            foreach (string role in Enum.GetNames(typeof(Enums.Roles)))
+            {
+                if(!await _roleManager.RoleExistsAsync(role))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(role));
+                }
+            }
+        }
+
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId == null || token == null)
+            {
+                return NotFound();
+            }
+            
+            AppUser user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            await _userManager.ConfirmEmailAsync(user, token);
+            
+            return RedirectToAction(actionName: "Index", controllerName: "Home");
+        }
+
     }
 }

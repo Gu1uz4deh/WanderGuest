@@ -214,8 +214,7 @@
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\Components\\BasketProducts\\Default.cshtml",
               "ViewState": "AgIAABMAAAAAAAAAAAAnwCcAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T15:40:28.519Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T15:40:28.519Z"
             },
             {
               "$type": "Document",
@@ -227,8 +226,7 @@
               "RelativeToolTip": "WanderQuest\\Views\\Products\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-17T10:49:21.818Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T10:49:21.818Z"
             },
             {
               "$type": "Document",
@@ -240,8 +238,7 @@
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\Components\\Header\\Default.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-14T18:15:39.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-14T18:15:39.5Z"
             },
             {
               "$type": "Document",
@@ -266,8 +263,7 @@
               "RelativeToolTip": "WanderQuest\\Startup.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAnwEUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T12:10:32.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T12:10:32.716Z"
             },
             {
               "$type": "Document",
@@ -279,8 +275,7 @@
               "RelativeToolTip": "WanderQuest.Infrastructure\\DAL\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAnwA0AAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T08:56:56.768Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T08:56:56.768Z"
             },
             {
               "$type": "Document",
@@ -292,8 +287,7 @@
               "RelativeToolTip": "WanderQuest\\ViewComponents\\CategoriesViewComponent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:14:44.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T14:14:44.095Z"
             },
             {
               "$type": "Document",
@@ -305,8 +299,7 @@
               "RelativeToolTip": "WanderQuest\\ViewComponents\\BasketProductsViewComponent.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T13:43:45.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T13:43:45.303Z"
             },
             {
               "$type": "Document",
@@ -318,8 +311,7 @@
               "RelativeToolTip": "WanderQuest\\Views\\Basket\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T15:43:04.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T15:43:04.441Z"
             },
             {
               "$type": "Document",
@@ -331,8 +323,7 @@
               "RelativeToolTip": "WanderQuest\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAAkAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-17T10:56:37.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T10:56:37.347Z"
             },
             {
               "$type": "Document",
@@ -344,8 +335,7 @@
               "RelativeToolTip": "WanderQuest\\ViewComponents\\ProductsByCategoryViewComponent.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAABQAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T11:05:55.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T11:05:55.528Z"
             },
             {
               "$type": "Document",
@@ -357,8 +347,7 @@
               "RelativeToolTip": "WanderQuest\\wwwroot\\assets\\js\\script.js",
               "ViewState": "AgIAAGsAAAAAAAAAAAAYwIQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-07-15T12:34:15.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T12:34:15.824Z"
             },
             {
               "$type": "Document",
@@ -370,8 +359,7 @@
               "RelativeToolTip": "WanderQuest\\Controllers\\BasketController.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAQwAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T09:11:00.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T09:11:00.155Z"
             },
             {
               "$type": "Document",
@@ -383,8 +371,7 @@
               "RelativeToolTip": "WanderQuest\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAqwDUAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T09:11:09.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T09:11:09.3Z"
             },
             {
               "$type": "Document",
@@ -396,8 +383,7 @@
               "RelativeToolTip": "WanderQuest.Application\\Services\\Public\\IProductsQueryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T11:08:49.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T11:08:49.273Z"
             },
             {
               "$type": "Document",
@@ -409,8 +395,7 @@
               "RelativeToolTip": "WanderQuest.Application\\Implementations\\Public\\ProductsQueryRepository.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAkwDoAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T10:44:31.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T10:44:31.357Z"
             },
             {
               "$type": "Document",
@@ -422,8 +407,7 @@
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\Components\\ProductsByCategory\\Default.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-17T11:10:47.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T11:10:47.691Z"
             },
             {
               "$type": "Document",
@@ -435,8 +419,7 @@
               "RelativeToolTip": "WanderQuest\\BasketHandlers\\Implementations\\BasketSummaryService.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAjwCAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T20:01:27.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-16T20:01:27.013Z"
             },
             {
               "$type": "Document",
@@ -448,8 +431,7 @@
               "RelativeToolTip": "WanderQuest\\BasketHandlers\\Implementations\\BasketItemService.cs",
               "ViewState": "AgIAAD0AAAAAAAAAAAAnwEoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T09:56:13.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T09:56:13.085Z"
             },
             {
               "$type": "Document",
@@ -461,8 +443,7 @@
               "RelativeToolTip": "WanderQuest\\ViewModels\\Basket\\BasketSummaryVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T18:39:07.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-16T18:39:07.352Z"
             },
             {
               "$type": "Document",
@@ -474,8 +455,7 @@
               "RelativeToolTip": "WanderQuest\\ViewComponents\\FooterViewComponent.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAIA6wBQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T18:36:55.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-16T18:36:55.063Z"
             },
             {
               "$type": "Document",
@@ -487,8 +467,7 @@
               "RelativeToolTip": "WanderQuest\\ViewComponents\\HeaderViewComponent.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAnwBIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:14:58.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T14:14:58.576Z"
             },
             {
               "$type": "Document",
@@ -500,8 +479,7 @@
               "RelativeToolTip": "WanderQuest\\ViewComponents\\ProductsViewComponent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:15:02.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T14:15:02.902Z"
             },
             {
               "$type": "Document",
@@ -513,8 +491,7 @@
               "RelativeToolTip": "WanderQuest.Shared\\Helpers\\ControllerExtensions.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAewBAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T13:49:00.626Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T13:49:00.626Z"
             },
             {
               "$type": "Document",
@@ -526,8 +503,7 @@
               "RelativeToolTip": "WanderQuest.Application\\Implementations\\Public\\BasketService\\BasketDbService.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAjwBIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T10:01:55.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T10:01:55.861Z"
             },
             {
               "$type": "Document",
@@ -539,8 +515,7 @@
               "RelativeToolTip": "WanderQuest\\ViewComponents\\BasketHoverDetailsViewComponent.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T12:31:30.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T12:31:30.494Z"
             },
             {
               "$type": "Document",
@@ -552,8 +527,7 @@
               "RelativeToolTip": "WanderQuest.Application\\Services\\Public\\ICategoriesQueryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T12:09:23.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T12:09:23.189Z"
             },
             {
               "$type": "Document",
@@ -565,8 +539,7 @@
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\Components\\Products\\Default.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-17T10:54:13.501Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T10:54:13.501Z"
             },
             {
               "$type": "Document",
@@ -578,8 +551,7 @@
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\Components\\Categories\\Default.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-17T11:30:19.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T11:30:19.215Z"
             },
             {
               "$type": "Document",
@@ -591,8 +563,7 @@
               "RelativeToolTip": "WanderQuest.Infrastructure\\Models\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T10:46:37.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T10:46:37.387Z"
             },
             {
               "$type": "Document",
@@ -604,8 +575,7 @@
               "RelativeToolTip": "WanderQuest\\BasketHandlers\\Services\\IBasketItemService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T15:18:28.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T15:18:28.814Z"
             },
             {
               "$type": "Document",
@@ -617,8 +587,7 @@
               "RelativeToolTip": "WanderQuest\\ViewModels\\BasketItemVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T09:11:57.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T09:11:57.202Z"
             },
             {
               "$type": "Document",
@@ -630,8 +599,7 @@
               "RelativeToolTip": "WanderQuest\\ViewModels\\BasketVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T09:11:59.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T09:11:59.176Z"
             },
             {
               "$type": "Document",
@@ -643,8 +611,7 @@
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\Components\\BasketHoverDetails\\Default.cshtml",
               "ViewState": "AgIAABEAAAAAAAAAAAAnwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T14:10:40.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T14:10:40.567Z"
             },
             {
               "$type": "Document",
@@ -656,8 +623,7 @@
               "RelativeToolTip": "WanderQuest.Application\\Services\\Public\\BasketService\\IBasketDbService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T10:02:49.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T10:02:49.569Z"
             },
             {
               "$type": "Document",
@@ -669,8 +635,7 @@
               "RelativeToolTip": "WanderQuest\\wwwroot\\assets\\css\\styles.css",
               "ViewState": "AgIAAIkCAAAAAAAAAADwv6UCAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-17T09:43:34.459Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T09:43:34.459Z"
             },
             {
               "$type": "Document",

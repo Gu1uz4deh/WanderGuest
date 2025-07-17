@@ -1,5 +1,5 @@
 wwwroot\assets\others\mountain-landscape-3840x2160-19802.jpg
-wwwroot\assets\css\styles.css
+wwwroot\assets\js\script.js
 wwwroot\Areas\Admin\css\styles.css
 wwwroot\Areas\Admin\js\script.js
 wwwroot\assets\uploads\teamMembers\gettyImages-1155613712-1.jpg
@@ -20,5 +20,5 @@ wwwroot\assets\uploads\teamMembers\mountaineering-mountainous-landforms-winter-s
 wwwroot\assets\uploads\sliders\dubai-sheikh-zayed-3840x2160-21154.jpg
 wwwroot\assets\uploads\products\213812414.jpg
 wwwroot\assets\uploads\teamMembers\9781e0c92a77fe526611d93a4ac0c6c2.jpg
-wwwroot\assets\js\script.js
+wwwroot\assets\css\styles.css
 wwwroot\assets\uploads\products\QatarDoha_8hrATVRide+DesertSafariComboPrivateTour-Klook,VereinigteStaaten.jpg

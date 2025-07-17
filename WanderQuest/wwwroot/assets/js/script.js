@@ -1,4 +1,14 @@
-﻿// Navbar toggle
+﻿
+//#region DOMContentLoaded
+document.addEventListener("DOMContentLoaded", async function () {
+    await setupBasketQuantityEvents();
+    await updateBasketTotals();
+    await loadBasketHover();
+    await loadBasketProducts();
+});
+//#endregion
+
+//#region Navbar toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 if (hamburger && navMenu) {
@@ -6,12 +16,9 @@ if (hamburger && navMenu) {
         navMenu.classList.toggle('active');
     });
 }
+//#endregion
 
-
-
-// Change product Count
-
-
+//#region Change product Count
 async function setupBasketQuantityEvents() {
 
     document.querySelectorAll(".qty-decrease").forEach(button => {
@@ -22,35 +29,16 @@ async function setupBasketQuantityEvents() {
 
             if (count > 0) {
                 input.value = count;
-                await fetch(`/Basket/DecreaseProductQuantity/${productId}`, { method: 'POST' })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.success) {
-                            document.querySelector('.wish-total').textContent = `Total: $${data.totalPrice}`;
-                            document.querySelector('#wishlistCount').textContent = data.totalItems;
-                        }
-                    });
-                await loadBasketHover();
-                await updateBasketTotals();
-                await loadBasketProducts();
+                await fetch(`/Basket/DecreaseProductQuantity/${productId}`);
+
             } else {
-                await fetch(`/Basket/DeleteProduct/${productId}`, { method: 'POST' })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.success) {
-                            button.closest("li").remove();
-                            document.querySelector('.wish-total').textContent = `Total: $${data.totalPrice}`;
-                            document.querySelector('#wishlistCount').textContent = data.totalItems;
-                            if (!document.querySelector(".wish-items li")) {
-                                document.querySelector('.wish-items').innerHTML = '<li style="padding: 10px; text-align: center; color: #777;">Wishlist is empty</li>';
-                            }
-                        }
-                    });
-                await productMessage('Removed succesfully')
-                await loadBasketHover();
-                await updateBasketTotals();
-                await loadBasketProducts();
+                await fetch(`/Basket/DecreaseProductQuantity/${productId}`);
+                
+                await productMessage('Removed succesfully');
             }
+            await loadBasketHover();
+            await updateBasketTotals();
+            await loadBasketProducts();
         });
     });
 
@@ -61,14 +49,7 @@ async function setupBasketQuantityEvents() {
             let count = parseInt(input.value) + 1;
 
             input.value = count;
-            await fetch(`/Basket/IncreaseProductQuantity/${productId}`, { method: 'POST' })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        document.querySelector('.wish-total').textContent = `Total: $${data.totalPrice}`;
-                        document.querySelector('#wishlistCount').textContent = data.totalItems;
-                    }
-                });
+            await fetch(`/Basket/IncreaseProductQuantity/${productId}`);
             await loadBasketHover();
             await updateBasketTotals();
             await loadBasketProducts();
@@ -81,51 +62,21 @@ async function setupBasketQuantityEvents() {
             let count = parseInt(input.value);
 
             if (count >= 1 && count <= 100) {
-                await fetch(`/Basket/UpdateProductQuantity/${productId}/${count}`, { method: 'POST' })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.success) {
-                            document.querySelector('.wish-total').textContent = `Total: $${data.totalPrice}`;
-                            document.querySelector('#wishlistCount').textContent = data.totalItems;
-                        }
-                    });
-                await loadBasketHover();
-                await updateBasketTotals();
-                await loadBasketProducts();
+                await fetch(`/Basket/UpdateProductQuantity/${productId}/${count}`);
+                
 
             } else if (count < 1) {
-                await fetch(`/Basket/DeleteProduct/${productId}`, { method: 'POST' })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.success) {
-                            input.closest("li").remove();
-                            document.querySelector('.wish-total').textContent = `Total: $${data.totalPrice}`;
-                            document.querySelector('#wishlistCount').textContent = data.totalItems;
-                            if (!document.querySelector(".wish-items li")) {
-                                document.querySelector('.wish-items').innerHTML = '<li style="padding: 10px; text-align: center; color: #777;">Wishlist is empty</li>';
-                            }
-                        }
-                    });
+                await fetch(`/Basket/DeleteProduct/${productId}`);
+                
                 await productMessage('Removed succesfully')
-                await loadBasketHover();
-                await updateBasketTotals();
-                await loadBasketProducts();
 
             } else {
                 input.value = 100;
-                await fetch(`/Basket/UpdateProductQuantity/${productId}/100`, { method: 'POST' })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.success) {
-                            document.querySelector('.wish-total').textContent = `Total: $${data.totalPrice}`;
-                            document.querySelector('#wishlistCount').textContent = data.totalItems;
-                        }
-                    });
-                await loadBasketHover();
-                await updateBasketTotals();
-                await loadBasketProducts();
-
+                await fetch(`/Basket/UpdateProductQuantity/${productId}/100`);
             }
+            await loadBasketHover();
+            await updateBasketTotals();
+            await loadBasketProducts();
         });
     });
 
@@ -133,18 +84,7 @@ async function setupBasketQuantityEvents() {
         button.addEventListener("click", async () => {
             const productId = button.getAttribute("data-product-id");
 
-            await fetch(`/Basket/DeleteProduct/${productId}`, { method: 'POST' })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        button.closest("li").remove();
-                        document.querySelector('.wish-total').textContent = `Total: $${data.totalPrice}`;
-                        document.querySelector('#wishlistCount').textContent = data.totalItems;
-                        if (!document.querySelector(".wish-items li")) {
-                            document.querySelector('.wish-items').innerHTML = '<li style="padding: 10px; text-align: center; color: #777;">Wishlist is empty</li>';
-                        }
-                    }
-                });
+            await fetch(`/Basket/DeleteProduct/${productId}`);
 
             await productMessage('Removed succesfully')
             await loadBasketHover();
@@ -153,43 +93,65 @@ async function setupBasketQuantityEvents() {
 
         });
     });
+
 }
+//#endregion
 
-document.addEventListener("DOMContentLoaded", async function () {
-    await setupBasketQuantityEvents();
-});
+//#region Update Basket Totals
+//async function updateBasketTotals() {
+//    const summary = await getBasketSummary();
+//    if (summary.totalItems === 0 && summary.totalPrice === 0) {
+//        document.querySelector('.basketTotalPrice').style.display = 'none';
+//        document.querySelector('.basketTotalCount').style.display = 'none';
+//    } else {
 
-
-
-
-
-
-//Load Total Price and Total Count
+//        document.querySelector('.basketTotalPrice').style.display = 'inline-block';
+//        document.querySelector('.basketTotalCount').style.display = 'inline-block';
+//        document.querySelector('.basketTotalPrice').textContent = `$ ${summary.totalPrice}`;
+//        document.querySelector('.basketTotalCount').textContent = summary.totalItems;
+//    }
+//}
 async function updateBasketTotals() {
-    try {
-        const res = await fetch('/Basket/TotalBasketItemsInformation', { method: 'GET' });
-        const data = await res.json();
+    const summary = await getBasketSummary();
 
-        const totalPriceElements = document.querySelectorAll('.basketTotalPrice');
-        const totalCountElements = document.querySelectorAll('.basketTotalCount');
+    const priceElements = document.querySelectorAll('.basketTotalPrice');
+    const countElements = document.querySelectorAll('.basketTotalCount');
 
-        if (data.data) {
-            totalPriceElements.forEach(el => el.textContent = `${data.data.totalPrice}`);
-            totalCountElements.forEach(el => el.textContent = data.data.totalCount);
-        } else {
-            totalPriceElements.forEach(el => el.textContent = '0');
-            totalCountElements.forEach(el => el.textContent = '0');
-        }
-    } catch (error) {
-        console.error('Fetch hatası:', error);
+    if (summary.totalItems === 0 && summary.totalPrice === 0) {
+        priceElements.forEach(el => el.style.display = 'none');
+        countElements.forEach(el => el.style.display = 'none');
+    } else {
+        priceElements.forEach(el => {
+            el.style.display = 'inline-block';
+            el.textContent = `$ ${summary.totalPrice}`;
+        });
+        countElements.forEach(el => {
+            el.style.display = 'inline-block';
+            el.textContent = summary.totalItems;
+        });
     }
 }
-document.addEventListener("DOMContentLoaded", updateBasketTotals);
+//#endregion
 
+//#region Get Basket Summary
+async function getBasketSummary() {
+    const response = await fetch('/Basket/GetBasketSummary', {
+        method: 'POST'
+    });
 
+    if (!response.ok) {
+        throw new Error('Basket summary could not be fetched.');
+    }
 
+    const data = await response.json();
+    return {
+        totalPrice: data.totalPrice,
+        totalItems: data.totalItems
+    };
+}
+//#endregion
 
-// Hero Slider
+//#region Hero Slider
 const slides = document.querySelectorAll('#heroSlider .slide');
 let currentSlide = 0;
 const nextBtn = document.getElementById('nextBtn');
@@ -229,9 +191,6 @@ else {
     console.log("prevBtn element not found - likely not on product page");
 }
 
-
-
-
 let autoSlide = setInterval(() => {
     showSlide((currentSlide + 1) % slides.length);
 }, 5000);
@@ -251,51 +210,9 @@ else {
 }
 
 showSlide(currentSlide);
+//#endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-//Products
-const packageGrid = document.getElementById('products');
-if (packageGrid) {
-    function renderPackages(filter = 'all') {
-        const packageCards = packageGrid.querySelectorAll('.package-card');
-        packageCards.forEach(card => {
-            const category = card.dataset.id;
-            if (filter === 'all' || category === filter) {
-                card.classList.remove('hidden');
-                if (filter === 'all') {
-                    moreProductButton.classList.remove('hidden');
-                }
-            } else {
-                card.classList.add('hidden');
-                moreProductButton.classList.add('hidden');
-            }
-        });
-    }
-}
-
-const filterBtns = document.querySelectorAll('.filter-btn');
-if (filterBtns.length > 0) {
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderPackages(btn.dataset.filter);
-        });
-    });
-}
-
-//Background Color Effect
+//#region Background Color Effect
 function changeBackgroundColor(id = 0) {
     // package-card içinde data-product-id ile eşleşen id'yi bul
     const packageCards = document.querySelectorAll('.package-card[data-product-id]');
@@ -319,34 +236,65 @@ function changeBackgroundColor(id = 0) {
         }
     });
 }
+//#endregion
 
+const filterBtns = document.querySelectorAll('.filter-btn');
+if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', async () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-//LoadMore
+            const categoryId = btn.getAttribute('data-category-id');
+            if (!categoryId) {
+                console.warn('Category ID tapılmadı');
+                return;
+            }
+            console.log(parseInt(categoryId));
+            
+        //await loadCategoryProducts(categoryId, 4);
+            // categoryId string olur, amma serverdə int lazımdırsa, parse et:
+            const container = document.querySelector('#products');
+            container.innerHTML = ''; // Köhnə məhsulları təmizlə
+            await loadCategoryProducts(parseInt(categoryId), 0, 1); // skip = 0 olaraq başlasın
+        });
+    });
+}
+
 let loadMoreButton = document.getElementById("loadMore");
 let products = document.getElementById("products");
 if (loadMoreButton && products) {
     loadMoreButton.addEventListener("click", async function () {
+
         let productItems = document.getElementsByClassName("productItem");
         let skip = productItems.length;
-        let resp = await fetch(`/products/loadmore/${skip}`);
+        console.log(skip);
 
-        let data = await resp.text();
-        if (data.trim() === "") {
-            loadMoreButton.remove();
-        }
-
-        products.innerHTML += data;
-        await changeBackgroundColor();
+        const active = document.querySelector('.active');
+        const categoryId = active.getAttribute('data-category-id');
+        console.log(parseInt(categoryId));
+        await loadCategoryProducts(parseInt(categoryId), skip, 1); 
     });
 } else {
     console.log("loadMoreButton or products element not found - likely not on product page");
 }
 
+async function loadCategoryProducts(categoryId, skip, take) {
+    try {
+        const res = await fetch(`/products/LoadCategoryProductsHtml?categoryId=${categoryId}&skip=${skip}&take=${take}`);
+        //const data = await res.text(); 
+        const data = await res.json();
+        console.log(data);
+
+        const container = document.querySelector('#products');
+        container.innerHTML += data.html; 
+    } catch (err) {
+        console.error("Məhsullar yüklənərkən xəta:", err);
+    }
+}
 
 
-
-
-
+//#region TestimonialSlider
 const testimonials = document.querySelectorAll('#testimonialSlider .testimonial');
 let currentTestimonial = 0;
 function showTestimonial(index) {
@@ -368,14 +316,9 @@ if (subscribeBtn) {
         if (email) alert('Subscribed: ' + email);
     });
 }
+//#endregion
 
-
-
-
-
-
-
-//Product Message
+//#region Product Message
 function productMessage(message = 'Added to cart') {
     // Yeni bir div oluştur
     const messageBox = document.createElement('div');
@@ -404,13 +347,10 @@ function productMessage(message = 'Added to cart') {
         }
     }, 2000);
 }
+//#endregion
 
-
-
-
+//#region Load Basket Hover
 async function loadBasketHover() {
-    // Basket Hover And Add Change
-    // 🌀 Basket-in hover görünüşünü serverdən yükləyir
     try {
         const res = await fetch('/Basket/GetHoverDetailsHtml');
         if (!res.ok) throw new Error('Server error');
@@ -430,8 +370,9 @@ async function loadBasketHover() {
         console.error('Load basket hover error:', error);
     }
 }
+//#endregion
 
-// 🖱️ addBasket düyməsinə klik olduqda basketə əlavə edir və hover-i yeniləyir
+//#region Click addBasket
 document.addEventListener('click', async (e) => {
     const addButton = e.target.closest('.addBasket');
     if (!addButton) return;
@@ -447,11 +388,6 @@ document.addEventListener('click', async (e) => {
         const data = await resp.json();
 
         if (data.status === 200) {
-            // ✅ Uğurla əlavə olundu — hover görünüşü yenilənsin
-            //
-            //
-            //
-            //console.log("fetch atilir");
             await changeBackgroundColor(dataValue);
             await productMessage();
             await loadBasketHover();
@@ -464,24 +400,9 @@ document.addEventListener('click', async (e) => {
         console.error('Add to basket error:', err);
     }
 });
+//#endregion
 
-// 📦 Səhifə açıldıqda ilk basket hover yüklə
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadBasketHover();
-});
-
-
-
-
-
-
-
-
-
-
-
-
-//Get Basket Products
+//#region Get Basket Products
 async function loadBasketProducts() {
     try {
         const res = await fetch('/Basket/GetBasketProductsHtml');
@@ -503,58 +424,10 @@ async function loadBasketProducts() {
         console.error('Load basket hover error:', error);
     }
 }
-document.addEventListener('click', async (e) => {
-    const addButton = e.target.closest('.addBasket');
-    if (!addButton) return;
 
-    const dataValue = addButton.getAttribute('data-value');
-    if (!dataValue) {
-        console.warn('data-value tapılmadı');
-        return;
-    }
+//#endregion
 
-    try {
-        const resp = await fetch('/products/SetBasket/' + dataValue);
-        const data = await resp.json();
-
-        if (data.status === 200) {
-            // ✅ Uğurla əlavə olundu — hover görünüşü yenilənsin
-            //
-            //
-            //
-            await changeBackgroundColor(dataValue);
-            await loadBasketProducts();
-            await updateBasketTotals();
-        } else {
-            console.error('Basket update failed');
-        }
-    } catch (err) {
-        console.error('Add to basket error:', err);
-    }
-});
-
-// 📦 Səhifə açıldıqda ilk basket hover yüklə
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadBasketProducts();
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//#region Contact Form
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', e => {
@@ -565,3 +438,4 @@ if (contactForm) {
         e.target.reset();
     });
 }
+//#endregion

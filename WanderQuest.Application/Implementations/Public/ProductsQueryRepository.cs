@@ -56,6 +56,17 @@ namespace WanderQuest.Application.Implementations.Public
 
             return findingProducts;
         }
+        public async Task<List<Product>> GetForCategoryAsync(int categoryId = 1, int skip = 0, int take = 4)
+        {
+            var findingProducts = await _context.Products.Where(n => !n.IsDeleted && n.CategoryId == categoryId)
+                                                          .Include(n => n.Category)
+                                                          .Include(n => n.ProductImages)
+                                                          .ThenInclude(n => n.Image)
+                                                          .Skip(skip)
+                                                          .Take(take)
+                                                          .ToListAsync();
+            return findingProducts;
+        }
 
     }
 }

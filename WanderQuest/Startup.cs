@@ -1,13 +1,17 @@
-﻿using WanderQuest.Application.Implementations.Admin;
-using WanderQuest.Application.Implementations.Public;
-using WanderQuest.Application.Services.Admin;
-using WanderQuest.Application.Services.Public;
-using WanderQuest.Infrastructure.DAL;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using Microsoft.AspNetCore.Identity;
+using WanderQuest.Application.Implementations.Admin;
+using WanderQuest.Application.Implementations.Public;
+using WanderQuest.Application.Implementations.Public.BasketService;
+using WanderQuest.Application.Services.Admin;
+using WanderQuest.Application.Services.Public;
+using WanderQuest.Application.Services.Public.BasketService;
+using WanderQuest.BasketHandlers.Implementations;
+using WanderQuest.BasketHandlers.Services;
+using WanderQuest.Infrastructure.DAL;
 using WanderQuest.Infrastructure.Models;
 
 namespace WanderQuest
@@ -34,11 +38,20 @@ namespace WanderQuest
             services.AddScoped<ISlidersQueryService, SlidersQueryRepository>();
             services.AddScoped<ICategoriesQueryService, CategoriesQueryRepository>();
             services.AddScoped<ITeamMembersQueyService, TeamMembersQueryRepository>();
+            services.AddScoped<IBasketDbService, BasketDbService>();
+
+
+            services.AddScoped<IBasketItemService, BasketItemService>();
+            services.AddScoped<IBasketSummaryService, BasketSummaryService>();
 
 
             services.AddControllersWithViews();
-             
-            
+
+
+            services.AddHttpContextAccessor(); 
+
+
+
             services.AddIdentity<AppUser, IdentityRole>()
               .AddDefaultTokenProviders()
               .AddEntityFrameworkStores<AppDbContext>();
@@ -82,25 +95,25 @@ namespace WanderQuest
             app.UseStaticFiles();
 
 
-            app.UseEndpoints(endpoints =>
-            {
+                app.UseEndpoints(endpoints =>
+                {
 
-                endpoints.MapControllerRoute(
-                    name: "ProductSearch",
-                    pattern: "products/searchproduct/{title}",
-                    defaults: new { controller = "Products", action = "SearchProduct" }
-                );
-                endpoints.MapControllerRoute
-                (
-                    name: "Areas",
-                    pattern: "{area:exists}/{controller=dashboard}/{action=index}/{id?}"
-                );
-                endpoints.MapControllerRoute
-                (
-                    name: "default",
-                    pattern: "{controller=home}/{action=index}/{id?}/{quantity?}"
-                ); 
-            });
+                    endpoints.MapControllerRoute(
+                        name: "ProductSearch",
+                        pattern: "products/searchproduct/{title}",
+                        defaults: new { controller = "Products", action = "SearchProduct" }
+                    );
+                    endpoints.MapControllerRoute
+                    (
+                        name: "Areas",
+                        pattern: "{area:exists}/{controller=dashboard}/{action=index}/{id?}"
+                    );
+                    endpoints.MapControllerRoute
+                    (
+                        name: "default",
+                        pattern: "{controller=home}/{action=index}/{id?}/{quantity?}"
+                    ); 
+                });
         }
     }
 }

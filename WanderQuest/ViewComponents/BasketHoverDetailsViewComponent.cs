@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Security.Claims;
 using System.Text.Json;
 using WanderQuest.Application.Services.Public;
+using WanderQuest.BasketHandlers.Services;
 using WanderQuest.ViewModels;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -10,48 +12,25 @@ namespace WanderQuest.ViewComponents
     public class BasketHoverDetailsViewComponent : ViewComponent
     {
         private readonly IProductsQueryService _productsQueryService;
-        public BasketHoverDetailsViewComponent(IProductsQueryService productsQueryService)
+        private readonly IBasketItemService _basketCookieService;
+        public BasketHoverDetailsViewComponent(IProductsQueryService productsQueryService, IBasketItemService basketCookieService)
         {
             _productsQueryService = productsQueryService;
+            _basketCookieService = basketCookieService;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
             decimal totalPrice = 0;
-            List<BasketItemVM> basketJson;
-            string cookieString = Request.Cookies["basket"];
-            if (string.IsNullOrEmpty(cookieString))
-            {
-                basketJson = new List<BasketItemVM>();
-            }
-            else
-            {
-                basketJson = JsonSerializer.Deserialize<List<BasketItemVM>>(cookieString).OrderByDescending(x => x.AddingDate).ToList();
-            }
+            var products = await _basketCookieService.GetBasketItemDetails();
 
-            List<BasketVM> productsHoverInfo = new List<BasketVM>();
-
-            for (int i = 0; i < basketJson.Count; i ++)
+            for (int i = 0; i < products.Count; i++)
             {
-                var dbProduct = await _productsQueryService.GetById(basketJson[i].Id);
-
-                if(dbProduct != null)
-                {
-                    totalPrice = totalPrice + dbProduct.Price * basketJson[i].Count;
-                    productsHoverInfo.Add(new BasketVM
-                    {
-                        Id = dbProduct.Id,
-                        ImageUrl = dbProduct.ProductImages[0].Image.Name,
-                        Title = dbProduct.Title,
-                        Price = dbProduct.Price,
-                        Category = dbProduct.Category.Name,
-                        Count = basketJson[i].Count
-                    });
-                }
+                totalPrice = totalPrice + products[i].Count * products[i].Price;
             }
 
             ViewBag.TotalPrice = totalPrice;
-            return View(productsHoverInfo);
+            return View(products);
         }
     }
 }

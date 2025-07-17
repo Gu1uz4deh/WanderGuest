@@ -1,22 +1,34 @@
-﻿using System;
-using WanderQuest.Infrastructure.DAL;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewEngines;  // NullView üçün
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
-using WanderQuest.ViewModels;
+using System;
+using System.Security.Claims;
 using System.Text.Json;
+using System.Threading.Tasks;
 using WanderQuest.Application.Services.Public;
-using Microsoft.AspNetCore.Authorization;
+using WanderQuest.BasketHandlers.Services;
+using WanderQuest.Infrastructure.DAL;
+using WanderQuest.Infrastructure.Models;
+using WanderQuest.Shared.Helpers;
+using WanderQuest.ViewModels;
 
 namespace WanderQuest.Controllers
 {
     public class ProductsController : Controller
     {
         private readonly IProductsQueryService _productQueryService;
+        private readonly IBasketItemService _basketItemService;
 
-        public ProductsController(IProductsQueryService products)
+        public ProductsController(IProductsQueryService productQueryService,
+                                  IBasketItemService basketItemService)
         {
-            _productQueryService = products;
+            _productQueryService = productQueryService;
+            _basketItemService = basketItemService;
         }
         public async Task<IActionResult> Index()
         {
@@ -46,93 +58,74 @@ namespace WanderQuest.Controllers
             return View(findingProducts);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
+
         [Authorize]
-        public IActionResult SetBasket(int id)
+        [HttpGet("products/setbasket/{productId}")]
+        public async Task<IActionResult> SetBasket(int productId)
         {
-            List<BasketItemVM> basketItems;
-
-            var cookieString = Request.Cookies["basket"];
-
-            if (string.IsNullOrEmpty(cookieString))
-            {
-                basketItems = new List<BasketItemVM>();
-            }
-            else
-            {
-                basketItems = JsonSerializer.Deserialize<List<BasketItemVM>>(cookieString);
-            }
-
-            var basketItem = basketItems.FirstOrDefault(n => n.Id == id);
-
-            if (basketItem == null)
-            {
-                basketItems.Add(new BasketItemVM()
-                {
-                    Id = id,
-                    Count = 1,
-                    AddingDate = DateTime.Now
-                });
-            }
-            else
-            {
-                basketItem.Count++;
-                basketItem.AddingDate = DateTime.Now;
-            }
-
-            cookieString = JsonSerializer.Serialize(basketItems);
-
-            Response.Cookies.Append("basket", cookieString);
-
+            await _basketItemService.AddBasketItem(productId);
+            
             return Json(new
             {
-                status = 200,
-                data = basketItems
+                status = 200
             });
         }
 
-        public IActionResult GetBasket()
-        {
-            List<BasketItemVM> basketItems;
-            string cookieString = Request.Cookies["basket"];
-
-            if (string.IsNullOrEmpty(cookieString))
-            {
-                basketItems = new List<BasketItemVM>();
-            }
-            else
-            {
-                basketItems = JsonSerializer.Deserialize<List<BasketItemVM>>(cookieString);
-            }
-            return Json(new
-            {
-                status = 200,
-                data = basketItems
-            });
-        }
-
-        #region CookieTest
-        //public IActionResult Set()
+        #region LoadCategoryProductsWithPartilView
+        //[Route("products/LoadCategoryProductsHtml/{categoryId}/{skip}")]
+        //public async Task<IActionResult> LoadCategoryProductsHtml(int categoryId, int skip)
         //{
-        //    //HttpContext.Session.SetString("test", "tural");
-
-        //    Response.Cookies.Append("test", "tural", new CookieOptions()
+        //    if (categoryId == 0)
         //    {
-        //        MaxAge = TimeSpan.FromSeconds(5)
-        //    });
-
-        //    return Json("OK");
-        //}
-
-        //public IActionResult Get()
-        //{
-        //    //var data = HttpContext.Session.GetString("test");
-
-        //    var data = Request.Cookies["test"];
-
-        //    return Json(data);
+        //        var allProducts = await _productQueryService.GetPaged(skip, 4);
+        //        return PartialView("_ProductPartial", allProducts);
+        //    }
+        //    var products = await _productQueryService.GetForCategoryAsync(categoryId, skip);
+        //    return PartialView("_ProductPartial", products);
         //}
         #endregion
+        [HttpGet("products/LoadCategoryProductsHtml")]
+        public async Task<IActionResult> LoadCategoryProductsHtml(int categoryId, int skip, int take)
+        {
+            var viewData = new ViewDataDictionary(new EmptyModelMetadataProvider(), new ModelStateDictionary())
+            {
+                { "CategoryId", categoryId },
+                { "Skip", skip },
+                { "Take", take }
+            };
+
+            var actionContext = new ActionContext(HttpContext, RouteData, ControllerContext.ActionDescriptor);
+
+            var nullView = new NullView();
+
+            var viewContext = new ViewContext(
+                actionContext,
+                nullView,
+                viewData,
+                TempData,
+                TextWriter.Null,
+                new HtmlHelperOptions()
+            );
+
+            //string html = await ControllerExtensions.RenderAsync(HttpContext, viewContext, "ProductsByCategory", null);
+            string html = await ControllerExtensions.RenderAsync(
+                HttpContext,
+                viewContext,
+                "ProductsByCategory",
+                new { categoryId = categoryId, skip = skip, take = take }
+            );
+            return Json(new { html });
+        }
+
+        public class NullView : IView
+        {
+            public string Path => string.Empty;
+
+            public Task RenderAsync(ViewContext context)
+            {
+                return Task.CompletedTask;
+            }
+        }
+
     }
 }

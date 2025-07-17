@@ -7,7 +7,7 @@
     <h2>Our Travel Packages</h2>
     @await Component.InvokeAsync("Categories")
     <div id="products" class="package-grid">
-        @await Component.InvokeAsync("Products", new { take = 4 })
+        @await Component.InvokeAsync("Products", new {skip = 0, take = 6 })
     </div>
 
     <div id="moreProductButton" class="more-products">

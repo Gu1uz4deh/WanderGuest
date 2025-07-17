@@ -230,6 +230,52 @@ namespace WanderQuest.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.Basket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("Baskets");
+                });
+
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.BasketItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("AddingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("BasketId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BasketId");
+
+                    b.ToTable("BasketItems");
+                });
+
             modelBuilder.Entity("WanderQuest.Infrastructure.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -512,6 +558,28 @@ namespace WanderQuest.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.Basket", b =>
+                {
+                    b.HasOne("WanderQuest.Infrastructure.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.BasketItem", b =>
+                {
+                    b.HasOne("WanderQuest.Infrastructure.Models.Basket", "Basket")
+                        .WithMany("Items")
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Basket");
+                });
+
             modelBuilder.Entity("WanderQuest.Infrastructure.Models.Product", b =>
                 {
                     b.HasOne("WanderQuest.Infrastructure.Models.Category", "Category")
@@ -578,6 +646,11 @@ namespace WanderQuest.Migrations
                     b.Navigation("Image");
 
                     b.Navigation("TeamMember");
+                });
+
+            modelBuilder.Entity("WanderQuest.Infrastructure.Models.Basket", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("WanderQuest.Infrastructure.Models.Category", b =>

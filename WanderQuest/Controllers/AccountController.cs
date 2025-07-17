@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using WanderQuest.Application.Services.Public.BasketService;
+using WanderQuest.BasketHandlers.Services;
 using WanderQuest.Infrastructure.Models;
 using WanderQuest.Shared.Helpers;
 using WanderQuest.ViewModels.Account;
@@ -13,17 +15,24 @@ namespace WanderQuest.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IBasketItemService _basketItemService;
         public AccountController(UserManager<AppUser> userManager,
                                  SignInManager<AppUser> signInManager,
-                                 RoleManager<IdentityRole> roleManager)
+                                 RoleManager<IdentityRole> roleManager,
+                                 IBasketItemService basketItemService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _basketItemService = basketItemService;
         }
         [Route(nameof(Register))]
         public IActionResult Register()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction(actionName: "Index", controllerName: "Home");
+            }
             return View();
         }
 
@@ -32,6 +41,7 @@ namespace WanderQuest.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterVM register)
         {
+
             if (!ModelState.IsValid)
             {
                 return View(register);
@@ -58,6 +68,7 @@ namespace WanderQuest.Controllers
 
             await _userManager.AddToRoleAsync(newUser, Enums.Roles.Member.ToString());
 
+            await _basketItemService.CreateBasketIfNotExistAsync(newUser.Id);
 
             string token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
             string route = Url.Action("ConfirmEmail", "Account", new { userId = newUser.Id, token }, HttpContext.Request.Scheme);
@@ -76,6 +87,10 @@ namespace WanderQuest.Controllers
         [Route(nameof(Login))]
         public IActionResult Login()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction(actionName: "Index", controllerName: "Home");
+            }
             return View();
         }
 
@@ -122,11 +137,13 @@ namespace WanderQuest.Controllers
 
             SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, login.IsPersistent, true);
 
+            await _basketItemService.CreateBasketIfNotExistAsync(user.Id);
+
             //if(await _userManager.IsInRoleAsync(user, Enums.Roles.Admin.ToString()))
             //{ 
             //}
 
-            if(User.IsInRole(Enums.Roles.Admin.ToString()))
+            if (User.IsInRole(Enums.Roles.Admin.ToString()))
             {
                 return RedirectToAction(actionName: "Index", controllerName: "Dashboard", new {area = "Admin"});
             }

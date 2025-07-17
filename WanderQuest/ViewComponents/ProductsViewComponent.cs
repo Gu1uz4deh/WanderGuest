@@ -13,9 +13,9 @@ namespace WanderQuest.ViewComponents
         {
             _productQueryService = productQueryService;
         }
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(int skip, int take)
         {
-            var products = await _productQueryService.GetPaged();
+            var products = await _productQueryService.GetPaged(skip, take);
             return View(products);
         }
     }

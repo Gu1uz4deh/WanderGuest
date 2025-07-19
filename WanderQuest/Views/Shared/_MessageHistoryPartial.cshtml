@@ -1,0 +1,33 @@
+﻿@model List<WanderQuest.Infrastructure.Models.Message>
+@{
+    var MyUsername = ViewBag.MyUsername as string;
+}
+<div class="viewBagUsername" data-value="@MyUsername"></div>
+@foreach (var msg in Model)
+{
+    if (msg.SendUserId == MyUsername)
+    {
+        <div class="message sent">
+            @* <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar"> *@
+            <div class="message-content">
+                <p>@* @msg.SendUserId:  *@@msg.Text</p>
+                <span class="timestamp-sent">@msg.SentAt.ToLocalTime().ToShortTimeString()</span>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="message received">
+            @* <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar"> *@
+            <div class="message-content">
+                <p>@* @msg.SendUserId:  *@@msg.Text</p>
+                <span class="timestamp-received">@msg.SentAt.ToLocalTime().ToShortTimeString()</span>
+            </div>
+        </div>
+    }
+
+}
+
+@* <script>
+    const myUserId = '@ViewBag.MyUsername';
+</script> *@

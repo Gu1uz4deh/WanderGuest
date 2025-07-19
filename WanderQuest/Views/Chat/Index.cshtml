@@ -1,0 +1,59 @@
+﻿@model List<string>
+
+<div class="main-container">
+    <div class="left-section">
+        <ul class="user-list" id="userList">
+            <ul id="userList"></ul>
+            <li>
+                <div class="search-item">
+                    <input type="text" id="userSearchInput" class="search-bar" placeholder="Kullanıcı ara..." oninput="searchUsers()" />
+                </div>
+            </li>
+            @foreach (var user in Model)
+            {
+                <li>
+                    <div class="user-item" onclick="loadMessages('@user')">
+                            <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                            <div class="user-info">
+                                <h3 class="user-name">@user</h3>
+                                <p class="last-message">Nasılsın dostum?</p>
+                            </div>
+                            <span class="timestamp">12:34</span>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="right-section-empty">
+        <div class="empty-content">
+            <div style="font-size: 80px; opacity: 0.3; margin-bottom: 12px;">💬</div>
+
+            <h2>No chat selected</h2>
+            <p>Click on a user on the left to start chatting.</p>
+        </div>
+    </div>
+    <div class="right-section">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div id="chatHeader">
+                    <h2>Chat</h2>
+                </div>
+                <div class="trash-icon" id="deleteAllBtn">
+                    🗑
+                </div>
+            </div>
+            <div class="chat-messages" id="messagesList">
+               
+            </div>
+            
+            <div class="chat-input">
+                <input type="hidden" id="receiverId" />
+                <input type="text" class="message-input" id="messageInput" placeholder="Mesaj yaz..." />
+                <button onclick="sendMessage()">Gönder</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+

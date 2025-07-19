@@ -9,7 +9,7 @@
             <li><a asp-area="" asp-controller="products" asp-action="index" class="nav-link">Products</a></li>
             <li><a href="@Model["Twitter"]" class="nav-link">About</a></li>
             <li><a href="#blog" class="nav-link">Blog</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a asp-area="" asp-controller="chat" asp-action="index" class="nav-link">Chat</a></li>
             <li class="nav-search">
                 <form id="searchForm" autocomplete="off" method="get" action="/products/searchproduct">
                     <div class="search-container">

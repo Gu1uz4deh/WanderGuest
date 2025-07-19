@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -6,11 +7,14 @@ using System;
 using WanderQuest.Application.Implementations.Admin;
 using WanderQuest.Application.Implementations.Public;
 using WanderQuest.Application.Implementations.Public.BasketService;
+using WanderQuest.Application.Implementations.Public.MessageServices;
 using WanderQuest.Application.Services.Admin;
 using WanderQuest.Application.Services.Public;
 using WanderQuest.Application.Services.Public.BasketService;
+using WanderQuest.Application.Services.Public.MessageServices;
 using WanderQuest.BasketHandlers.Implementations;
 using WanderQuest.BasketHandlers.Services;
+using WanderQuest.Hubs;
 using WanderQuest.Infrastructure.DAL;
 using WanderQuest.Infrastructure.Models;
 
@@ -39,14 +43,16 @@ namespace WanderQuest
             services.AddScoped<ICategoriesQueryService, CategoriesQueryRepository>();
             services.AddScoped<ITeamMembersQueyService, TeamMembersQueryRepository>();
             services.AddScoped<IBasketDbService, BasketDbService>();
-
+            services.AddScoped<IMessageDbService, MessageDbService>();
 
             services.AddScoped<IBasketItemService, BasketItemService>();
             services.AddScoped<IBasketSummaryService, BasketSummaryService>();
 
 
             services.AddControllersWithViews();
-
+            services.AddSignalR(); // SignalR'ı aktif et
+            services.AddSignalR().AddJsonProtocol(); //
+            services.AddSingleton<IUserIdProvider, NameIdentifierProvider>(); // Bunu ekle
 
             services.AddHttpContextAccessor(); 
 
@@ -68,6 +74,7 @@ namespace WanderQuest
                 options.UseSqlServer(_configuration.GetConnectionString("Default"),
                     b => b.MigrationsAssembly("WanderQuest"));
             });
+
 
 
             services.AddAuthentication();
@@ -112,8 +119,11 @@ namespace WanderQuest
                     (
                         name: "default",
                         pattern: "{controller=home}/{action=index}/{id?}/{quantity?}"
-                    ); 
+                    );
+                    endpoints.MapHub<ChatHub>("/chathub");
                 });
+
+            // 🔥 SignalR Hub route'u burada
         }
     }
 }

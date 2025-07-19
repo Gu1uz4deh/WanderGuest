@@ -98,19 +98,6 @@ async function setupBasketQuantityEvents() {
 //#endregion
 
 //#region Update Basket Totals
-//async function updateBasketTotals() {
-//    const summary = await getBasketSummary();
-//    if (summary.totalItems === 0 && summary.totalPrice === 0) {
-//        document.querySelector('.basketTotalPrice').style.display = 'none';
-//        document.querySelector('.basketTotalCount').style.display = 'none';
-//    } else {
-
-//        document.querySelector('.basketTotalPrice').style.display = 'inline-block';
-//        document.querySelector('.basketTotalCount').style.display = 'inline-block';
-//        document.querySelector('.basketTotalPrice').textContent = `$ ${summary.totalPrice}`;
-//        document.querySelector('.basketTotalCount').textContent = summary.totalItems;
-//    }
-//}
 async function updateBasketTotals() {
     const summary = await getBasketSummary();
 
@@ -238,6 +225,7 @@ function changeBackgroundColor(id = 0) {
 }
 //#endregion
 
+//#region
 const filterBtns = document.querySelectorAll('.filter-btn');
 if (filterBtns.length > 0) {
     filterBtns.forEach(btn => {
@@ -292,7 +280,7 @@ async function loadCategoryProducts(categoryId, skip, take) {
         console.error("Məhsullar yüklənərkən xəta:", err);
     }
 }
-
+//#endregion
 
 //#region TestimonialSlider
 const testimonials = document.querySelectorAll('#testimonialSlider .testimonial');
@@ -425,6 +413,217 @@ async function loadBasketProducts() {
     }
 }
 
+//#endregion
+
+//#region Chat Section
+const connection = new signalR.HubConnectionBuilder()
+    .withUrl("/chathub")
+    .build();
+
+//connection.on("ReceiveMessage", function (senderId, messageText, sentAt) {
+//    const isMyMessage = senderId === "@ViewBag.MyUserId";
+//    const msg = document.createElement("div");
+//    msg.style.textAlign = isMyMessage ? "right" : "left";
+//    msg.textContent = `[${new Date(sentAt).toLocaleTimeString()}] ${senderId}: ${messageText}`;
+//    document.getElementById("messagesList").appendChild(msg);
+//});
+connection.on("ReceiveMessage", function (senderId, messageText, sentAt) {
+    const viewBagDiv = document.querySelector(".viewBagUsername");
+    const myUserId = viewBagDiv.getAttribute("data-value");
+    const isMyMessage = senderId === myUserId;
+    console.log(senderId);
+    console.log(myUserId);
+    console.log(isMyMessage);
+    console.log(messageText);
+    console.log(sentAt);
+    const msgWrapper = document.createElement("div");
+    msgWrapper.className = isMyMessage ? "message sent" : "message received";
+
+    // İsteğe bağlı avatar için img etiketi eklenebilir
+    // const avatar = document.createElement("img");
+    // avatar.src = "https://via.placeholder.com/40";
+    // avatar.alt = "User Avatar";
+    // avatar.className = "avatar";
+    // msgWrapper.appendChild(avatar);
+
+    const messageContent = document.createElement("div");
+    messageContent.className = "message-content";
+
+    const messageTextP = document.createElement("p");
+    messageTextP.textContent = messageText;
+
+    const timeSpan = document.createElement("span");
+    timeSpan.className = isMyMessage ? "timestamp-sent" : "timestamp-received";
+    timeSpan.textContent = new Date(sentAt).toLocaleTimeString();
+
+    messageContent.appendChild(messageTextP);
+    messageContent.appendChild(timeSpan);
+    msgWrapper.appendChild(messageContent);
+
+    document.getElementById("messagesList").appendChild(msgWrapper);
+    const container = document.getElementById("messagesList");
+    container.scrollTop = container.scrollHeight;
+});
+connection.start();
+
+function loadMessages(userId) {
+    document.getElementById("receiverId").value = userId;
+
+    fetch(`/Chat/GetMessages?receiverId=${userId}`)
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("messagesList").innerHTML = html;
+            showChatSection();
+            // YALNIZCA buraya koyarsan çalışır: HTML yüklendikten sonra
+            const container = document.getElementById("messagesList");
+            container.scrollTop = container.scrollHeight;
+
+            const chatHeader = document.getElementById("chatHeader");
+            chatHeader.innerHTML = `<h2>${userId}</h2>`;
+        });
+}
+
+//function deleteAllMessages(userId) {
+//    document.getElementById("receiverId").value = userId;
+//    fetch(`/Chat/DeleteAllMessages?receiverId=${userId}`);
+//}
+
+function sendMessage() {
+    const receiverId = document.getElementById("receiverId").value;
+    const message = document.getElementById("messageInput").value;
+
+    if (!receiverId || !message) return;
+
+    connection.invoke("SendMessage", receiverId, message).catch(console.error);
+    document.getElementById("messageInput").value = "";
+}
+
+function searchUsers() {
+    const query = document.getElementById("userSearchInput").value;
+    if (query.length < 2) return;
+
+    fetch(`/Chat/SearchUser?query=${encodeURIComponent(query)}`)
+        .then(res => res.json())
+        .then(data => {
+            const list = document.getElementById("userList");
+            list.innerHTML = "";
+
+            data.forEach(user => {
+                const div = document.createElement("div");
+                div.className = "user-item";
+                div.onclick = () => loadMessages(user.userName);
+
+                //div.setAttribute("onclick", `loadMessages('${user.userName}')`);
+
+                // Avatar
+                const img = document.createElement("img");
+                img.src = "https://via.placeholder.com/40";
+                img.alt = "User Avatar";
+                img.className = "avatar";
+                div.appendChild(img);
+
+                // User info container
+                const userInfo = document.createElement("div");
+                userInfo.className = "user-info";
+
+                // User name
+                const h3 = document.createElement("h3");
+                h3.className = "user-name";
+                h3.textContent = user.userName; // veya user.name, api'ye göre değişebilir
+                userInfo.appendChild(h3);
+
+                // Last message (statik örnek)
+                const p = document.createElement("p");
+                p.className = "last-message";
+                p.textContent = "";
+                userInfo.appendChild(p);
+
+                div.appendChild(userInfo);
+
+                // Timestamp (statik örnek)
+                const span = document.createElement("span");
+                span.className = "timestamp";
+                span.textContent = "";
+                div.appendChild(span);
+
+                list.appendChild(div);
+            });
+        });
+}
+document.addEventListener('DOMContentLoaded', function () {
+    const searchBar = document.querySelector('.search-bar');
+    const searchDropdown = document.querySelector('.search-dropdown');
+    const trashIcon = document.querySelector('.trash-icon');
+
+    // Arama çubuğuna tıklayınca dropdown aç
+    searchBar.addEventListener('focus', function () {
+        searchDropdown.style.display = 'block';
+    });
+
+    // Başka yere tıklayınca dropdown kapat
+    document.addEventListener('click', function (event) {
+        if (!searchBar.contains(event.target) && !searchDropdown.contains(event.target)) {
+            searchDropdown.style.display = 'none';
+        }
+    });
+
+    // Çöp ikonuna tıklayınca arama çubuğunu temizle
+    trashIcon.addEventListener('click', function () {
+        searchBar.value = '';
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    showEmptySection();
+});
+
+function showEmptySection() {
+    const chatSection = document.querySelector('.right-section');
+    const emptySection = document.querySelector('.right-section-empty');
+
+    if (chatSection) chatSection.style.setProperty("display", "none", "important");
+    if (emptySection) emptySection.style.setProperty("display", "flex", "important");
+}
+
+function showChatSection() {
+    const chatSection = document.querySelector('.right-section');
+    const emptySection = document.querySelector('.right-section-empty');
+
+    if (emptySection) emptySection.style.setProperty("display", "none", "important");
+    if (chatSection) chatSection.style.setProperty("display", "flex", "important");
+}
+
+
+
+
+document.getElementById("deleteAllBtn").addEventListener("click", async () => {
+    const userId = document.getElementById("receiverId").value;
+    if (!userId) {
+        alert("No user selected to delete messages!");
+        return;
+    }
+
+    // Onay kutusu
+    const confirmed = confirm(`Are you sure you want to delete all messages with ${userId}?`);
+    if (!confirmed) return; // Kullanıcı hayır dedi, işlem iptal
+
+    try {
+        const response = await fetch(`/deleteAllMessages/${encodeURIComponent(userId)}`, {
+            method: "DELETE",
+        });
+
+        if (response.ok) {
+            alert("All messages deleted successfully!");
+            document.getElementById("messagesList").innerHTML = ""; // Mesaj listesini temizle
+        } else {
+            alert("Failed to delete messages.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while deleting messages.");
+    }
+});
 //#endregion
 
 //#region Contact Form

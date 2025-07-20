@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WanderQuest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ff66f7d8548a51ddbcac86ba762905be643b6bc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cac9658ad4c6c7eaf01e9f0bc3a78a2cb335c418")]
 [assembly: System.Reflection.AssemblyProductAttribute("WanderQuest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WanderQuest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

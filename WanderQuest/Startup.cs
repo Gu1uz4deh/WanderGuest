@@ -9,6 +9,7 @@ using WanderQuest.Application.Implementations.Public;
 using WanderQuest.Application.Implementations.Public.BasketService;
 using WanderQuest.Application.Implementations.Public.MessageServices;
 using WanderQuest.Application.Services.Admin;
+using WanderQuest.Application.Services.ChatGpt;
 using WanderQuest.Application.Services.Public;
 using WanderQuest.Application.Services.Public.BasketService;
 using WanderQuest.Application.Services.Public.MessageServices;
@@ -44,6 +45,7 @@ namespace WanderQuest
             services.AddScoped<ITeamMembersQueyService, TeamMembersQueryRepository>();
             services.AddScoped<IBasketDbService, BasketDbService>();
             services.AddScoped<IMessageDbService, MessageDbService>();
+            services.AddScoped<IChatGptService, ChatGptService>();
 
             services.AddScoped<IBasketItemService, BasketItemService>();
             services.AddScoped<IBasketSummaryService, BasketSummaryService>();

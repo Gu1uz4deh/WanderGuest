@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using WanderQuest.Application.DTO;
 using WanderQuest.Infrastructure.Models;
 
 namespace WanderQuest.Application.Services.Public.MessageServices
@@ -12,5 +13,6 @@ namespace WanderQuest.Application.Services.Public.MessageServices
         //Task<List<string>> GetContactedUsersAsync(string userId);
         Task<List<string>> GetContactedUsersAsync(string userId);
         Task DeleteAllMessages(string userOneName, string userTwoName);
+        Task<List<UserChatOverviewDto>> GetLastMessageSummary(string username);
     }
 }

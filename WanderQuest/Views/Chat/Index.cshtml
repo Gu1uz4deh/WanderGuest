@@ -1,4 +1,5 @@
-﻿@model List<string>
+﻿@using WanderQuest.Application.DTO
+@model List<UserChatOverviewDto>
 
 <div class="main-container">
     <div class="left-section">
@@ -12,13 +13,14 @@
             @foreach (var user in Model)
             {
                 <li>
-                    <div class="user-item" onclick="loadMessages('@user')">
-                            <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                    <div class="user-item" onclick="loadMessages('@user.Username')">
+                            @* <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar"> *@
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="avatar" alt="Anonim Kullanıcı">
                             <div class="user-info">
-                                <h3 class="user-name">@user</h3>
-                                <p class="last-message">Nasılsın dostum?</p>
+                                <h3 class="user-name">@user.Username</h3>
+                                <p class="last-message">@user.LastMessageText</p>
                             </div>
-                            <span class="timestamp">12:34</span>
+                        <span class="timestamp">@user.LastMessageTime.ToLocalTime().ToShortTimeString()</span>
                     </div>
                 </li>
             }
@@ -33,6 +35,7 @@
         </div>
     </div>
     <div class="right-section">
+        <div id="toast" class="toast"></div>
         <div class="chat-container">
             <div class="chat-header">
                 <div id="chatHeader">
@@ -49,7 +52,7 @@
             <div class="chat-input">
                 <input type="hidden" id="receiverId" />
                 <input type="text" class="message-input" id="messageInput" placeholder="Mesaj yaz..." />
-                <button onclick="sendMessage()">Gönder</button>
+                <button type="su" onclick="sendMessage()">Gönder</button>
             </div>
         </div>
     </div>

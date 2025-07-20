@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using WanderQuest.Application.DTO;
+using WanderQuest.Application.Services.ChatGpt;
 using WanderQuest.Application.Services.Public.MessageServices;
 using WanderQuest.Infrastructure.Models;
 
@@ -13,11 +15,14 @@ namespace WanderQuest.Controllers
     {
         private readonly IMessageDbService _messageService;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IChatGptService _chatGptService;
 
-        public ChatController(IMessageDbService messageService, UserManager<AppUser> userManager)
+
+        public ChatController(IMessageDbService messageService, UserManager<AppUser> userManager, IChatGptService chatGptService)
         {
             _messageService = messageService;
             _userManager = userManager;
+            _chatGptService = chatGptService;
         }
 
         [AllowAnonymous]
@@ -36,10 +41,12 @@ namespace WanderQuest.Controllers
 
 
             // Artık contacted users da username ile gelecek
-            var contacts = await _messageService.GetContactedUsersAsync(user.UserName);
+            //var contacts = await _messageService.GetContactedUsersAsync(user.UserName);
+            var userChatOverview = await _messageService.GetLastMessageSummary(user.UserName);
+
 
             ViewBag.MyUsername = myUsername;
-            return View(contacts); // View: Views/Chat/Index.cshtml
+            return View(userChatOverview); // View: Views/Chat/Index.cshtml
         }
 
         [HttpGet]
@@ -73,11 +80,6 @@ namespace WanderQuest.Controllers
             return Json(results);
         }
 
-        //[HttpDelete("DeleteAllMessages/{userId}")]
-        //public async Task<IActionResult> DeleteAllMessages(string receiverId)
-        //{
-            
-        //}
         [HttpDelete("deleteAllMessages/{userId}")]
         public async Task<IActionResult> DeleteAllMessages(string userId)
         {
@@ -95,6 +97,13 @@ namespace WanderQuest.Controllers
             return RedirectToAction("Index", "Chat");
 
             return Ok();
+        }
+
+        [HttpPost("ask")]
+        public async Task<IActionResult> Ask([FromBody] string question)
+        {
+            var reply = await _chatGptService.AskChatGptAsync(question);
+            return Ok(reply);
         }
     }
 }

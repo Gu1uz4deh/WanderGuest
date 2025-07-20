@@ -415,27 +415,15 @@ async function loadBasketProducts() {
 
 //#endregion
 
-//#region Chat Section
+//#region Chat Connection Section
 const connection = new signalR.HubConnectionBuilder()
     .withUrl("/chathub")
     .build();
-
-//connection.on("ReceiveMessage", function (senderId, messageText, sentAt) {
-//    const isMyMessage = senderId === "@ViewBag.MyUserId";
-//    const msg = document.createElement("div");
-//    msg.style.textAlign = isMyMessage ? "right" : "left";
-//    msg.textContent = `[${new Date(sentAt).toLocaleTimeString()}] ${senderId}: ${messageText}`;
-//    document.getElementById("messagesList").appendChild(msg);
-//});
 connection.on("ReceiveMessage", function (senderId, messageText, sentAt) {
     const viewBagDiv = document.querySelector(".viewBagUsername");
     const myUserId = viewBagDiv.getAttribute("data-value");
     const isMyMessage = senderId === myUserId;
-    console.log(senderId);
-    console.log(myUserId);
-    console.log(isMyMessage);
-    console.log(messageText);
-    console.log(sentAt);
+    
     const msgWrapper = document.createElement("div");
     msgWrapper.className = isMyMessage ? "message sent" : "message received";
 
@@ -463,9 +451,23 @@ connection.on("ReceiveMessage", function (senderId, messageText, sentAt) {
     document.getElementById("messagesList").appendChild(msgWrapper);
     const container = document.getElementById("messagesList");
     container.scrollTop = container.scrollHeight;
+    if (!isMyMessage) {
+        showToast(senderId + " say: " + messageText)
+    }
 });
 connection.start();
 
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.className = "toast show";
+    setTimeout(() => {
+        toast.className = "toast";
+    }, 2000); // 2 saniye sonra kapanır
+}
+//#endregion
+
+//#region LoadChatMessages
 function loadMessages(userId) {
     document.getElementById("receiverId").value = userId;
 
@@ -482,12 +484,9 @@ function loadMessages(userId) {
             chatHeader.innerHTML = `<h2>${userId}</h2>`;
         });
 }
+//#endregion
 
-//function deleteAllMessages(userId) {
-//    document.getElementById("receiverId").value = userId;
-//    fetch(`/Chat/DeleteAllMessages?receiverId=${userId}`);
-//}
-
+//#region SendMessage
 function sendMessage() {
     const receiverId = document.getElementById("receiverId").value;
     const message = document.getElementById("messageInput").value;
@@ -497,7 +496,9 @@ function sendMessage() {
     connection.invoke("SendMessage", receiverId, message).catch(console.error);
     document.getElementById("messageInput").value = "";
 }
+//#endregion
 
+//#region Search User
 function searchUsers() {
     const query = document.getElementById("userSearchInput").value;
     if (query.length < 2) return;
@@ -571,13 +572,10 @@ document.addEventListener('DOMContentLoaded', function () {
     trashIcon.addEventListener('click', function () {
         searchBar.value = '';
     });
-});
+})
+//#endregion
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    showEmptySection();
-});
-
+//#region Change Chat Section
 function showEmptySection() {
     const chatSection = document.querySelector('.right-section');
     const emptySection = document.querySelector('.right-section-empty');
@@ -595,8 +593,13 @@ function showChatSection() {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    showEmptySection();
+});
 
+//#endregion
 
+//#region Delete CHATBTN
 document.getElementById("deleteAllBtn").addEventListener("click", async () => {
     const userId = document.getElementById("receiverId").value;
     if (!userId) {
@@ -625,6 +628,12 @@ document.getElementById("deleteAllBtn").addEventListener("click", async () => {
     }
 });
 //#endregion
+
+
+
+
+
+
 
 //#region Contact Form
 const contactForm = document.getElementById('contactForm');

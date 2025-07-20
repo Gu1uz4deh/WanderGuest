@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
+using WanderQuest.Application.DTO;
 using WanderQuest.Application.Services.Public.MessageServices;
 using WanderQuest.Infrastructure.DAL;
 using WanderQuest.Infrastructure.Models;
@@ -46,6 +47,41 @@ namespace WanderQuest.Application.Implementations.Public.MessageServices
             return contactedUsernames;
         }
 
+        public async Task<List<UserChatOverviewDto>> GetLastMessageSummary(string username)
+        {
+            List<UserChatOverviewDto> userChatLists = new List<UserChatOverviewDto>();
+
+            // 1. Kullanıcının konuştuğu diğer kişileri bul
+            //var otherUsers = await _context.Messages
+            //    .Where(m => m.SendUserId == userOneName || m.ReceiverUserId == userOneName)
+            //    .Select(m => m.SendUserId == userOneName ? m.ReceiverUserId : m.SendUserId)
+            //    .Distinct()
+            //    .ToListAsync();
+            var otherUsers = await GetContactedUsersAsync(username);
+
+            // 2. Her kişi için en son mesajı al ve listeye ekle
+            foreach (var otherUser in otherUsers)
+            {
+                var lastMessage = await _context.Messages
+                    .Where(m =>
+                        (m.SendUserId == username && m.ReceiverUserId == otherUser) ||
+                        (m.SendUserId == otherUser && m.ReceiverUserId == username))
+                    .OrderByDescending(m => m.SentAt)
+                    .FirstOrDefaultAsync();
+
+                if (lastMessage != null)
+                {
+                    userChatLists.Add(new UserChatOverviewDto
+                    {
+                        Username = otherUser,
+                        LastMessageText = lastMessage.Text,
+                        LastMessageTime = lastMessage.SentAt
+                    });
+                }
+            }
+            // 3. En son mesaj tarihine göre sıralayıp döndür
+            return userChatLists.OrderByDescending(x => x.LastMessageTime).ToList();
+        }
         public async Task DeleteAllMessages(string userOneName, string userTwoName)
         {
             var allMessages = await _context.Messages

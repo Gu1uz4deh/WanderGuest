@@ -1,6 +1,5 @@
 wwwroot\Areas\Admin\css\styles.css
 wwwroot\Areas\Admin\js\script.js
-wwwroot\assets\css\styles.css
 wwwroot\assets\img\3b2fb682772f52e97b9dd8ba933b9493.jpg
 wwwroot\assets\others\chicago-downtown-3840x2160-21348.jpg
 wwwroot\assets\others\mountain-landscape-3840x2160-19802.jpg
@@ -21,4 +20,5 @@ wwwroot\assets\uploads\teamMembers\9781e0c92a77fe526611d93a4ac0c6c2.jpg
 wwwroot\assets\uploads\teamMembers\gettyImages-1155613712-1.jpg
 wwwroot\assets\uploads\teamMembers\mountaineering-mountainous-landforms-winter-sport.jpg
 wwwroot\assets\uploads\teamMembers\s-3e6525c9484d36e5930798ea6b8facd24ca7d5aa.jpg
+wwwroot\assets\css\styles.css
 wwwroot\assets\js\script.js

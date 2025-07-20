@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3CC9F43C-1E5F-00E4-CD65-7CF44F0FC2D8}|WanderQuest.Application\\WanderQuest.Application.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest.application\\services\\chatgpt\\chatgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CC9F43C-1E5F-00E4-CD65-7CF44F0FC2D8}|WanderQuest.Application\\WanderQuest.Application.csproj|solutionrelative:wanderquest.application\\services\\chatgpt\\chatgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\wwwroot\\assets\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|solutionrelative:wanderquest\\wwwroot\\assets\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3CC9F43C-1E5F-00E4-CD65-7CF44F0FC2D8}|WanderQuest.Application\\WanderQuest.Application.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest.application\\services\\chatgpt\\ichatgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3CC9F43C-1E5F-00E4-CD65-7CF44F0FC2D8}|WanderQuest.Application\\WanderQuest.Application.csproj|solutionrelative:wanderquest.application\\services\\chatgpt\\ichatgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CC9F43C-1E5F-00E4-CD65-7CF44F0FC2D8}|WanderQuest.Application\\WanderQuest.Application.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest.application\\services\\chatgpt\\chatgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CC9F43C-1E5F-00E4-CD65-7CF44F0FC2D8}|WanderQuest.Application\\WanderQuest.Application.csproj|solutionrelative:wanderquest.application\\services\\chatgpt\\chatgptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56C86C59-A3F5-4706-8F2A-7BD6E33F0F01}|WanderQuest\\WanderQuest.csproj|c:\\users\\quluz\\source\\repos\\wanderquest\\wanderquest\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -250,15 +250,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 343,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
@@ -270,8 +266,7 @@
               "RelativeToolTip": "WanderQuest\\Controllers\\ChatController.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAYwBQAAABxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-19T15:21:35.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-19T15:21:35.219Z"
             },
             {
               "$type": "Document",
@@ -283,25 +278,24 @@
               "RelativeToolTip": "WanderQuest\\Views\\Shared\\_MessageHistoryPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-19T15:25:37.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-19T15:25:37.238Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "ChatGptService.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Application\\Services\\ChatGpt\\ChatGptService.cs",
               "RelativeDocumentMoniker": "WanderQuest.Application\\Services\\ChatGpt\\ChatGptService.cs",
               "ToolTip": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Application\\Services\\ChatGpt\\ChatGptService.cs",
               "RelativeToolTip": "WanderQuest.Application\\Services\\ChatGpt\\ChatGptService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAmwCwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-20T09:38:16.169Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "IChatGptService.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Application\\Services\\ChatGpt\\IChatGptService.cs",
               "RelativeDocumentMoniker": "WanderQuest.Application\\Services\\ChatGpt\\IChatGptService.cs",
@@ -309,12 +303,11 @@
               "RelativeToolTip": "WanderQuest.Application\\Services\\ChatGpt\\IChatGptService.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwAYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T09:41:37.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-20T09:41:37.135Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "script.js",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\wwwroot\\assets\\js\\script.js",
               "RelativeDocumentMoniker": "WanderQuest\\wwwroot\\assets\\js\\script.js",
@@ -322,12 +315,11 @@
               "RelativeToolTip": "WanderQuest\\wwwroot\\assets\\js\\script.js",
               "ViewState": "AgIAALEBAAAAAAAAAAAowMoBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-07-15T12:34:15.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T12:34:15.824Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Views\\Chat\\Index.cshtml",
               "RelativeDocumentMoniker": "WanderQuest\\Views\\Chat\\Index.cshtml",
@@ -335,12 +327,11 @@
               "RelativeToolTip": "WanderQuest\\Views\\Chat\\Index.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-19T15:24:58.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-19T15:24:58.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "styles.css",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\wwwroot\\assets\\css\\styles.css",
               "RelativeDocumentMoniker": "WanderQuest\\wwwroot\\assets\\css\\styles.css",
@@ -361,12 +352,11 @@
               "RelativeToolTip": "WanderQuest.Application\\DTO\\UserChatOverviewDto .cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T07:47:24.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-20T07:47:24.34Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ChatHub.cs",
               "DocumentMoniker": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest\\Hubs\\ChatHub.cs",
               "RelativeDocumentMoniker": "WanderQuest\\Hubs\\ChatHub.cs",
@@ -374,8 +364,7 @@
               "RelativeToolTip": "WanderQuest\\Hubs\\ChatHub.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAYwFQAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T13:13:11.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-18T13:13:11.562Z"
             },
             {
               "$type": "Document",
@@ -387,8 +376,7 @@
               "RelativeToolTip": "WanderQuest\\Startup.cs",
               "ViewState": "AgIAABcAAAAAAAAAAIA4wC8AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T12:10:32.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T12:10:32.716Z"
             },
             {
               "$type": "Document",
@@ -400,8 +388,7 @@
               "RelativeToolTip": "WanderQuest.Application\\Services\\Public\\MessageServices\\IMessageDbService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-19T13:11:55.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-19T13:11:55.862Z"
             },
             {
               "$type": "Document",
@@ -413,8 +400,7 @@
               "RelativeToolTip": "WanderQuest.Application\\Implementations\\Public\\MessageServices\\MessageDbService.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAkwDEAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-19T12:59:51.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-19T12:59:51.593Z"
             },
             {
               "$type": "Document",
@@ -426,8 +412,7 @@
               "RelativeToolTip": "WanderQuest.Infrastructure\\Models\\Message.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-19T12:49:57.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-19T12:49:57.844Z"
             },
             {
               "$type": "Document",
@@ -992,6 +977,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-14T18:08:28.58Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

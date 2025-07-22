@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     await updateBasketTotals();
     await loadBasketHover();
     await loadBasketProducts();
+    await loadUsers();
 });
 //#endregion
 
@@ -451,9 +452,11 @@ connection.on("ReceiveMessage", function (senderId, messageText, sentAt) {
     document.getElementById("messagesList").appendChild(msgWrapper);
     const container = document.getElementById("messagesList");
     container.scrollTop = container.scrollHeight;
+    loadUsers();
     if (!isMyMessage) {
         showToast(senderId + " say: " + messageText)
     }
+
 });
 connection.start();
 
@@ -465,10 +468,67 @@ function showToast(message) {
         toast.className = "toast";
     }, 2000); // 2 saniye sonra kapanır
 }
+
+async function loadUsers() {
+    const result = activeUserChatMessages(); // Aktif kullanıcıyı al
+
+    try {
+        const response = await fetch('/Chat/GetUsers');
+        if (!response.ok) throw new Error("Server Users not running!");
+
+        const html = await response.text();
+
+        const usersUl = document.getElementById('usersList');    
+        usersUl.innerHTML = ''; // Önce temizle
+        usersUl.innerHTML = html; // Yeni içeriği yükle
+
+        // HTML yüklendikten SONRA class işlemleri yapılmalı
+        if (result !== null) {
+            const allItems = document.querySelectorAll('.user-item');
+
+            allItems.forEach(item => {
+                const itemUser = item.getAttribute("data-value");
+                if (itemUser === result) {
+                    item.classList.add('user-item-active');
+                    item.style.backgroundColor = "black";
+                    console.log("Aktif kullanıcı bulundu ve class eklendi:", itemUser);
+                } else {
+                    item.classList.remove('user-item-active');
+                }
+            });
+        }
+
+    } catch (error) {
+        console.error("Users not loaded!", error);
+    }
+}
+
+
 //#endregion
+
+function activeUserChatMessages() {
+    const item = document.querySelector('.user-item-active');
+    if (!item) return null;
+
+    const itemUser = item.getAttribute("data-value");
+    return itemUser ?? null;
+}
 
 //#region LoadChatMessages
 function loadMessages(userId) {
+
+    // Tüm user-item div'lerini al
+    const allItems = document.querySelectorAll('.user-item');
+
+    allItems.forEach(item => {
+        const itemUser = item.getAttribute("data-value");
+        if (itemUser === userId) {
+            item.classList.add('user-item-active');
+        } else {
+            item.classList.remove('user-item-active');
+        }
+    });
+
     document.getElementById("receiverId").value = userId;
 
     fetch(`/Chat/GetMessages?receiverId=${userId}`)
@@ -487,7 +547,7 @@ function loadMessages(userId) {
 //#endregion
 
 //#region SendMessage
-function sendMessage() {
+async function sendMessage() {
     const receiverId = document.getElementById("receiverId").value;
     const message = document.getElementById("messageInput").value;
 
@@ -495,6 +555,7 @@ function sendMessage() {
 
     connection.invoke("SendMessage", receiverId, message).catch(console.error);
     document.getElementById("messageInput").value = "";
+    await loadUsers();
 }
 //#endregion
 
@@ -506,7 +567,7 @@ function searchUsers() {
     fetch(`/Chat/SearchUser?query=${encodeURIComponent(query)}`)
         .then(res => res.json())
         .then(data => {
-            const list = document.getElementById("userList");
+            const list = document.getElementById("usersList");
             list.innerHTML = "";
 
             data.forEach(user => {
@@ -514,11 +575,12 @@ function searchUsers() {
                 div.className = "user-item";
                 div.onclick = () => loadMessages(user.userName);
 
+
                 //div.setAttribute("onclick", `loadMessages('${user.userName}')`);
 
                 // Avatar
                 const img = document.createElement("img");
-                img.src = "https://via.placeholder.com/40";
+                img.src = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
                 img.alt = "User Avatar";
                 img.className = "avatar";
                 div.appendChild(img);
@@ -553,26 +615,32 @@ function searchUsers() {
 }
 document.addEventListener('DOMContentLoaded', function () {
     const searchBar = document.querySelector('.search-bar');
-    const searchDropdown = document.querySelector('.search-dropdown');
     const trashIcon = document.querySelector('.trash-icon');
 
-    // Arama çubuğuna tıklayınca dropdown aç
-    searchBar.addEventListener('focus', function () {
-        searchDropdown.style.display = 'block';
+    // Arama çubuğuna tıklayınca kullanıcıları yükle
+    searchBar.addEventListener('focus', async function () {
+        await loadUsers();
     });
 
-    // Başka yere tıklayınca dropdown kapat
-    document.addEventListener('click', function (event) {
-        if (!searchBar.contains(event.target) && !searchDropdown.contains(event.target)) {
-            searchDropdown.style.display = 'none';
+     //Sayfada herhangi bir yere tıklanınca
+    document.addEventListener('click', async function (event) {
+        const clickedInsideSearchBar = searchBar.contains(event.target);
+        const clickedInsideTrash = trashIcon && trashIcon.contains(event.target);
+
+        if (!clickedInsideSearchBar && !clickedInsideTrash) {
+            // Dışarı tıklanınca input temizle + kullanıcıları yeniden yükle
+            searchBar.value = '';
+            await loadUsers(); 
         }
     });
 
-    // Çöp ikonuna tıklayınca arama çubuğunu temizle
-    trashIcon.addEventListener('click', function () {
-        searchBar.value = '';
-    });
-})
+    // Çöp ikonuna tıklanınca sadece input temizlensin
+    if (trashIcon) {
+        trashIcon.addEventListener('click', function () {
+            searchBar.value = '';
+        });
+    }
+}); 
 //#endregion
 
 //#region Change Chat Section
@@ -619,6 +687,7 @@ document.getElementById("deleteAllBtn").addEventListener("click", async () => {
         if (response.ok) {
             alert("All messages deleted successfully!");
             document.getElementById("messagesList").innerHTML = ""; // Mesaj listesini temizle
+            await loadUsers();
         } else {
             alert("Failed to delete messages.");
         }
@@ -627,6 +696,10 @@ document.getElementById("deleteAllBtn").addEventListener("click", async () => {
         alert("An error occurred while deleting messages.");
     }
 });
+
+//document.getElementsByClassName("btn-cancel-search").addEventListener("click", async () => {
+//    await loadUsers();
+//});
 //#endregion
 
 

@@ -1,29 +1,18 @@
-﻿@using WanderQuest.Application.DTO
-@model List<UserChatOverviewDto>
-
+﻿
 <div class="main-container">
     <div class="left-section">
-        <ul class="user-list" id="userList">
-            <ul id="userList"></ul>
+        <ul class="user-list">
             <li>
                 <div class="search-item">
                     <input type="text" id="userSearchInput" class="search-bar" placeholder="Kullanıcı ara..." oninput="searchUsers()" />
+                    <button class="btn-cancel-search">
+                        x
+                    </button>
                 </div>
             </li>
-            @foreach (var user in Model)
-            {
-                <li>
-                    <div class="user-item" onclick="loadMessages('@user.Username')">
-                            @* <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar"> *@
-                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="avatar" alt="Anonim Kullanıcı">
-                            <div class="user-info">
-                                <h3 class="user-name">@user.Username</h3>
-                                <p class="last-message">@user.LastMessageText</p>
-                            </div>
-                        <span class="timestamp">@user.LastMessageTime.ToLocalTime().ToShortTimeString()</span>
-                    </div>
-                </li>
-            }
+            <ul id="usersList">
+
+            </ul>
         </ul>
     </div>
     <div class="right-section-empty">
@@ -35,7 +24,7 @@
         </div>
     </div>
     <div class="right-section">
-        <div id="toast" class="toast"></div>
+        <div id="toast" class="toast"></div>    
         <div class="chat-container">
             <div class="chat-header">
                 <div id="chatHeader">

@@ -842,7 +842,16 @@ footer {
     margin-right: 40px; /* sağdan məsafə */
     flex-shrink: 0;
 }
-
+.btn-cancel-search {
+    background-color: #e9e9e9;
+    color: #111111;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 20px;
+    transition: background 0.3s ease;
+}
 .wish-total {
     text-align: right;
     font-size: 16px;
@@ -1199,6 +1208,15 @@ footer {
 
     .user-item:hover {
         background: #e0e0e0;
+    }
+
+.user-item-active {
+    background: #c7c7c7 !important;
+}
+
+    .user-item-active:hover {
+        transition: background 2s ease;
+        background: #acacac !important;
     }
 
 .avatar {

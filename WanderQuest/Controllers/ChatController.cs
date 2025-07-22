@@ -39,14 +39,8 @@ namespace WanderQuest.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-
-            // Artık contacted users da username ile gelecek
-            //var contacts = await _messageService.GetContactedUsersAsync(user.UserName);
-            var userChatOverview = await _messageService.GetLastMessageSummary(user.UserName);
-
-
             ViewBag.MyUsername = myUsername;
-            return View(userChatOverview); // View: Views/Chat/Index.cshtml
+            return View();
         }
 
         [HttpGet]
@@ -95,8 +89,21 @@ namespace WanderQuest.Controllers
             await _messageService.DeleteAllMessages(myUsername, userId);
 
             return RedirectToAction("Index", "Chat");
+        }
 
-            return Ok();
+
+        [HttpGet]
+        public async Task<IActionResult> GetUsers()
+        {
+            var myUsername = User.Identity?.Name;
+            var user = await _userManager.FindByNameAsync(myUsername);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            var userChatOverview = await _messageService.GetLastMessageSummary(user.UserName);
+
+            return PartialView("_UsersPartial", userChatOverview);
         }
 
         [HttpPost("ask")]

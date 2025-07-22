@@ -1,0 +1,17 @@
+﻿@using WanderQuest.Application.DTO
+@model List<UserChatOverviewDto>
+
+@foreach (var user in Model)
+{
+    <li>
+        <div class="user-item" onclick="loadMessages('@user.Username')" data-value="@user.Username">
+            @* <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar"> *@
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="avatar" alt="anonim">
+            <div class="user-info">
+                <h3 class="user-name">@user.Username</h3>
+                <p class="last-message">@user.LastMessageText</p>
+            </div>
+            <span class="timestamp">@user.LastMessageTime.ToLocalTime().ToShortTimeString()</span>
+        </div>
+    </li>
+}

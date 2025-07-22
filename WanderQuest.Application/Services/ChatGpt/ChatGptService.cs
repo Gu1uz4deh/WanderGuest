@@ -8,7 +8,7 @@ namespace WanderQuest.Application.Services.ChatGpt
     public class ChatGptService : IChatGptService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "KENDI_API_KEYINIZI_BURAYA_YAPISTIRIN";
+        private readonly string _apiKey = "K`ENDI_API_KEYINIZI_BURAYA_YAPISTIRIN";
 
         public ChatGptService()
         {

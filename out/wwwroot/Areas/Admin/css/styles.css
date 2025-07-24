@@ -1,0 +1,340 @@
+﻿body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f6f9;
+            color: #333;
+        }
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background: #2c3e50;
+    color: #fff;
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+    .sidebar.collapsed {
+        width: 60px;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+        margin: 0 0 20px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .sidebar ul li {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+            .sidebar ul li:hover {
+                background: #34495e;
+            }
+
+            .sidebar ul li span {
+                margin-left: 10px;
+            }
+
+    .sidebar.collapsed ul li span {
+        display: none;
+    }
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+    .main-content.expanded {
+        margin-left: 60px;
+    }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-bar input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.content-section {
+    display: none;
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+    .content-section.active {
+        display: block;
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-group button {
+        padding: 10px 20px;
+        background: #2c3e50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .form-group button:hover {
+            background: #34495e;
+        }
+
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    table th, table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table th {
+        background: #f4f6f9;
+    }
+
+.icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.icon-item {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}       
+
+
+
+.product-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.table-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.table-striped {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table-striped th,
+    .table-striped td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table-striped th {
+        background-color: #f4f4f4;
+    }
+
+    .table-striped tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .table-striped tr:hover {
+        background-color: #f1f1f1;
+    }
+
+.btn-details {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-update {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-back {
+    background-color: #989898;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #228724;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.buttons-table-product {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttons-table-product-update {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-product-btn {
+    margin-left: auto;
+}
+
+/*.product-go-back {
+    display: inline-block !important;
+    float: left;
+}*/
+
+.btn-details:hover, .btn-update:hover, .btn-delete:hover {
+    opacity: 0.9;
+}
+
+.nav-link {
+    display: flex; 
+    align-items: center; 
+    color: inherit;
+    text-decoration: none;
+    width: 100%; 
+}
+
+.update-section {
+    display: block;
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.category-create-section {
+    display: block;
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.product-create-section {
+    display: block;
+    margin-top: 20px;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+}
+
+    select:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    }
+
+
+.text-error {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: red;
+}

@@ -2470,6 +2470,19 @@
           }
         }
       },
+      "WanderQuest.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.6"
+        },
+        "compile": {
+          "bin/placeholder/WanderQuest.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WanderQuest.Core.dll": {}
+        }
+      },
       "WanderQuest.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2477,7 +2490,8 @@
           "Microsoft.AspNetCore.Http": "2.3.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.18",
           "Microsoft.EntityFrameworkCore": "9.0.6",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.6"
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.6",
+          "WanderQuest.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WanderQuest.Infrastructure.dll": {}
@@ -6518,6 +6532,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "WanderQuest.Core/1.0.0": {
+      "type": "project",
+      "path": "../WanderQuest.Core/WanderQuest.Core.csproj",
+      "msbuildProject": "../WanderQuest.Core/WanderQuest.Core.csproj"
     },
     "WanderQuest.Infrastructure/1.0.0": {
       "type": "project",

@@ -199,3 +199,5 @@ C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Microsoft.A
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\WanderQuest.Core.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest\bin\Debug\net8.0\WanderQuest.Core.pdb

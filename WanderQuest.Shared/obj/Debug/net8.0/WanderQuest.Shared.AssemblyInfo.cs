@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WanderQuest.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60f5c502a29a515a18ad43ab7fc939d61256efbc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb6f02a1c7f6fd90e0a494176afe2741fdfd3017")]
 [assembly: System.Reflection.AssemblyProductAttribute("WanderQuest.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WanderQuest.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

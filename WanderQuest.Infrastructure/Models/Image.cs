@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WanderQuest.Core.Entity;
 
 namespace WanderQuest.Infrastructure.Models
 {
-    public class Image
+    public class Image : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

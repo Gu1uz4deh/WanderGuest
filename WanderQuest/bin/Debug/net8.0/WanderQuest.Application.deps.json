@@ -1466,12 +1466,24 @@
           }
         }
       },
+      "WanderQuest.Core/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.6"
+        },
+        "runtime": {
+          "WanderQuest.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "WanderQuest.Infrastructure/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http": "2.3.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.18",
           "Microsoft.EntityFrameworkCore": "9.0.6",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.6"
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.6",
+          "WanderQuest.Core": "1.0.0"
         },
         "runtime": {
           "WanderQuest.Infrastructure.dll": {
@@ -2395,6 +2407,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "WanderQuest.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "WanderQuest.Infrastructure/1.0.0": {
       "type": "project",

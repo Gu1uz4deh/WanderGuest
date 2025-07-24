@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WanderQuest.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4eee16c59040a2c1fa5b7ff5eabe08e012c33be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb6f02a1c7f6fd90e0a494176afe2741fdfd3017")]
 [assembly: System.Reflection.AssemblyProductAttribute("WanderQuest.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WanderQuest.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

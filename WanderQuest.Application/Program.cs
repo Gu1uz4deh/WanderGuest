@@ -8,11 +8,22 @@ namespace WanderQuest.Application
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+            CreateHostBuilder(args, port).Build().Run();
+            //CreateHostBuilder(args).Build().Run();
         }
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        //public static IHostBuilder CreateHostBuilder(string[] args) =>
+        //    Host.CreateDefaultBuilder(args)
+        //    .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+        //}
+        public static IHostBuilder CreateHostBuilder(string[] args, string port) =>
             Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder
+                        .UseStartup<Startup>()
+                        .UseUrls($"http://*:{port}");
+                });
     }
 }
 

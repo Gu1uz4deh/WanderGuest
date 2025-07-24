@@ -1,0 +1,13 @@
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\bin\Debug\net8.0\WanderQuest.Core.deps.json
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\bin\Debug\net8.0\WanderQuest.Core.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\bin\Debug\net8.0\WanderQuest.Core.pdb
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\WanderQuest.Core.csproj.AssemblyReference.cache
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\WanderQuest.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\WanderQuest.Core.AssemblyInfoInputs.cache
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\WanderQuest.Core.AssemblyInfo.cs
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\WanderQuest.Core.csproj.CoreCompileInputs.cache
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\WanderQuest.Core.sourcelink.json
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\WanderQuest.Core.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\refint\WanderQuest.Core.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\WanderQuest.Core.pdb
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Core\obj\Debug\net8.0\ref\WanderQuest.Core.dll

@@ -1,8 +1,9 @@
 ﻿using System;
+using WanderQuest.Core.Entity;
 
 namespace WanderQuest.Infrastructure.Models
 {
-    public class Slider : BaseEntity
+    public class Slider : BaseEntity, IEntity
     {
         //public string ImgUrl { get; set; }
         public string Title { get; set; }

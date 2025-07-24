@@ -6,10 +6,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WanderQuest.Core.Entity;
 
 namespace WanderQuest.Infrastructure.Models
 {
-    public class Product : BaseEntity
+    public class Product : BaseEntity, IEntity
     {
         //[Required(ErrorMessage = "Please enter the title")]
         //[MaxLength(255, ErrorMessage = "Title length max 255 length")]

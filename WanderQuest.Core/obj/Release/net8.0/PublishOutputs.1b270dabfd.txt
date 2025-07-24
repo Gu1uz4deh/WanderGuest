@@ -1,0 +1,14 @@
+C:\Users\quluz\source\repos\WanderQuest\out\WanderQuest.Core.dll
+C:\Users\quluz\source\repos\WanderQuest\out\WanderQuest.Core.deps.json
+C:\Users\quluz\source\repos\WanderQuest\out\WanderQuest.Core.pdb
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.EntityFrameworkCore.dll
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.Extensions.Logging.dll
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.Extensions.Options.dll
+C:\Users\quluz\source\repos\WanderQuest\out\Microsoft.Extensions.Primitives.dll
+C:\Users\quluz\source\repos\WanderQuest\out\System.Diagnostics.DiagnosticSource.dll

@@ -13,3 +13,6 @@ C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.pdb
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQuest.Infrastructure.genruntimeconfig.cache
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\ref\WanderQuest.Infrastructure.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\bin\Debug\net8.0\WanderQuest.Core.dll
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\bin\Debug\net8.0\WanderQuest.Core.pdb
+C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Infrastructure\obj\Debug\net8.0\WanderQu.AD35E372.Up2Date

@@ -17,4 +17,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WanderQuest.Core\WanderQuest.Core.csproj" />
+  </ItemGroup>
+
 </Project>

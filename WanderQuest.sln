@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WanderQuest.Application", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WanderQuest.Infrastructure", "WanderQuest.Infrastructure\WanderQuest.Infrastructure.csproj", "{23C0DDD1-28ED-C476-3A7A-2ECC94B3AD00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WanderQuest.Core", "WanderQuest.Core\WanderQuest.Core.csproj", "{404EF540-911C-4467-BB13-2DDBC5990D34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{23C0DDD1-28ED-C476-3A7A-2ECC94B3AD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C0DDD1-28ED-C476-3A7A-2ECC94B3AD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C0DDD1-28ED-C476-3A7A-2ECC94B3AD00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{404EF540-911C-4467-BB13-2DDBC5990D34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{404EF540-911C-4467-BB13-2DDBC5990D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{404EF540-911C-4467-BB13-2DDBC5990D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{404EF540-911C-4467-BB13-2DDBC5990D34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

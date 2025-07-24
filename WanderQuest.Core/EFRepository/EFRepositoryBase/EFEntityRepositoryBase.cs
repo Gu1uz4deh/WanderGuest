@@ -13,28 +13,52 @@ namespace WanderQuest.Core.EFRepository.EFEntityRepositoryBase
         where TEntity : class, IEntity, new()
         where TContext : DbContext
     {
-        private readonly TContext _context;
+        protected readonly TContext _context;
 
         public EFEntityRepositoryBase(TContext context)
         {
             _context = context;
         }
-        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression = null)
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression = null,
+            params Expression<Func<TEntity, object>>[] includes)
         {
             var query = _context.Set<TEntity>().AsNoTracking();
-            var data = expression is null
-                ? await query.FirstOrDefaultAsync()
-                : await query.Where(expression).FirstOrDefaultAsync();
-            return data;
+            // var data = expression is null
+            //     ? await query.FirstOrDefaultAsync()
+            //     : await query.Where(expression).FirstOrDefaultAsync();
+            if (expression != null)
+            {
+                query = query.Where(expression);
+            }
+
+            if (includes != null)
+            {
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+            return query.FirstOrDefault();
         }
 
-        public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null)
+        public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null, 
+                                              params Expression<Func<TEntity, object>>[] includes)
         {
             var query = _context.Set<TEntity>().AsNoTracking();
-            var data = expression is null
-                ? await query.ToListAsync()
-                : await query.Where(expression).ToListAsync();
-            return data;
+            if (expression != null)
+            {
+                query = query.Where(expression);
+            }
+
+            if (includes != null)
+            {
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task AddAsync(TEntity entity)

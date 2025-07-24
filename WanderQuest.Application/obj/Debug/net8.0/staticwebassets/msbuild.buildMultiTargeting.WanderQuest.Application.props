@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/WanderQuest.Application.props" />
+</Project>

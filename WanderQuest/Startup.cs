@@ -41,11 +41,15 @@ namespace WanderQuest
 
             services.AddScoped<ISettingsQueryService, SettingsQueryRepository>();
             services.AddScoped<ICategoryAdminService, CategoryAdminRepository>();
+            
             services.AddScoped<IProductsQueryService, ProductsQueryRepository>();
+            
             services.AddScoped<ISlidersQueryService, SlidersQueryRepository>();
             services.AddScoped<ISliderDAL, SliderRepositoryDAL>();
 
             services.AddScoped<ICategoriesQueryService, CategoriesQueryRepository>();
+            services.AddScoped<ICategoryDAL, CategoryRepositoryDAL>();
+            
             services.AddScoped<ITeamMembersQueyService, TeamMembersQueryRepository>();
             services.AddScoped<IBasketDbService, BasketDbService>();
             services.AddScoped<IMessageDbService, MessageDbService>();

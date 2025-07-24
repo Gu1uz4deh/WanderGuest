@@ -16,33 +16,19 @@ namespace WanderQuest.Application.Implementations.Public
         }
         public async Task<List<Slider>> GetAll()
         {
-            //var sliders = await _context.Sliders.Where(n => !n.IsDeleted)
-            //                                 .Include(n => n.SliderImages)
-            //                                 .ThenInclude(n => n.Image)
-            //                                 .ToListAsync();
-            var sliders = await _repository.GetAllAsync(n => !n.IsDeleted);
+            var sliders = await _repository.GetAllSlidersWithImagesAsync();
             return sliders;
         }
 
         public async Task<Slider> GetById(int id)
         {
-            //var slider = await _context.Sliders.Where(n => !n.IsDeleted && n.Id == id)
-            //                                 .Include(n => n.SliderImages)
-            //                                 .ThenInclude(n => n.Image)
-            //                                 .FirstOrDefaultAsync();
-            var slider = await _repository.GetAsync(n => !n.IsDeleted && n.Id == id);
+            var slider = await _repository.GetSliderWithImagesAsync(id);
             return slider;
         }
 
         public async Task<List<Slider>> GetPaged(int skip = 0, int take = 4)
         {
-            //var sliders = await _context.Sliders.Where(n => !n.IsDeleted)
-            //                                 .Include(n => n.SliderImages)
-            //                                 .ThenInclude(n => n.Image)
-            //                                 .Skip(skip)
-            //                                 .Take(take)
-            //                                 .ToListAsync();
-            var sliders = await _repository.GetAllAsync(n => !n.IsDeleted);
+            var sliders = await _repository.GetPagedSlidersWithImagesAsync(skip, take);
             return sliders;
         }
     }

@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"T7nt7VXFaEz1x3zKuDYQal3OD5dbF3VtwIg7GOyFFSA=","Source":"WanderQuest.Application","BasePath":"_content/WanderQuest.Application","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "fz/QegtoT9dX7XsnJf18lDMQvtbrR4thiK0g1TdR8oc=",
+  "Source": "WanderQuest.Application",
+  "BasePath": "_content/WanderQuest.Application",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

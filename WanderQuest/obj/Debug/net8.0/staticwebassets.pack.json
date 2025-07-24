@@ -1,0 +1,117 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/Areas/Admin/css/styles.css",
+      "PackagePath": "staticwebassets/Areas/Admin/css/styles.css"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/Areas/Admin/js/script.js",
+      "PackagePath": "staticwebassets/Areas/Admin/js/script.js"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/css/styles.css",
+      "PackagePath": "staticwebassets/assets/css/styles.css"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/img/3b2fb682772f52e97b9dd8ba933b9493.jpg",
+      "PackagePath": "staticwebassets/assets/img/3b2fb682772f52e97b9dd8ba933b9493.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/js/script.js",
+      "PackagePath": "staticwebassets/assets/js/script.js"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/others/chicago-downtown-3840x2160-21348.jpg",
+      "PackagePath": "staticwebassets/assets/others/chicago-downtown-3840x2160-21348.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/others/mountain-landscape-3840x2160-19802.jpg",
+      "PackagePath": "staticwebassets/assets/others/mountain-landscape-3840x2160-19802.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/others/tropical-beach-3840x2160-14811.jpg",
+      "PackagePath": "staticwebassets/assets/others/tropical-beach-3840x2160-14811.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/products/213812414.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/products/213812414.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/products/3437afe8-6d9e-4a47-ac27-a83dbf46f88dScreenshot 2024-12-27 022505.png",
+      "PackagePath": "staticwebassets/assets/uploads/products/3437afe8-6d9e-4a47-ac27-a83dbf46f88dScreenshot 2024-12-27 022505.png"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/products/EL-ignNWkAAHfnj.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/products/EL-ignNWkAAHfnj.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/products/QatarDoha_8hrATVRide+DesertSafariComboPrivateTour-Klook,VereinigteStaaten.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/products/QatarDoha_8hrATVRide+DesertSafariComboPrivateTour-Klook,VereinigteStaaten.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/products/Screenshot 2025-06-24 144838.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/products/Screenshot 2025-06-24 144838.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/products/Treetop Adventure Park in Bali.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/products/Treetop Adventure Park in Bali.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/products/faf4960d3df3501880a0de9e5f91956310855087.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/products/faf4960d3df3501880a0de9e5f91956310855087.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/products/maxresdefault.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/products/maxresdefault.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/products/ulitsa_gorod_dvizhenie_145125_1680x1050.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/products/ulitsa_gorod_dvizhenie_145125_1680x1050.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/sliders/baros-maldives-island-seascape-tropical-beach-blue-sky-3840x2160-4325.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/sliders/baros-maldives-island-seascape-tropical-beach-blue-sky-3840x2160-4325.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/sliders/colorado-mountain-3840x2160-18548.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/sliders/colorado-mountain-3840x2160-18548.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/sliders/dubai-sheikh-zayed-3840x2160-21154.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/sliders/dubai-sheikh-zayed-3840x2160-21154.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/teamMembers/9781e0c92a77fe526611d93a4ac0c6c2.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/teamMembers/9781e0c92a77fe526611d93a4ac0c6c2.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/teamMembers/gettyImages-1155613712-1.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/teamMembers/gettyImages-1155613712-1.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/teamMembers/mountaineering-mountainous-landforms-winter-sport.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/teamMembers/mountaineering-mountainous-landforms-winter-sport.jpg"
+    },
+    {
+      "Id": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest/wwwroot/assets/uploads/teamMembers/s-3e6525c9484d36e5930798ea6b8facd24ca7d5aa.jpg",
+      "PackagePath": "staticwebassets/assets/uploads/teamMembers/s-3e6525c9484d36e5930798ea6b8facd24ca7d5aa.jpg"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.WanderQuest.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.WanderQuest.props",
+      "PackagePath": "build\\WanderQuest.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.WanderQuest.props",
+      "PackagePath": "buildMultiTargeting\\WanderQuest.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.WanderQuest.props",
+      "PackagePath": "buildTransitive\\WanderQuest.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

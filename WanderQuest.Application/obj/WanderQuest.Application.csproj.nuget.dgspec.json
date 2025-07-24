@@ -1,42 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Application\\WanderQuest.Application.csproj": {}
+    "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Application/WanderQuest.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Application\\WanderQuest.Application.csproj": {
+    "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Application/WanderQuest.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Application\\WanderQuest.Application.csproj",
+        "projectUniqueName": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Application/WanderQuest.Application.csproj",
         "projectName": "WanderQuest.Application",
-        "projectPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Application\\WanderQuest.Application.csproj",
-        "packagesPath": "C:\\Users\\quluz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Application\\obj\\",
+        "projectPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Application/WanderQuest.Application.csproj",
+        "packagesPath": "/Users/guluz4deh/.nuget/packages/",
+        "outputPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Application/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\quluz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/guluz4deh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Infrastructure\\WanderQuest.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Infrastructure\\WanderQuest.Infrastructure.csproj"
+              "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Infrastructure/WanderQuest.Infrastructure.csproj": {
+                "projectPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Infrastructure/WanderQuest.Infrastructure.csproj"
               },
-              "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Shared\\WanderQuest.Shared.csproj": {
-                "projectPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Shared\\WanderQuest.Shared.csproj"
+              "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Shared/WanderQuest.Shared.csproj": {
+                "projectPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Shared/WanderQuest.Shared.csproj"
               }
             }
           }
@@ -50,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -91,32 +84,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Core\\WanderQuest.Core.csproj": {
+    "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Core/WanderQuest.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Core\\WanderQuest.Core.csproj",
+        "projectUniqueName": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Core/WanderQuest.Core.csproj",
         "projectName": "WanderQuest.Core",
-        "projectPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Core\\WanderQuest.Core.csproj",
-        "packagesPath": "C:\\Users\\quluz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Core\\obj\\",
+        "projectPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Core/WanderQuest.Core.csproj",
+        "packagesPath": "/Users/guluz4deh/.nuget/packages/",
+        "outputPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Core/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\quluz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/guluz4deh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -134,8 +121,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -162,40 +148,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Infrastructure\\WanderQuest.Infrastructure.csproj": {
+    "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Infrastructure/WanderQuest.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Infrastructure\\WanderQuest.Infrastructure.csproj",
+        "projectUniqueName": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Infrastructure/WanderQuest.Infrastructure.csproj",
         "projectName": "WanderQuest.Infrastructure",
-        "projectPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Infrastructure\\WanderQuest.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\quluz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Infrastructure\\obj\\",
+        "projectPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Infrastructure/WanderQuest.Infrastructure.csproj",
+        "packagesPath": "/Users/guluz4deh/.nuget/packages/",
+        "outputPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Infrastructure/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\quluz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/guluz4deh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Core\\WanderQuest.Core.csproj": {
-                "projectPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Core\\WanderQuest.Core.csproj"
+              "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Core/WanderQuest.Core.csproj": {
+                "projectPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Core/WanderQuest.Core.csproj"
               }
             }
           }
@@ -209,8 +189,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -255,32 +234,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Shared\\WanderQuest.Shared.csproj": {
+    "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Shared/WanderQuest.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Shared\\WanderQuest.Shared.csproj",
+        "projectUniqueName": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Shared/WanderQuest.Shared.csproj",
         "projectName": "WanderQuest.Shared",
-        "projectPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Shared\\WanderQuest.Shared.csproj",
-        "packagesPath": "C:\\Users\\quluz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quluz\\source\\repos\\WanderQuest\\WanderQuest.Shared\\obj\\",
+        "projectPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Shared/WanderQuest.Shared.csproj",
+        "packagesPath": "/Users/guluz4deh/.nuget/packages/",
+        "outputPath": "/Users/guluz4deh/Documents/Projects/WanderGuest/WanderQuest.Shared/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\quluz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/guluz4deh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -298,8 +271,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -330,7 +302,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

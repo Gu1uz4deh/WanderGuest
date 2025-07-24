@@ -5,8 +5,6 @@ C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Application\obj\Debug\net8.0
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Application\obj\Debug\net8.0\WanderQuest.Application.csproj.CoreCompileInputs.cache
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Application\obj\Debug\net8.0\WanderQuest.Application.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Application\obj\Debug\net8.0\WanderQuest.Application.sourcelink.json
-C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Application\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Application\bin\Debug\net8.0\appsettings.json
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Application\bin\Debug\net8.0\WanderQuest.Application.staticwebassets.endpoints.json
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Application\bin\Debug\net8.0\WanderQuest.Application.exe
 C:\Users\quluz\source\repos\WanderQuest\WanderQuest.Application\bin\Debug\net8.0\WanderQuest.Application.deps.json

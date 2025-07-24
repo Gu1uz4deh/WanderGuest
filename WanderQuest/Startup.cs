@@ -16,7 +16,9 @@ using WanderQuest.Application.Services.Public.MessageServices;
 using WanderQuest.BasketHandlers.Implementations;
 using WanderQuest.BasketHandlers.Services;
 using WanderQuest.Hubs;
+using WanderQuest.Infrastructure.Abstracts;
 using WanderQuest.Infrastructure.DAL;
+using WanderQuest.Infrastructure.Implementations;
 using WanderQuest.Infrastructure.Models;
 
 namespace WanderQuest
@@ -41,11 +43,14 @@ namespace WanderQuest
             services.AddScoped<ICategoryAdminService, CategoryAdminRepository>();
             services.AddScoped<IProductsQueryService, ProductsQueryRepository>();
             services.AddScoped<ISlidersQueryService, SlidersQueryRepository>();
+            services.AddScoped<ISliderDAL, SliderRepositoryDAL>();
+
             services.AddScoped<ICategoriesQueryService, CategoriesQueryRepository>();
             services.AddScoped<ITeamMembersQueyService, TeamMembersQueryRepository>();
             services.AddScoped<IBasketDbService, BasketDbService>();
             services.AddScoped<IMessageDbService, MessageDbService>();
             services.AddScoped<IChatGptService, ChatGptService>();
+
 
             services.AddScoped<IBasketItemService, BasketItemService>();
             services.AddScoped<IBasketSummaryService, BasketSummaryService>();

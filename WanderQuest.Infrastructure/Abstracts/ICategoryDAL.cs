@@ -6,5 +6,5 @@ namespace WanderQuest.Infrastructure.Abstracts;
 
 public interface ICategoryDAL : IRepositoryBase<Category>
 {
-    
+
 }

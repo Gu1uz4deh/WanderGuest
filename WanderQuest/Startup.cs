@@ -43,6 +43,7 @@ namespace WanderQuest
             services.AddScoped<ICategoryAdminService, CategoryAdminRepository>();
             
             services.AddScoped<IProductsQueryService, ProductsQueryRepository>();
+            services.AddScoped<IProductDAL, ProductsRepositoryDAL>();
             
             services.AddScoped<ISlidersQueryService, SlidersQueryRepository>();
             services.AddScoped<ISliderDAL, SliderRepositoryDAL>();

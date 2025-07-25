@@ -7,7 +7,6 @@ namespace WanderQuest
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
             // Startup.cs'teki class'ı kullanmak için
             var startup = new Startup(builder.Configuration);
 

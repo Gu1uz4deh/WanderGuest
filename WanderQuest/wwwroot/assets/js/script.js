@@ -490,7 +490,6 @@ async function loadUsers() {
                 const itemUser = item.getAttribute("data-value");
                 if (itemUser === result) {
                     item.classList.add('user-item-active');
-                    item.style.backgroundColor = "black";
                     console.log("Aktif kullanıcı bulundu ve class eklendi:", itemUser);
                 } else {
                     item.classList.remove('user-item-active');

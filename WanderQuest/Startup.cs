@@ -53,7 +53,9 @@ namespace WanderQuest
             
             services.AddScoped<ITeamMembersQueyService, TeamMembersQueryRepository>();
             services.AddScoped<IBasketDbService, BasketDbService>();
+
             services.AddScoped<IMessageDbService, MessageDbService>();
+            services.AddSingleton<IOnlineUserService, OnlineUserService>();
             services.AddScoped<IChatGptService, ChatGptService>();
 
 

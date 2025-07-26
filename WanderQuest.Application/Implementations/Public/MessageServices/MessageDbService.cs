@@ -12,10 +12,12 @@ namespace WanderQuest.Application.Implementations.Public.MessageServices
     {
         private readonly AppDbContext _context;
         private readonly UserManager<AppUser> _userManager;
-        public MessageDbService(AppDbContext context, UserManager<AppUser> userManager)
+        private readonly IOnlineUserService _onlineUserService;
+        public MessageDbService(AppDbContext context, UserManager<AppUser> userManager, IOnlineUserService onlineUserService)
         {
             _context = context;
             _userManager = userManager;
+            _onlineUserService = onlineUserService;
         }
         public async Task SaveMessageAsync(Message message)
         {
@@ -51,12 +53,6 @@ namespace WanderQuest.Application.Implementations.Public.MessageServices
         {
             List<UserChatOverviewDto> userChatLists = new List<UserChatOverviewDto>();
 
-            // 1. Kullanıcının konuştuğu diğer kişileri bul
-            //var otherUsers = await _context.Messages
-            //    .Where(m => m.SendUserId == userOneName || m.ReceiverUserId == userOneName)
-            //    .Select(m => m.SendUserId == userOneName ? m.ReceiverUserId : m.SendUserId)
-            //    .Distinct()
-            //    .ToListAsync();
             var otherUsers = await GetContactedUsersAsync(username);
 
             // 2. Her kişi için en son mesajı al ve listeye ekle
@@ -75,7 +71,8 @@ namespace WanderQuest.Application.Implementations.Public.MessageServices
                     {
                         Username = otherUser,
                         LastMessageText = lastMessage.Text,
-                        LastMessageTime = lastMessage.SentAt
+                        LastMessageTime = lastMessage.SentAt,
+                        IsOnline = _onlineUserService.IsUserOnline(otherUser)
                     });
                 }
             }

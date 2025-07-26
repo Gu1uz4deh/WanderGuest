@@ -8,10 +8,19 @@
             @* <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar"> *@
             <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="avatar" alt="anonim">
             <div class="user-info">
-                <h3 class="user-name">@user.Username</h3>
+                <h3 class="user-name" style="display: inline-block !important;">@user.Username</h3>
+                
                 <p class="last-message">@user.LastMessageText</p>
             </div>
             <span class="timestamp">@user.LastMessageTime.ToLocalTime().ToShortTimeString()</span>
+            @if (@user.IsOnline)
+            {
+                <h3 style="color: #00b251; display: inline-block !important; margin-left: 10px;">⬤</h3>
+            }
+                else
+            {
+                <h3 style="color: #b50202;display: inline-block !important; margin-left: 10px;">⬤</h3>
+            }
         </div>
     </li>
 }
